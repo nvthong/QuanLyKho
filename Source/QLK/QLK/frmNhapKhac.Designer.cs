@@ -343,6 +343,19 @@
             this.gridColumn3});
             this.gridViewHoaDon.GridControl = this.gridCtrlDSHoaDon;
             this.gridViewHoaDon.Name = "gridViewHoaDon";
+            this.gridViewHoaDon.OptionsBehavior.Editable = false;
+            this.gridViewHoaDon.OptionsBehavior.ReadOnly = true;
+            this.gridViewHoaDon.OptionsCustomization.AllowColumnMoving = false;
+            this.gridViewHoaDon.OptionsCustomization.AllowGroup = false;
+            this.gridViewHoaDon.OptionsFind.AllowFindPanel = false;
+            this.gridViewHoaDon.OptionsMenu.EnableColumnMenu = false;
+            this.gridViewHoaDon.OptionsMenu.EnableFooterMenu = false;
+            this.gridViewHoaDon.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridViewHoaDon.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridViewHoaDon.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridViewHoaDon.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridViewHoaDon.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridViewHoaDon.OptionsMenu.ShowSplitItem = false;
             this.gridViewHoaDon.OptionsView.ShowGroupPanel = false;
             this.gridViewHoaDon.RowHeight = 25;
             this.gridViewHoaDon.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridViewHoaDon_RowClick);
@@ -424,6 +437,25 @@
             this.gridColumn14});
             this.gridViewHangHoa.GridControl = this.gridCtrlDSHangHoa;
             this.gridViewHangHoa.Name = "gridViewHangHoa";
+            this.gridViewHangHoa.OptionsBehavior.Editable = false;
+            this.gridViewHangHoa.OptionsBehavior.ReadOnly = true;
+            this.gridViewHangHoa.OptionsCustomization.AllowColumnMoving = false;
+            this.gridViewHangHoa.OptionsCustomization.AllowFilter = false;
+            this.gridViewHangHoa.OptionsCustomization.AllowGroup = false;
+            this.gridViewHangHoa.OptionsFilter.AllowColumnMRUFilterList = false;
+            this.gridViewHangHoa.OptionsFilter.AllowFilterEditor = false;
+            this.gridViewHangHoa.OptionsFilter.AllowFilterIncrementalSearch = false;
+            this.gridViewHangHoa.OptionsFilter.AllowMRUFilterList = false;
+            this.gridViewHangHoa.OptionsFilter.AllowMultiSelectInCheckedFilterPopup = false;
+            this.gridViewHangHoa.OptionsFilter.FilterEditorUseMenuForOperandsAndOperators = false;
+            this.gridViewHangHoa.OptionsFilter.ShowAllTableValuesInCheckedFilterPopup = false;
+            this.gridViewHangHoa.OptionsFind.AllowFindPanel = false;
+            this.gridViewHangHoa.OptionsMenu.EnableColumnMenu = false;
+            this.gridViewHangHoa.OptionsMenu.EnableFooterMenu = false;
+            this.gridViewHangHoa.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridViewHangHoa.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridViewHangHoa.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridViewHangHoa.OptionsMenu.ShowSplitItem = false;
             this.gridViewHangHoa.OptionsView.ShowFooter = true;
             this.gridViewHangHoa.OptionsView.ShowGroupPanel = false;
             this.gridViewHangHoa.RowHeight = 25;
@@ -494,7 +526,7 @@
             this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn9.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn9.Caption = "Giá bán";
-            this.gridColumn9.DisplayFormat.FormatString = "n0";
+            this.gridColumn9.DisplayFormat.FormatString = "n1";
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn9.FieldName = "HDNX_GIABAN";
             this.gridColumn9.GroupFormat.FormatString = "n0";
@@ -516,7 +548,7 @@
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn8.Caption = "Giá nhập";
-            this.gridColumn8.DisplayFormat.FormatString = "n0";
+            this.gridColumn8.DisplayFormat.FormatString = "n1";
             this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "HDNX_GIAMUA";
             this.gridColumn8.GroupFormat.FormatString = "n0";
@@ -557,7 +589,7 @@
             this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn15.Caption = "Tổng tiền";
-            this.gridColumn15.DisplayFormat.FormatString = "n0";
+            this.gridColumn15.DisplayFormat.FormatString = "n1";
             this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn15.FieldName = "HDNX_TONGMUA";
             this.gridColumn15.Name = "gridColumn15";
@@ -594,7 +626,7 @@
             this.gridColumn11.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn11.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn11.Caption = "Giá VAT";
-            this.gridColumn11.DisplayFormat.FormatString = "n0";
+            this.gridColumn11.DisplayFormat.FormatString = "n1";
             this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn11.FieldName = "HDNX_GIAVAT";
             this.gridColumn11.GroupFormat.FormatString = "n0";
@@ -615,7 +647,7 @@
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.Caption = "Tổng VAT";
-            this.gridColumn4.DisplayFormat.FormatString = "n0";
+            this.gridColumn4.DisplayFormat.FormatString = "n1";
             this.gridColumn4.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn4.FieldName = "HDNX_TONGVAT";
             this.gridColumn4.Name = "gridColumn4";
@@ -634,7 +666,7 @@
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
             this.gridColumn13.Caption = "Thành tiền";
-            this.gridColumn13.DisplayFormat.FormatString = "n0";
+            this.gridColumn13.DisplayFormat.FormatString = "n1";
             this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn13.FieldName = "HDNX_THANHTIEN";
             this.gridColumn13.GroupFormat.FormatString = "n0";
@@ -643,7 +675,7 @@
             this.gridColumn13.OptionsColumn.AllowEdit = false;
             this.gridColumn13.OptionsColumn.ReadOnly = true;
             this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n1}")});
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 10;
             this.gridColumn13.Width = 61;
@@ -655,6 +687,7 @@
             this.gridColumn14.MinWidth = 10;
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
+            this.gridColumn14.OptionsColumn.AllowGroup = DevExpress.Utils.DefaultBoolean.False;
             this.gridColumn14.OptionsColumn.AllowMove = false;
             this.gridColumn14.OptionsColumn.AllowShowHide = false;
             this.gridColumn14.OptionsColumn.AllowSize = false;
@@ -662,6 +695,9 @@
             this.gridColumn14.OptionsColumn.FixedWidth = true;
             this.gridColumn14.OptionsColumn.ReadOnly = true;
             this.gridColumn14.OptionsColumn.ShowCaption = false;
+            this.gridColumn14.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn14.OptionsFilter.AllowFilter = false;
+            this.gridColumn14.OptionsFilter.ImmediateUpdateAutoFilter = false;
             this.gridColumn14.Visible = true;
             this.gridColumn14.VisibleIndex = 11;
             this.gridColumn14.Width = 10;
@@ -680,10 +716,12 @@
             // btnXoaHH
             // 
             this.btnXoaHH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoaHH.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXoaHH.Appearance.Options.UseFont = true;
             this.btnXoaHH.Enabled = false;
             this.btnXoaHH.Location = new System.Drawing.Point(609, 49);
             this.btnXoaHH.Name = "btnXoaHH";
-            this.btnXoaHH.Size = new System.Drawing.Size(75, 20);
+            this.btnXoaHH.Size = new System.Drawing.Size(75, 22);
             this.btnXoaHH.TabIndex = 21;
             this.btnXoaHH.Text = "Xóa";
             this.btnXoaHH.Click += new System.EventHandler(this.btnXoaHH_Click);
@@ -738,10 +776,12 @@
             // btnSuaHH
             // 
             this.btnSuaHH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSuaHH.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnSuaHH.Appearance.Options.UseFont = true;
             this.btnSuaHH.Enabled = false;
             this.btnSuaHH.Location = new System.Drawing.Point(528, 49);
             this.btnSuaHH.Name = "btnSuaHH";
-            this.btnSuaHH.Size = new System.Drawing.Size(75, 20);
+            this.btnSuaHH.Size = new System.Drawing.Size(75, 22);
             this.btnSuaHH.TabIndex = 20;
             this.btnSuaHH.Text = "Sửa";
             this.btnSuaHH.Click += new System.EventHandler(this.btnSuaHH_Click);
@@ -749,10 +789,12 @@
             // btnThemHH
             // 
             this.btnThemHH.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThemHH.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnThemHH.Appearance.Options.UseFont = true;
             this.btnThemHH.Enabled = false;
             this.btnThemHH.Location = new System.Drawing.Point(447, 49);
             this.btnThemHH.Name = "btnThemHH";
-            this.btnThemHH.Size = new System.Drawing.Size(75, 20);
+            this.btnThemHH.Size = new System.Drawing.Size(75, 22);
             this.btnThemHH.TabIndex = 19;
             this.btnThemHH.Text = "Thêm";
             this.btnThemHH.Click += new System.EventHandler(this.btnThemHH_Click);
@@ -869,11 +911,12 @@
             // btnDongHD
             // 
             this.btnDongHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDongHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDongHD.Image = ((System.Drawing.Image)(resources.GetObject("btnDongHD.Image")));
             this.btnDongHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDongHD.Location = new System.Drawing.Point(475, 5);
+            this.btnDongHD.Location = new System.Drawing.Point(545, 5);
             this.btnDongHD.Name = "btnDongHD";
-            this.btnDongHD.Size = new System.Drawing.Size(77, 31);
+            this.btnDongHD.Size = new System.Drawing.Size(95, 31);
             this.btnDongHD.TabIndex = 29;
             this.btnDongHD.Text = "Đóng";
             this.btnDongHD.UseVisualStyleBackColor = true;
@@ -882,11 +925,12 @@
             // btnExcelHD
             // 
             this.btnExcelHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcelHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcelHD.Image = ((System.Drawing.Image)(resources.GetObject("btnExcelHD.Image")));
             this.btnExcelHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcelHD.Location = new System.Drawing.Point(388, 5);
+            this.btnExcelHD.Location = new System.Drawing.Point(430, 5);
             this.btnExcelHD.Name = "btnExcelHD";
-            this.btnExcelHD.Size = new System.Drawing.Size(87, 31);
+            this.btnExcelHD.Size = new System.Drawing.Size(115, 31);
             this.btnExcelHD.TabIndex = 28;
             this.btnExcelHD.Text = "In h.đơn";
             this.btnExcelHD.UseVisualStyleBackColor = true;
@@ -895,11 +939,12 @@
             // btnXoaHD
             // 
             this.btnXoaHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoaHD.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaHD.Image")));
             this.btnXoaHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaHD.Location = new System.Drawing.Point(313, 5);
+            this.btnXoaHD.Location = new System.Drawing.Point(335, 5);
             this.btnXoaHD.Name = "btnXoaHD";
-            this.btnXoaHD.Size = new System.Drawing.Size(75, 31);
+            this.btnXoaHD.Size = new System.Drawing.Size(95, 31);
             this.btnXoaHD.TabIndex = 27;
             this.btnXoaHD.Text = "Xóa";
             this.btnXoaHD.UseVisualStyleBackColor = true;
@@ -908,11 +953,12 @@
             // btnSuaHD
             // 
             this.btnSuaHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSuaHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSuaHD.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaHD.Image")));
             this.btnSuaHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSuaHD.Location = new System.Drawing.Point(229, 5);
+            this.btnSuaHD.Location = new System.Drawing.Point(240, 5);
             this.btnSuaHD.Name = "btnSuaHD";
-            this.btnSuaHD.Size = new System.Drawing.Size(84, 31);
+            this.btnSuaHD.Size = new System.Drawing.Size(95, 31);
             this.btnSuaHD.TabIndex = 26;
             this.btnSuaHD.Text = "Sửa";
             this.btnSuaHD.UseVisualStyleBackColor = true;
@@ -921,11 +967,12 @@
             // btnThemHD
             // 
             this.btnThemHD.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThemHD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemHD.Image = ((System.Drawing.Image)(resources.GetObject("btnThemHD.Image")));
             this.btnThemHD.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemHD.Location = new System.Drawing.Point(145, 5);
             this.btnThemHD.Name = "btnThemHD";
-            this.btnThemHD.Size = new System.Drawing.Size(84, 31);
+            this.btnThemHD.Size = new System.Drawing.Size(95, 31);
             this.btnThemHD.TabIndex = 25;
             this.btnThemHD.Text = "Thêm";
             this.btnThemHD.UseVisualStyleBackColor = true;
@@ -991,7 +1038,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(23, 13);
+            this.labelControl1.Location = new System.Drawing.Point(23, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(48, 16);
             this.labelControl1.TabIndex = 0;

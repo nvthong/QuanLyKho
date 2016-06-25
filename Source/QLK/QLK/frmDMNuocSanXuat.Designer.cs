@@ -89,7 +89,17 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 25;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
@@ -212,7 +222,7 @@
             this.chkQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkQuanLy.EditValue = true;
             this.chkQuanLy.EnterMoveNextControl = true;
-            this.chkQuanLy.Location = new System.Drawing.Point(591, 66);
+            this.chkQuanLy.Location = new System.Drawing.Point(601, 66);
             this.chkQuanLy.Name = "chkQuanLy";
             this.chkQuanLy.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chkQuanLy.Properties.Appearance.Options.UseFont = true;
@@ -225,7 +235,7 @@
             // 
             this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGhiChu.EnterMoveNextControl = true;
-            this.txtGhiChu.Location = new System.Drawing.Point(263, 38);
+            this.txtGhiChu.Location = new System.Drawing.Point(273, 38);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
@@ -239,7 +249,7 @@
             // 
             this.txtTenQuocGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenQuocGia.EnterMoveNextControl = true;
-            this.txtTenQuocGia.Location = new System.Drawing.Point(463, 10);
+            this.txtTenQuocGia.Location = new System.Drawing.Point(473, 10);
             this.txtTenQuocGia.Name = "txtTenQuocGia";
             this.txtTenQuocGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTenQuocGia.Properties.Appearance.Options.UseFont = true;
@@ -253,7 +263,7 @@
             // 
             this.txtMaQuocGia.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaQuocGia.EnterMoveNextControl = true;
-            this.txtMaQuocGia.Location = new System.Drawing.Point(263, 10);
+            this.txtMaQuocGia.Location = new System.Drawing.Point(273, 10);
             this.txtMaQuocGia.Name = "txtMaQuocGia";
             this.txtMaQuocGia.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtMaQuocGia.Properties.Appearance.Options.UseFont = true;
@@ -280,11 +290,12 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDong.Location = new System.Drawing.Point(569, 11);
+            this.btnDong.Location = new System.Drawing.Point(595, 11);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(77, 31);
+            this.btnDong.Size = new System.Drawing.Size(95, 31);
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -293,11 +304,12 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(482, 11);
+            this.btnExcel.Location = new System.Drawing.Point(500, 11);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(87, 31);
+            this.btnExcel.Size = new System.Drawing.Size(95, 31);
             this.btnExcel.TabIndex = 1;
             this.btnExcel.Text = "Excel";
             this.btnExcel.UseVisualStyleBackColor = true;
@@ -306,11 +318,12 @@
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(407, 11);
+            this.btnXoa.Location = new System.Drawing.Point(405, 11);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 31);
+            this.btnXoa.Size = new System.Drawing.Size(95, 31);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -319,11 +332,12 @@
             // btnSua
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(323, 11);
+            this.btnSua.Location = new System.Drawing.Point(310, 11);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(84, 31);
+            this.btnSua.Size = new System.Drawing.Size(95, 31);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -332,11 +346,12 @@
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(239, 11);
+            this.btnThem.Location = new System.Drawing.Point(215, 11);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(84, 31);
+            this.btnThem.Size = new System.Drawing.Size(95, 31);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -346,7 +361,7 @@
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(210, 41);
+            this.labelControl3.Location = new System.Drawing.Point(220, 41);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 16);
             this.labelControl3.TabIndex = 2;
@@ -356,7 +371,7 @@
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(371, 14);
+            this.labelControl2.Location = new System.Drawing.Point(381, 14);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(86, 16);
             this.labelControl2.TabIndex = 1;
@@ -366,7 +381,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(210, 14);
+            this.labelControl1.Location = new System.Drawing.Point(220, 14);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(39, 16);
             this.labelControl1.TabIndex = 0;

@@ -883,8 +883,8 @@
             // 
             // ribbonPageGroup1
             // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.btnXuaBanSi);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXuatBanLe);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnXuaBanSi);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXuatKhac);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem6);
@@ -894,8 +894,8 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeBanSi);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeBanLe);
+            this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeBanSi);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeXuatKhac);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";

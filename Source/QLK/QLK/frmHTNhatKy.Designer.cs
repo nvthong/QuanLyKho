@@ -65,9 +65,11 @@
             // simpleButton2
             // 
             this.simpleButton2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton2.Appearance.Options.UseFont = true;
             this.simpleButton2.Location = new System.Drawing.Point(453, 12);
             this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton2.Size = new System.Drawing.Size(75, 25);
             this.simpleButton2.TabIndex = 1;
             this.simpleButton2.Text = "Đóng";
             this.simpleButton2.Click += new System.EventHandler(this.simpleButton2_Click);
@@ -75,9 +77,11 @@
             // simpleButton1
             // 
             this.simpleButton1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.simpleButton1.Appearance.Options.UseFont = true;
             this.simpleButton1.Location = new System.Drawing.Point(372, 12);
             this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(75, 23);
+            this.simpleButton1.Size = new System.Drawing.Size(75, 25);
             this.simpleButton1.TabIndex = 0;
             this.simpleButton1.Text = "Xem";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
@@ -118,6 +122,17 @@
             this.gridColumn8});
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsFind.AllowFindPanel = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 25;
             // 

@@ -82,9 +82,11 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Location = new System.Drawing.Point(487, 38);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.Size = new System.Drawing.Size(75, 25);
             this.btnDong.TabIndex = 8;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnClose_Click);
@@ -92,9 +94,11 @@
             // btnMoKhoa
             // 
             this.btnMoKhoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMoKhoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnMoKhoa.Appearance.Options.UseFont = true;
             this.btnMoKhoa.Location = new System.Drawing.Point(406, 38);
             this.btnMoKhoa.Name = "btnMoKhoa";
-            this.btnMoKhoa.Size = new System.Drawing.Size(75, 23);
+            this.btnMoKhoa.Size = new System.Drawing.Size(75, 25);
             this.btnMoKhoa.TabIndex = 7;
             this.btnMoKhoa.Text = "Mở khóa";
             this.btnMoKhoa.Click += new System.EventHandler(this.btnMoKhoa_Click);
@@ -102,9 +106,11 @@
             // btnKhoa
             // 
             this.btnKhoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnKhoa.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnKhoa.Appearance.Options.UseFont = true;
             this.btnKhoa.Location = new System.Drawing.Point(325, 38);
             this.btnKhoa.Name = "btnKhoa";
-            this.btnKhoa.Size = new System.Drawing.Size(75, 23);
+            this.btnKhoa.Size = new System.Drawing.Size(75, 25);
             this.btnKhoa.TabIndex = 6;
             this.btnKhoa.Text = "Khóa";
             this.btnKhoa.Click += new System.EventHandler(this.btnKhoa_Click);
@@ -220,6 +226,16 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 25;
             // 

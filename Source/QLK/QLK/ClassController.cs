@@ -22,13 +22,14 @@ namespace QLK
         /// </summary>
         public static SqlConnection ConnectDatabase()
         {
-            SqlConnection myConnection = new SqlConnection(
-                                       "user id=" + Properties.Settings.Default.Username + ";" +
+            string vConnectionSing = "UID=" + Properties.Settings.Default.Username + ";" +
                                        "password=" + Properties.Settings.Default.Password + ";" +
                                        "server=" + Properties.Settings.Default.ServerName + ";" +
-                                       "Trusted_Connection=yes;" +
+                                       //"Trusted_Connection=yes;" +
                                        "database=" + Properties.Settings.Default.Database + "; " +
-                                       "connection timeout=30");
+                                       "connection timeout=30";
+
+            SqlConnection myConnection = new SqlConnection(vConnectionSing);
             return myConnection;
         }
 
@@ -74,236 +75,242 @@ namespace QLK
             DataTable dtDS = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand sqlCmd;
-            using(SqlConnection connect = ConnectDatabase())
+            try
             {
-                connect.Open();
-                switch (pLoaiDanhMuc)
+                using (SqlConnection connect = ConnectDatabase())
                 {
-                    //1Đơn vị tính
-                    case "DVT_MADONVI":
-                        sqlCmd = new SqlCommand("SelectDmhhDonvitinhsAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //2Kho hàng
-                    case "KH_MAKHO":
-                        sqlCmd = new SqlCommand("SelectDmKhohangsAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //3Hàng hóa
-                    case "HH_MAHANG":
-                        sqlCmd = new SqlCommand("SelectDmhhHanghoasAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //4Nhà phân phối
-                    case "NPP_MANPP_P":
-                        sqlCmd = new SqlCommand("SelectDmNhaphanphoisAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //5Khách hàng
-                    case "NPP_MANPP_K":
-                        sqlCmd = new SqlCommand("SelectDmKhachhangsAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //6Loại hàng
-                    case "LH_MALOAI":
-                        sqlCmd = new SqlCommand("SelectDmhhLoaihangsAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //7Nhóm hàng
-                    case "NH_MANHOM":
-                        sqlCmd = new SqlCommand("SelectDmhhNhomhangsAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-                    //8Quốc gia
-                    case "QG_MAQUOCGIA":
-                        sqlCmd = new SqlCommand("SelectDmhhQuocgiasAll", connect);
-                        sqlCmd.CommandTimeout = 1000;
-                        sqlCmd.CommandType = CommandType.StoredProcedure;
-                        da.SelectCommand = sqlCmd;
-                        da.Fill(dtDS);
-                        break;
-
-                }
-                connect.Close();
-                if(dtDS.Rows.Count > 0)
-                {
-                    double[] arrDVT_MADONVI = new double[dtDS.Rows.Count];
-                    double[] arrKH_MAKHO = new double[dtDS.Rows.Count];
-                    double[] arrHH_MAHANG = new double[dtDS.Rows.Count];
-                    double[] arrNPP_MANPP = new double[dtDS.Rows.Count];
-                    double[] arrKHAH = new double[dtDS.Rows.Count];
-                    double[] arrLH_MALOAI = new double[dtDS.Rows.Count];
-                    double[] arrNH_MANHOM = new double[dtDS.Rows.Count];
-                    double[] arrQG_MAQUOCGIA = new double[dtDS.Rows.Count];
-
-                    for (int i = 0; i < dtDS.Rows.Count; i++)
+                    connect.Open();
+                    switch (pLoaiDanhMuc)
                     {
-                        string vPreName = "";
-                        string vPreNumber = "";
+                        //1Đơn vị tính
+                        case "DVT_MADONVI":
+                            sqlCmd = new SqlCommand("SelectDmhhDonvitinhsAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //2Kho hàng
+                        case "KH_MAKHO":
+                            sqlCmd = new SqlCommand("SelectDmKhohangsAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //3Hàng hóa
+                        case "HH_MAHANG":
+                            sqlCmd = new SqlCommand("SelectDmhhHanghoasAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //4Nhà phân phối
+                        case "NPP_MANPP_P":
+                            sqlCmd = new SqlCommand("SelectDmNhaphanphoisAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //5Khách hàng
+                        case "NPP_MANPP_K":
+                            sqlCmd = new SqlCommand("SelectDmKhachhangsAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //6Loại hàng
+                        case "LH_MALOAI":
+                            sqlCmd = new SqlCommand("SelectDmhhLoaihangsAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //7Nhóm hàng
+                        case "NH_MANHOM":
+                            sqlCmd = new SqlCommand("SelectDmhhNhomhangsAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
+                        //8Quốc gia
+                        case "QG_MAQUOCGIA":
+                            sqlCmd = new SqlCommand("SelectDmhhQuocgiasAll", connect);
+                            sqlCmd.CommandTimeout = 1000;
+                            sqlCmd.CommandType = CommandType.StoredProcedure;
+                            da.SelectCommand = sqlCmd;
+                            da.Fill(dtDS);
+                            break;
 
-                        if (pLoaiDanhMuc == "NPP_MANPP_P" || pLoaiDanhMuc == "NPP_MANPP_K")
+                    }
+                    connect.Close();
+                    if (dtDS.Rows.Count > 0)
+                    {
+                        double[] arrDVT_MADONVI = new double[dtDS.Rows.Count];
+                        double[] arrKH_MAKHO = new double[dtDS.Rows.Count];
+                        double[] arrHH_MAHANG = new double[dtDS.Rows.Count];
+                        double[] arrNPP_MANPP = new double[dtDS.Rows.Count];
+                        double[] arrKHAH = new double[dtDS.Rows.Count];
+                        double[] arrLH_MALOAI = new double[dtDS.Rows.Count];
+                        double[] arrNH_MANHOM = new double[dtDS.Rows.Count];
+                        double[] arrQG_MAQUOCGIA = new double[dtDS.Rows.Count];
+
+                        for (int i = 0; i < dtDS.Rows.Count; i++)
                         {
-                            vPreName = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(0, 3);
+                            string vPreName = "";
+                            string vPreNumber = "";
+
+                            if (pLoaiDanhMuc == "NPP_MANPP_P" || pLoaiDanhMuc == "NPP_MANPP_K")
+                            {
+                                vPreName = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(0, 3);
+                            }
+                            else
+                            {
+                                vPreName = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(0, 3);
+                            }
+
+                            pPrefix = vPreName;
+                            if (vPreName == "DVT")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrDVT_MADONVI[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "KHO")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrKH_MAKHO[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "HAN")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrHH_MAHANG[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "NPP")
+                            {
+                                vPreNumber = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(3, (dtDS.Rows[i]["NPP_MANPP"].ToString().Length - 3));
+                                arrNPP_MANPP[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "KHA")
+                            {
+                                vPreNumber = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(3, (dtDS.Rows[i]["NPP_MANPP"].ToString().Length - 3));
+                                arrKHAH[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "LOA")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrLH_MALOAI[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "NHO")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrNH_MANHOM[i] = Convert.ToInt64(vPreNumber);
+                            }
+                            else if (vPreName == "QUO")
+                            {
+                                vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
+                                arrQG_MAQUOCGIA[i] = Convert.ToInt64(vPreNumber);
+                            }
+                        }
+
+                        switch (pLoaiDanhMuc)
+                        {
+                            case "DVT_MADONVI":
+                                vNumber = (arrDVT_MADONVI.Max() + 1).ToString();
+                                break;
+                            case "KH_MAKHO":
+                                vNumber = (arrKH_MAKHO.Max() + 1).ToString();
+                                break;
+                            case "HH_MAHANG":
+                                vNumber = (arrHH_MAHANG.Max() + 1).ToString();
+                                break;
+                            case "NPP_MANPP_P":
+                                vNumber = (arrNPP_MANPP.Max() + 1).ToString();
+                                break;
+                            case "NPP_MANPP_K":
+                                vNumber = (arrKHAH.Max() + 1).ToString();
+                                break;
+                            case "LH_MALOAI":
+                                vNumber = (arrLH_MALOAI.Max() + 1).ToString();
+                                break;
+                            case "NH_MANHOM":
+                                vNumber = (arrNH_MANHOM.Max() + 1).ToString();
+                                break;
+                            case "QG_MAQUOCGIA":
+                                vNumber = (arrQG_MAQUOCGIA.Max() + 1).ToString();
+                                break;
+                        }
+
+                        int vLenght = vNumber.Length;
+                        if (vLenght < 6)
+                        {
+                            string vTemp = "";
+                            do
+                            {
+                                vTemp += "0";
+                            } while ((vTemp + vNumber).Length < 6);
+                            vNumber = vTemp + vNumber;
+                            MaDanhMuc = pPrefix + vNumber;
                         }
                         else
                         {
-                            vPreName = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(0, 3);
+                            //Nếu số lớn hơn 14 chữ số (vd: 99.999.999.999.999)
+                            if (Convert.ToInt64(vNumber) > 99999999999999)
+                            {
+                                MaDanhMuc = "";
+                            }
+                            else
+                            {
+                                MaDanhMuc = pPrefix + vNumber;
+                            }
                         }
-
-                        pPrefix = vPreName;
-                        if (vPreName == "DVT")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrDVT_MADONVI[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "KHO")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrKH_MAKHO[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "HAN")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrHH_MAHANG[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "NPP")
-                        {
-                            vPreNumber = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(3, (dtDS.Rows[i]["NPP_MANPP"].ToString().Length - 3));
-                            arrNPP_MANPP[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "KHA")
-                        {
-                            vPreNumber = dtDS.Rows[i]["NPP_MANPP"].ToString().Substring(3, (dtDS.Rows[i]["NPP_MANPP"].ToString().Length - 3));
-                            arrKHAH[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "LOA")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrLH_MALOAI[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "NHO")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrNH_MANHOM[i] = Convert.ToInt64(vPreNumber);
-                        }
-                        else if (vPreName == "QUO")
-                        {
-                            vPreNumber = dtDS.Rows[i][pLoaiDanhMuc].ToString().Substring(3, (dtDS.Rows[i][pLoaiDanhMuc].ToString().Length - 3));
-                            arrQG_MAQUOCGIA[i] = Convert.ToInt64(vPreNumber);
-                        }
-                    }
-
-                    switch (pLoaiDanhMuc)
-                    {
-                        case "DVT_MADONVI":
-                            vNumber = (arrDVT_MADONVI.Max() + 1).ToString();
-                            break;
-                        case "KH_MAKHO":
-                            vNumber = (arrKH_MAKHO.Max() + 1).ToString();
-                            break;
-                        case "HH_MAHANG":
-                            vNumber = (arrHH_MAHANG.Max() + 1).ToString();
-                            break;
-                        case "NPP_MANPP_P":
-                            vNumber = (arrNPP_MANPP.Max() + 1).ToString();
-                            break;
-                        case "NPP_MANPP_K":
-                            vNumber = (arrKHAH.Max() + 1).ToString();
-                            break;
-                        case "LH_MALOAI":
-                            vNumber = (arrLH_MALOAI.Max() + 1).ToString();
-                            break;
-                        case "NH_MANHOM":
-                            vNumber = (arrNH_MANHOM.Max() + 1).ToString();
-                            break;
-                        case "QG_MAQUOCGIA":
-                            vNumber = (arrQG_MAQUOCGIA.Max() + 1).ToString();
-                            break;
-                    }
-
-                    int vLenght = vNumber.Length;
-                    if (vLenght < 6)
-                    {
-                        string vTemp = "";
-                        do
-                        {
-                            vTemp += "0";
-                        } while ((vTemp + vNumber).Length < 6);
-                        vNumber = vTemp + vNumber;
-                        MaDanhMuc = pPrefix + vNumber;
                     }
                     else
                     {
-                        //Nếu số lớn hơn 14 chữ số (vd: 99.999.999.999.999)
-                        if (Convert.ToInt64(vNumber) > 99999999999999)
+                        switch (pLoaiDanhMuc)
                         {
-                            MaDanhMuc = "";
-                        }
-                        else
-                        {
-                            MaDanhMuc = pPrefix + vNumber;
+                            case "DVT_MADONVI":
+                                vNumber = "DVT" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "KH_MAKHO":
+                                vNumber = "KHO" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "HH_MAHANG":
+                                vNumber = "HAN" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "NPP_MANPP_P":
+                                vNumber = "NPP" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "NPP_MANPP_K":
+                                vNumber = "KHA" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "LH_MALOAI":
+                                vNumber = "LOA" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "NH_MANHOM":
+                                vNumber = "NHO" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
+                            case "QG_MAQUOCGIA":
+                                vNumber = "QUO" + "000001";
+                                MaDanhMuc = vNumber;
+                                break;
                         }
                     }
                 }
-                else
-                {
-                    switch (pLoaiDanhMuc)
-                    {
-                        case "DVT_MADONVI":
-                            vNumber = "DVT" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "KH_MAKHO":
-                            vNumber = "KHO" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "HH_MAHANG":
-                            vNumber = "HAN" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "NPP_MANPP_P":
-                            vNumber = "NPP" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "NPP_MANPP_K":
-                            vNumber = "KHA" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "LH_MALOAI":
-                            vNumber = "LOA" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "NH_MANHOM":
-                            vNumber = "NHO" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                        case "QG_MAQUOCGIA":
-                            vNumber = "QUO" + "000001";
-                            MaDanhMuc = vNumber;
-                            break;
-                    }
-                }
+            }catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
             return MaDanhMuc;
         }
@@ -319,86 +326,92 @@ namespace QLK
             DataTable dtDS = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand sqlCmd;
-            using (SqlConnection connect = ConnectDatabase())
+            try
             {
-                connect.Open();
-                sqlCmd = new SqlCommand("SelectHdNhapxuatsAll", connect);
-                sqlCmd.CommandTimeout = 1000;
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand = sqlCmd;
-                da.Fill(dtDS);
-                connect.Close();
-            }
-
-            if (dtDS.Rows.Count > 0)
-            {
-                double[] arrHD_NHAPKHO = new double[dtDS.Rows.Count];
-                double[] arrHD_NHAPKHAC = new double[dtDS.Rows.Count];
-                double[] arrHD_XUATKHO = new double[dtDS.Rows.Count];
-
-                for (int i = 0; i < dtDS.Rows.Count; i++)
+                using (SqlConnection connect = ConnectDatabase())
                 {
-                    string vPreName = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(0, 2);
-                    string vPreNumber = "";
+                    connect.Open();
+                    sqlCmd = new SqlCommand("SelectHdNhapxuatsAll", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = sqlCmd;
+                    da.Fill(dtDS);
+                    connect.Close();
+                }
 
-                    if (vPreName == "NK")
+                if (dtDS.Rows.Count > 0)
+                {
+                    double[] arrHD_NHAPKHO = new double[dtDS.Rows.Count];
+                    double[] arrHD_NHAPKHAC = new double[dtDS.Rows.Count];
+                    double[] arrHD_XUATKHO = new double[dtDS.Rows.Count];
+
+                    for (int i = 0; i < dtDS.Rows.Count; i++)
                     {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(2, (dtDS.Rows[i]["HDNX_SOHD"].ToString().Length - 2));
-                        arrHD_NHAPKHO[i] = Convert.ToInt64(vPreNumber);
-                    }//Nhập khác
-                    else if (vPreName == "NC")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHD"].ToString().Length - 10));
-                        arrHD_NHAPKHAC[i] = Convert.ToInt64(vPreNumber);
+                        string vPreName = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(0, 2);
+                        string vPreNumber = "";
+
+                        if (vPreName == "NK")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(2, (dtDS.Rows[i]["HDNX_SOHD"].ToString().Length - 2));
+                            arrHD_NHAPKHO[i] = Convert.ToInt64(vPreNumber);
+                        }//Nhập khác
+                        else if (vPreName == "NC")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHD"].ToString().Length - 10));
+                            arrHD_NHAPKHAC[i] = Convert.ToInt64(vPreNumber);
+                        }
+                        else if (vPreName == "XK")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(2, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 2));
+                            arrHD_XUATKHO[i] = Convert.ToInt64(vPreNumber);
+                        }
                     }
-                    else if (vPreName == "XK")
+
+                    switch (pPrefix)
                     {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHD"].ToString().Substring(2, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 2));
-                        arrHD_XUATKHO[i] = Convert.ToInt64(vPreNumber);
+                        case "NK":
+                            vNumber = (arrHD_NHAPKHO.Max() + 1).ToString();
+                            break;
+                        case "NC":
+                            vNumber = (arrHD_NHAPKHAC.Max() + 1).ToString();
+                            break;
+                        case "XK":
+                            vNumber = (arrHD_XUATKHO.Max() + 1).ToString();
+                            break;
                     }
-                }
 
-                switch (pPrefix)
-                {
-                    case "NK":
-                        vNumber = (arrHD_NHAPKHO.Max() + 1).ToString();
-                        break;
-                    case "NC":
-                        vNumber = (arrHD_NHAPKHAC.Max() + 1).ToString();
-                        break;
-                    case "XK":
-                        vNumber = (arrHD_XUATKHO.Max() + 1).ToString();
-                        break;
-                }
-
-                int vLenght = vNumber.Length;
-                if (vLenght < 6)
-                {
-                    string vTemp = "";
-                    do
+                    int vLenght = vNumber.Length;
+                    if (vLenght < 6)
                     {
-                        vTemp += "0";
-                    } while ((vTemp + vNumber).Length < 6);
-                    vNumber = vTemp + vNumber;
-                    SoHDNB = pPrefix + vNumber;
-                }
-                else
-                {
-                    //Nếu số hóa đơn lớn hơn 14 chữ số (vd: 99.999.999.999.999)
-                    if (Convert.ToInt64(vNumber) > 99999999999999)
-                    {
-                        SoHDNB = "";
+                        string vTemp = "";
+                        do
+                        {
+                            vTemp += "0";
+                        } while ((vTemp + vNumber).Length < 6);
+                        vNumber = vTemp + vNumber;
+                        SoHDNB = pPrefix + vNumber;
                     }
                     else
                     {
-                        SoHDNB = pPrefix + vNumber;
+                        //Nếu số hóa đơn lớn hơn 14 chữ số (vd: 99.999.999.999.999)
+                        if (Convert.ToInt64(vNumber) > 99999999999999)
+                        {
+                            SoHDNB = "";
+                        }
+                        else
+                        {
+                            SoHDNB = pPrefix + vNumber;
+                        }
                     }
                 }
-            }
-            else
+                else
+                {
+                    vNumber = pPrefix + "000001";
+                    SoHDNB = vNumber;
+                }
+            }catch(Exception ex)
             {
-                vNumber = pPrefix + "000001";
-                SoHDNB = vNumber;
+                MessageBox.Show(ex.ToString());
             }
             return SoHDNB;
         }
@@ -414,105 +427,112 @@ namespace QLK
             DataTable dtDS = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter();
             SqlCommand sqlCmd;
-            using(SqlConnection connect = ConnectDatabase())
+            try
             {
-                connect.Open();
-                sqlCmd = new SqlCommand("SelectHdNhapxuatsToGenSHDNB", connect);
-                sqlCmd.CommandTimeout = 1000;
-                sqlCmd.CommandType = CommandType.StoredProcedure;
-                da.SelectCommand = sqlCmd;
-                da.Fill(dtDS);
-                connect.Close();
-            }
-            
-            if (dtDS.Rows.Count > 0)
-            {
-                double[] arrHD_NHAPKHO = new double[dtDS.Rows.Count];
-                double[] arrHD_NHAPKHAC = new double[dtDS.Rows.Count];
-                double[] arrHD_XUATSI = new double[dtDS.Rows.Count];
-                double[] arrHD_XUATLE = new double[dtDS.Rows.Count];
-                double[] arrHD_XUATKHAC = new double[dtDS.Rows.Count];
-                
-                for (int i = 0; i < dtDS.Rows.Count; i++)
+                using (SqlConnection connect = ConnectDatabase())
                 {
-                    string vPreName = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(0, 2);
-                    string vPreNumber = "";
-
-                    //Nhập kho
-                    if (vPreName == "NK")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
-                        arrHD_NHAPKHO[i] = Convert.ToInt64(vPreNumber);
-                    }//Nhập khác
-                    else if (vPreName == "NC")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
-                        arrHD_NHAPKHAC[i] = Convert.ToInt64(vPreNumber);
-                    }//Xuất kho
-                    else if (vPreName == "XS")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
-                        arrHD_XUATSI[i] = Convert.ToInt64(vPreNumber);
-                    }
-                    else if (vPreName == "XL")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
-                        arrHD_XUATLE[i] = Convert.ToInt64(vPreNumber);
-                    }
-                    else if (vPreName == "XC")
-                    {
-                        vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
-                        arrHD_XUATKHAC[i] = Convert.ToInt64(vPreNumber);
-                    }
+                    connect.Open();
+                    sqlCmd = new SqlCommand("SelectHdNhapxuatsToGenSHDNB", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    da.SelectCommand = sqlCmd;
+                    da.Fill(dtDS);
+                    connect.Close();
                 }
 
-                switch (pPrefix)
+                if (dtDS.Rows.Count > 0)
                 {
-                    case "NK":
-                        vNumber = (arrHD_NHAPKHO.Max() + 1).ToString();
-                        break;
-                    case "NC":
-                        vNumber = (arrHD_NHAPKHAC.Max() + 1).ToString();
-                        break;
-                    case "XS":
-                        vNumber = (arrHD_XUATSI.Max() + 1).ToString();
-                        break;
-                    case "XL":
-                        vNumber = (arrHD_XUATLE.Max() + 1).ToString();
-                        break;
-                    case "XC":
-                        vNumber = (arrHD_XUATKHAC.Max() + 1).ToString();
-                        break;
-                }
+                    double[] arrHD_NHAPKHO = new double[dtDS.Rows.Count];
+                    double[] arrHD_NHAPKHAC = new double[dtDS.Rows.Count];
+                    double[] arrHD_XUATSI = new double[dtDS.Rows.Count];
+                    double[] arrHD_XUATLE = new double[dtDS.Rows.Count];
+                    double[] arrHD_XUATKHAC = new double[dtDS.Rows.Count];
 
-                int vLenght = vNumber.Length;
-                if (vLenght < 6)
-                {
-                    string vTemp = "";
-                    do
+                    for (int i = 0; i < dtDS.Rows.Count; i++)
                     {
-                        vTemp += "0";
-                    } while ((vTemp + vNumber).Length < 6);
-                    vNumber = vTemp + vNumber;
-                    SoHDNB = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + vNumber;
-                }
-                else
-                {
-                    //Nếu số hóa đơn lớn hơn 14 chữ số (vd: 99.999.999.999.999)
-                    if (Convert.ToInt64(vNumber) > 99999999999999)
+                        string vPreName = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(0, 2);
+                        string vPreNumber = "";
+
+                        //Nhập kho
+                        if (vPreName == "NK")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_NHAPKHO[i] = Convert.ToInt64(vPreNumber);
+                        }//Nhập khác
+                        else if (vPreName == "NC")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_NHAPKHAC[i] = Convert.ToInt64(vPreNumber);
+                        }//Xuất kho
+                        else if (vPreName == "XS")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_XUATSI[i] = Convert.ToInt64(vPreNumber);
+                        }
+                        else if (vPreName == "XL")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_XUATLE[i] = Convert.ToInt64(vPreNumber);
+                        }
+                        else if (vPreName == "XC")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_XUATKHAC[i] = Convert.ToInt64(vPreNumber);
+                        }
+                    }
+
+                    switch (pPrefix)
                     {
-                        SoHDNB = "";
+                        case "NK":
+                            vNumber = (arrHD_NHAPKHO.Max() + 1).ToString();
+                            break;
+                        case "NC":
+                            vNumber = (arrHD_NHAPKHAC.Max() + 1).ToString();
+                            break;
+                        case "XS":
+                            vNumber = (arrHD_XUATSI.Max() + 1).ToString();
+                            break;
+                        case "XL":
+                            vNumber = (arrHD_XUATLE.Max() + 1).ToString();
+                            break;
+                        case "XC":
+                            vNumber = (arrHD_XUATKHAC.Max() + 1).ToString();
+                            break;
+                    }
+
+                    int vLenght = vNumber.Length;
+                    if (vLenght < 6)
+                    {
+                        string vTemp = "";
+                        do
+                        {
+                            vTemp += "0";
+                        } while ((vTemp + vNumber).Length < 6);
+                        vNumber = vTemp + vNumber;
+                        SoHDNB = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + vNumber;
                     }
                     else
                     {
-                        SoHDNB = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + vNumber;
+                        //Nếu số hóa đơn lớn hơn 14 chữ số (vd: 99.999.999.999.999)
+                        if (Convert.ToInt64(vNumber) > 99999999999999)
+                        {
+                            SoHDNB = "";
+                        }
+                        else
+                        {
+                            SoHDNB = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + vNumber;
+                        }
                     }
                 }
+                else
+                {
+                    vNumber = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + "000001";
+                    SoHDNB = vNumber;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                vNumber = pPrefix + "/" + (DateTime.Now.Month < 10 ? ("0" + DateTime.Now.Month) : DateTime.Now.Month.ToString()) + DateTime.Now.Year + "/" + "000001";
-                SoHDNB = vNumber;
+                MessageBox.Show(ex.ToString());
             }
             return SoHDNB;
         }
@@ -536,6 +556,48 @@ namespace QLK
                 {
                     vHSD = DateTime.Now.AddMonths(objHH.HH_HSD);
                 }
+            }
+            return vHSD;
+        }
+
+        /// <summary>
+        /// Trả về Hạn sử dụng của hàng hóa khi nhập kho khi cập nhật hóa đơn
+        /// </summary>
+        /// <param name="pMaHang">Mã hàng hóa</param>
+        /// <param name="pMaHoaDon">Mã hóa đơn</param>
+        public static DateTime getHanSuDungHHUpdate(string pMaHang, string pMaHoaDon)
+        {
+            DateTime vHSD = new DateTime(1900, 1, 1);
+            DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+            objHH = layHangHoaTheoMa(pMaHang);
+            if (objHH != null)
+            {
+                List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+                objList = layDSHoaDonNhapKhoTheoSHDNB(pMaHoaDon);
+                if(objList.Count > 0)
+                {
+                    List<HD_NHAPXUAT> objList2 = new List<HD_NHAPXUAT>();
+                    objList2 = objList.Where(x => x.HH_MAHANG == pMaHang).ToList();
+                    foreach(var item in objList2)
+                    {
+                        if(item.HDNX_HANSUDUNG.Year <= 1900)
+                        {
+                            if (objHH.HH_HANSUDUNG.Year != 1 && objHH.HH_HSD != 0)
+                            {
+                                vHSD = objHH.HH_HANSUDUNG.AddMonths(objHH.HH_HSD);
+                            }
+                            else if (objHH.HH_HANSUDUNG.Year == 1 && objHH.HH_HSD != 0)
+                            {
+                                vHSD = DateTime.Now.AddMonths(objHH.HH_HSD);
+                            }
+                        }else
+                        {
+                            vHSD = item.HDNX_HANSUDUNG;
+                        }
+                    }
+                }
+
+                
             }
             return vHSD;
         }
@@ -792,7 +854,7 @@ namespace QLK
                             obj.NH_MANHOM = dr["NH_MANHOM"].ToString();
                             obj.QG_MAQUOCGIA = dr["QG_MAQUOCGIA"].ToString();
                             obj.DVT_MADONVI = dr["DVT_MADONVI"].ToString();
-                            obj.HH_HANSUDUNG = DateTime.Parse(dr["HH_HANSUDUNG"].ToString());
+                            obj.HH_HANSUDUNG = dr["HH_HANSUDUNG"].ToString() != "" ? DateTime.Parse(dr["HH_HANSUDUNG"].ToString()) : new DateTime(1900, 1, 1);
                             obj.HH_HSD = int.Parse(dr["HH_HSD"].ToString());
                         }
                     }
@@ -1728,6 +1790,7 @@ namespace QLK
                             obj.NPP_MANPP = dr["NPP_MANPP"].ToString();
                             obj.NV_MANV = dr["NV_MANV"].ToString();
                             obj.NV_TAIKHOAN = dr["NV_TAIKHOAN"].ToString();
+                            obj.HDNX_HANSUDUNG = DateTime.Parse(dr["HDNX_HANSUDUNG"].ToString());
                             objList.Add(obj);
                         }
                     }
@@ -2229,7 +2292,6 @@ namespace QLK
 
         public static DataTable bangKeNhapKhac(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
         {
-            SqlDataReader dr;
             DataTable dt = new DataTable();
             SqlConnection connect;
             List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
@@ -2690,7 +2752,6 @@ namespace QLK
 
         public static DataTable bangKeXuatLe(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
         {
-            SqlDataReader dr;
             DataTable dt = new DataTable();
             SqlConnection connect;
             List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
@@ -3019,7 +3080,6 @@ namespace QLK
 
         public static DataTable bangKeXuatSi(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
         {
-            SqlDataReader dr;
             DataTable dt = new DataTable();
             SqlConnection connect;
             List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
@@ -3348,7 +3408,6 @@ namespace QLK
 
         public static DataTable bangKeXuatKhac(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
         {
-            SqlDataReader dr;
             DataTable dt = new DataTable();
             SqlConnection connect;
             List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();

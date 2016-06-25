@@ -1,4 +1,7 @@
 E:\ApplicationDesktop\QuanLyKho\QLK\Source\QLK\QLK\bin\Debug\QLK.exe.config
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.exe.config
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.exe
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.pdb
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.csproj.ResolveComReference.cache
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmBangKeBanLe.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmBangKeBanSi.resources
@@ -17,7 +20,11 @@ E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmDMNhaPhanPhoics.resour
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmDMNhomHang.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmDMNuocSanXuat.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHanSuDung.resources
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhBaoCao.resources
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhHoaDon.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhKetNoi.resources
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhGiaoDien.resources
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhChung.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhUngDung.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTLogo.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTMatKhau.resources
@@ -27,6 +34,7 @@ E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTPhanQuyen.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTVaiTro.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmNhapKhac.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmNhapKho.resources
+E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmRptHoaDonXuatKho.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmRptPhieuNhap.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmRptPhieuXuatKho.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmShowHangHoa.resources
@@ -50,14 +58,6 @@ E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.csproj.GenerateResource.C
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.exe.licenses
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\RdlCompile.cache
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\RdlCompile.compiled
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.exe.config
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.exe
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\bin\Debug\QLK.pdb
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.exe
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.pdb
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmRptHoaDonXuatKho.resources
 E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.csprojResolveAssemblyReference.cache
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhBaoCao.resources
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhHoaDon.resources
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhGiaoDien.resources
-E:\ApplicationDesktop\QLK\Source\QLK\QLK\obj\Debug\QLK.frmHTCauHinhChung.resources

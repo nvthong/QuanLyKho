@@ -73,9 +73,11 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Location = new System.Drawing.Point(254, 161);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.Size = new System.Drawing.Size(75, 25);
             this.btnDong.TabIndex = 10;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -83,9 +85,11 @@
             // btnCapNhat
             // 
             this.btnCapNhat.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCapNhat.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnCapNhat.Appearance.Options.UseFont = true;
             this.btnCapNhat.Location = new System.Drawing.Point(173, 161);
             this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(75, 23);
+            this.btnCapNhat.Size = new System.Drawing.Size(75, 25);
             this.btnCapNhat.TabIndex = 10;
             this.btnCapNhat.Text = "Cập nhật";
             this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click_1);
@@ -129,6 +133,7 @@
             this.txtCong.Properties.Appearance.Options.UseFont = true;
             this.txtCong.Size = new System.Drawing.Size(71, 22);
             this.txtCong.TabIndex = 6;
+            this.txtCong.Visible = false;
             // 
             // txtMayChu
             // 
@@ -136,7 +141,7 @@
             this.txtMayChu.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMayChu.Location = new System.Drawing.Point(125, 20);
             this.txtMayChu.Name = "txtMayChu";
-            this.txtMayChu.Size = new System.Drawing.Size(166, 23);
+            this.txtMayChu.Size = new System.Drawing.Size(283, 23);
             this.txtMayChu.TabIndex = 5;
             // 
             // labelControl5
@@ -178,6 +183,7 @@
             this.labelControl2.Size = new System.Drawing.Size(34, 16);
             this.labelControl2.TabIndex = 1;
             this.labelControl2.Text = "Cổng:";
+            this.labelControl2.Visible = false;
             // 
             // labelControl1
             // 

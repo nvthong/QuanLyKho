@@ -75,7 +75,7 @@
             this.gridDVT.Name = "gridDVT";
             this.gridDVT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.colQuanLyCheckEdit});
-            this.gridDVT.Size = new System.Drawing.Size(696, 247);
+            this.gridDVT.Size = new System.Drawing.Size(896, 351);
             this.gridDVT.TabIndex = 0;
             this.gridDVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -99,6 +99,14 @@
             this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsCustomization.AllowQuickHideColumns = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 25;
             this.gridView1.RowClick += new DevExpress.XtraGrid.Views.Grid.RowClickEventHandler(this.gridView1_RowClick);
@@ -216,10 +224,10 @@
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 251);
+            this.groupControl1.Location = new System.Drawing.Point(0, 355);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(700, 149);
+            this.groupControl1.Size = new System.Drawing.Size(900, 145);
             this.groupControl1.TabIndex = 1;
             // 
             // chkQuanLy
@@ -227,7 +235,7 @@
             this.chkQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkQuanLy.EditValue = true;
             this.chkQuanLy.EnterMoveNextControl = true;
-            this.chkQuanLy.Location = new System.Drawing.Point(501, 70);
+            this.chkQuanLy.Location = new System.Drawing.Point(601, 70);
             this.chkQuanLy.Name = "chkQuanLy";
             this.chkQuanLy.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chkQuanLy.Properties.Appearance.Options.UseFont = true;
@@ -239,7 +247,7 @@
             // 
             this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGhiChu.EnterMoveNextControl = true;
-            this.txtGhiChu.Location = new System.Drawing.Point(184, 42);
+            this.txtGhiChu.Location = new System.Drawing.Point(284, 42);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
@@ -253,7 +261,7 @@
             // 
             this.txtTenDonVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTenDonVi.EnterMoveNextControl = true;
-            this.txtTenDonVi.Location = new System.Drawing.Point(363, 14);
+            this.txtTenDonVi.Location = new System.Drawing.Point(463, 14);
             this.txtTenDonVi.Name = "txtTenDonVi";
             this.txtTenDonVi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtTenDonVi.Properties.Appearance.Options.UseFont = true;
@@ -267,7 +275,7 @@
             // 
             this.txtMaDonVi.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtMaDonVi.EnterMoveNextControl = true;
-            this.txtMaDonVi.Location = new System.Drawing.Point(186, 14);
+            this.txtMaDonVi.Location = new System.Drawing.Point(286, 14);
             this.txtMaDonVi.Name = "txtMaDonVi";
             this.txtMaDonVi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtMaDonVi.Properties.Appearance.Options.UseFont = true;
@@ -285,20 +293,21 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(2, 99);
+            this.groupBox1.Location = new System.Drawing.Point(2, 95);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(696, 48);
+            this.groupBox1.Size = new System.Drawing.Size(896, 48);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             // 
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDong.Location = new System.Drawing.Point(469, 11);
+            this.btnDong.Location = new System.Drawing.Point(595, 11);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(77, 31);
+            this.btnDong.Size = new System.Drawing.Size(95, 31);
             this.btnDong.TabIndex = 1;
             this.btnDong.Text = "Đóng";
             this.btnDong.UseVisualStyleBackColor = true;
@@ -307,11 +316,12 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
             this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(382, 11);
+            this.btnExcel.Location = new System.Drawing.Point(500, 11);
             this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(87, 31);
+            this.btnExcel.Size = new System.Drawing.Size(95, 31);
             this.btnExcel.TabIndex = 1;
             this.btnExcel.Text = "Excel";
             this.btnExcel.UseVisualStyleBackColor = true;
@@ -320,11 +330,12 @@
             // btnXoa
             // 
             this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(307, 11);
+            this.btnXoa.Location = new System.Drawing.Point(405, 11);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 31);
+            this.btnXoa.Size = new System.Drawing.Size(95, 31);
             this.btnXoa.TabIndex = 1;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -333,11 +344,12 @@
             // btnSua
             // 
             this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(223, 11);
+            this.btnSua.Location = new System.Drawing.Point(310, 11);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(84, 31);
+            this.btnSua.Size = new System.Drawing.Size(95, 31);
             this.btnSua.TabIndex = 1;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
@@ -346,12 +358,12 @@
             // btnThem
             // 
             this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(139, 11);
+            this.btnThem.Location = new System.Drawing.Point(215, 11);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(84, 31);
+            this.btnThem.Size = new System.Drawing.Size(95, 31);
             this.btnThem.TabIndex = 0;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
@@ -361,7 +373,7 @@
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(120, 45);
+            this.labelControl3.Location = new System.Drawing.Point(220, 45);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(47, 16);
             this.labelControl3.TabIndex = 2;
@@ -371,7 +383,7 @@
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(292, 17);
+            this.labelControl2.Location = new System.Drawing.Point(392, 17);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(65, 16);
             this.labelControl2.TabIndex = 1;
@@ -381,7 +393,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(120, 17);
+            this.labelControl1.Location = new System.Drawing.Point(220, 17);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(60, 16);
             this.labelControl1.TabIndex = 0;
@@ -394,14 +406,14 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(700, 251);
+            this.groupControl2.Size = new System.Drawing.Size(900, 355);
             this.groupControl2.TabIndex = 2;
             // 
             // frmDMDonVi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 400);
+            this.ClientSize = new System.Drawing.Size(900, 500);
             this.Controls.Add(this.groupControl2);
             this.Controls.Add(this.groupControl1);
             this.Cursor = System.Windows.Forms.Cursors.Default;

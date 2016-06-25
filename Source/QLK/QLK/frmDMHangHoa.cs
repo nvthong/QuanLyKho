@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.IO;
@@ -240,37 +241,129 @@ namespace QLK
             chartRange.FormulaR1C1 = "DANH SÁCH HÀNG HÓA";
             chartRange.HorizontalAlignment = 3;
             chartRange.VerticalAlignment = 3;
-            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
-            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             chartRange.Font.Size = 20;
-
-            chartRange = xlWorkSheet.get_Range("b4", "o4");
-            chartRange.Font.Bold = true;
-
-            /*
-            chartRange = xlWorkSheet.get_Range("b2", "f9");
             chartRange.BorderAround(
                 Excel.XlLineStyle.xlContinuous,
                 Excel.XlBorderWeight.xlThin,
                 Excel.XlColorIndex.xlColorIndexAutomatic,
                 Excel.XlColorIndex.xlColorIndexAutomatic);
-            */
 
+            chartRange = xlWorkSheet.get_Range("b4", "o4");
+            chartRange.Font.Bold = true;
+            
             xlWorkSheet.Cells[4, 2] = "STT";
-            xlWorkSheet.Cells[4, 3] = "Mã hàng";
-            xlWorkSheet.Cells[4, 4] = "Tên hàng";
-            xlWorkSheet.Cells[4, 5] = "Đơn vị tính";
-            xlWorkSheet.Cells[4, 6] = "Loại hàng";
-            xlWorkSheet.Cells[4, 7] = "Nhóm hàng";
-            xlWorkSheet.Cells[4, 8] = "Nước sản xuất";
-            xlWorkSheet.Cells[4, 9] = "Nhà phân phối";
-            xlWorkSheet.Cells[4, 10] = "Giá mua";
-            xlWorkSheet.Cells[4, 11] = "Giá bán sỉ";
-            xlWorkSheet.Cells[4, 12] = "Giá bán lẻ";
-            xlWorkSheet.Cells[4, 13] = "Khuyến mãi (%)";
-            xlWorkSheet.Cells[4, 14] = "Ghi chú";
-            xlWorkSheet.Cells[4, 15] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("b4", "b4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
+            xlWorkSheet.Cells[4, 3] = "Mã hàng";
+            chartRange = xlWorkSheet.get_Range("c4", "c4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 4] = "Tên hàng";
+            chartRange = xlWorkSheet.get_Range("d4", "d4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 5] = "Đơn vị tính";
+            chartRange = xlWorkSheet.get_Range("e4", "e4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 6] = "Loại hàng";
+            chartRange = xlWorkSheet.get_Range("f4", "f4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 7] = "Nhóm hàng";
+            chartRange = xlWorkSheet.get_Range("g4", "g4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 8] = "Nước sản xuất";
+            chartRange = xlWorkSheet.get_Range("h4", "h4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 9] = "Nhà phân phối";
+            chartRange = xlWorkSheet.get_Range("i4", "i4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 10] = "Giá mua";
+            chartRange = xlWorkSheet.get_Range("j4", "j4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 11] = "Giá bán sỉ";
+            chartRange = xlWorkSheet.get_Range("k4", "k4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 12] = "Giá bán lẻ";
+            chartRange = xlWorkSheet.get_Range("l4", "l4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 13] = "Khuyến mãi (%)";
+            chartRange = xlWorkSheet.get_Range("m4", "m4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 14] = "Ghi chú";
+            chartRange = xlWorkSheet.get_Range("n4", "n4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 15] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("o4", "o4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
             xlWorkSheet.Columns[2].ColumnWidth = 14;
             xlWorkSheet.Columns[3].ColumnWidth = 14;
@@ -290,19 +383,116 @@ namespace QLK
             for (int i = 5; i < (dtDVT.Rows.Count + 5); i++)
             {
                 xlWorkSheet.Cells[i, 2] = (i - 4).ToString();
+                chartRange = xlWorkSheet.get_Range("b" + i, "b" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 3] = dtDVT.Rows[i - 5]["HH_MAHANG"].ToString();
+                chartRange = xlWorkSheet.get_Range("c" + i, "c" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 4] = dtDVT.Rows[i - 5]["HH_TENHANG"].ToString();
+                chartRange = xlWorkSheet.get_Range("d" + i, "d" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 5] = dtDVT.Rows[i - 5]["DVT_TENDONVI"].ToString();
+                chartRange = xlWorkSheet.get_Range("e" + i, "e" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 6] = dtDVT.Rows[i - 5]["LH_TENLOAI"].ToString();
+                chartRange = xlWorkSheet.get_Range("f" + i, "f" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 7] = dtDVT.Rows[i - 5]["NH_TENNHOM"].ToString();
+                chartRange = xlWorkSheet.get_Range("g" + i, "g" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 8] = dtDVT.Rows[i - 5]["QG_TENQUOCGIA"].ToString();
+                chartRange = xlWorkSheet.get_Range("h" + i, "h" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 9] = dtDVT.Rows[i - 5]["NPP_TENNPP"].ToString();
+                chartRange = xlWorkSheet.get_Range("i" + i, "i" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 10] = double.Parse(dtDVT.Rows[i - 5]["HH_GIAMUA"].ToString()).ToString();
+                chartRange = xlWorkSheet.get_Range("j" + i, "j" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 11] = double.Parse(dtDVT.Rows[i - 5]["HH_GIABANSI"].ToString()).ToString();
+                chartRange = xlWorkSheet.get_Range("k" + i, "k" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 12] = double.Parse(dtDVT.Rows[i - 5]["HH_GIABANLE"].ToString()).ToString();
+                chartRange = xlWorkSheet.get_Range("l" + i, "l" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 13] = dtDVT.Rows[i - 5]["HH_KHUYENMAI"].ToString();
+                chartRange = xlWorkSheet.get_Range("m" + i, "m" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 14] = dtDVT.Rows[i - 5]["HH_GHICHU"].ToString();
+                chartRange = xlWorkSheet.get_Range("n" + i, "n" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 15] = dtDVT.Rows[i - 5]["HH_KICHHOAT"].ToString() == "1" ? "Còn quản lý" : "Không";
+                chartRange = xlWorkSheet.get_Range("o" + i, "o" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
             }
 
 
@@ -348,6 +538,30 @@ namespace QLK
                 btnThem.Text = "Lưu";
                 btnSua.Text = "Bỏ qua";
                 txtMaHang.Text = ClassController.getMaDanhMuc("HH_MAHANG");
+
+                List<HT_CAUHINH> objList = new List<HT_CAUHINH>();
+                objList = ClassController.loadCauHinh();
+
+                string vHanSuDung = objList.Where(x => x.CH_MACH == "CH_MACDINH_HANSUDUNG").FirstOrDefault().CH_GIATRI;
+                string vSoLuong = objList.Where(x => x.CH_MACH == "CH_MACDINH_SOLUONG").FirstOrDefault().CH_GIATRI;
+                string vTonToiThieu = objList.Where(x => x.CH_MACH == "CH_MACDINH_TONTOITHIEU").FirstOrDefault().CH_GIATRI;
+                string vDVT = objList.Where(x => x.CH_MACH == "CH_MACDINH_DONVITINH").FirstOrDefault().CH_GIATRI;
+                string vLoaiHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_LOAIHANG").FirstOrDefault().CH_GIATRI;
+                string vNhomHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHOMHANG").FirstOrDefault().CH_GIATRI;
+                string vQG = objList.Where(x => x.CH_MACH == "CH_MACDINH_NUOCSANXUAT").FirstOrDefault().CH_GIATRI;
+                string vNPP = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHAPHANPHOI").FirstOrDefault().CH_GIATRI;
+
+                lkuDonViTinh.EditValue = vDVT;
+                txtNPPMa.Text = vNPP;
+                txtNPPTen.Text = vNPP;
+                txtNuocSanXuatTen.Text = vQG;
+                txtNuocSXMa.Text = vQG;
+                txtNhomHangMa.Text = vNhomHang;
+                txtNhomHangTen.Text = vNhomHang;
+                txtLoaiHangMa.Text = vLoaiHang;
+                txtLoaiHangTen.Text = vLoaiHang;
+                txtTonToiThieu.Text = vTonToiThieu;
+
                 txtTenHang.Focus();
 
             }
@@ -796,7 +1010,7 @@ namespace QLK
 
         private void btnNhapExcel_Click(object sender, EventArgs e)
         {
-
+            openFileDialog1.ShowDialog();
         }
 
         private void gridView1_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
@@ -855,7 +1069,11 @@ namespace QLK
             {
                 frmShowLoaiHang frm = new frmShowLoaiHang();
                 frm.ShowDialog(this);
-                frm.Dispose();
+                if (frm.dvtMa != null)
+                {
+                    txtLoaiHangMa.Text = frm.dvtMa;
+                    txtLoaiHangTen.Text = frm.dvtTen;
+                }
             }
         }
 
@@ -865,7 +1083,11 @@ namespace QLK
             {
                 frmShowNhomHang frm = new frmShowNhomHang();
                 frm.ShowDialog(this);
-                frm.Dispose();
+                if (frm.dvtMa != null)
+                {
+                    txtNhomHangMa.Text = frm.dvtMa;
+                    txtNhomHangTen.Text = frm.dvtTen;
+                }
             }
         }
 
@@ -875,7 +1097,11 @@ namespace QLK
             {
                 frmShowQuocGia frm = new frmShowQuocGia();
                 frm.ShowDialog(this);
-                frm.Dispose();
+                if (frm.dvtMa != null)
+                {
+                    txtNuocSXMa.Text = frm.dvtMa;
+                    txtNuocSanXuatTen.Text = frm.dvtTen;
+                }
             }
         }
 
@@ -885,7 +1111,11 @@ namespace QLK
             {
                 frmShowNhaPhanPhoi frm = new frmShowNhaPhanPhoi();
                 frm.ShowDialog(this);
-                frm.Dispose();
+                if (frm.dvtMa != null)
+                {
+                    txtNPPMa.Text = frm.dvtMa;
+                    txtNPPTen.Text = frm.dvtTen;
+                }
             }
         }
 
@@ -923,6 +1153,152 @@ namespace QLK
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+            try
+            {
+                string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+                string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+                string filePath = openFileDialog1.FileName;
+                string extension = Path.GetExtension(filePath);
+                string header = "YES";
+                string conStr, sheetName;
+
+                conStr = string.Empty;
+                switch (extension)
+                {
+                    case ".xls":
+                        conStr = string.Format(Excel03ConString, filePath, header);
+                        break;
+
+                    case ".xlsx":
+                        conStr = string.Format(Excel07ConString, filePath, header);
+                        break;
+                }
+
+                using (OleDbConnection con = new OleDbConnection(conStr))
+                {
+                    using (OleDbCommand cmd = new OleDbCommand())
+                    {
+                        cmd.Connection = con;
+                        con.Open();
+                        DataTable dtExcelSchema = con.GetOleDbSchemaTable(OleDbSchemaGuid.Tables, null);
+                        sheetName = dtExcelSchema.Rows[0]["TABLE_NAME"].ToString();
+                        con.Close();
+                    }
+                }
+
+                using (OleDbConnection con = new OleDbConnection(conStr))
+                {
+                    using (OleDbCommand cmd = new OleDbCommand())
+                    {
+                        using (OleDbDataAdapter oda = new OleDbDataAdapter())
+                        {
+                            DataTable dt = new DataTable();
+                            cmd.CommandText = "SELECT * From [" + sheetName + "]";
+                            cmd.Connection = con;
+                            con.Open();
+                            oda.SelectCommand = cmd;
+                            oda.Fill(dt);
+                            con.Close();
+
+                            for(int i=0; i<dt.Rows.Count; i++)
+                            {
+                                DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                                string vMaHang = dt.Rows[i]["MAHANG"].ToString();
+                                string vTenHang = dt.Rows[i]["TENHANG"].ToString();
+                                string vDonViTinh = dt.Rows[i]["DONVITINH"].ToString();
+                                string vGiaMua = dt.Rows[i]["GIAMUA"].ToString();
+                                string vGiaBanLe = dt.Rows[i]["GIABANLE"].ToString();
+                                string vGiaBanSi = dt.Rows[i]["GIABANSI"].ToString();
+
+                                if(vTenHang.Trim() != "")
+                                {
+                                    List<HT_CAUHINH> objList = new List<HT_CAUHINH>();
+                                    objList = ClassController.loadCauHinh();
+                                    string vHanSuDung = objList.Where(x => x.CH_MACH == "CH_MACDINH_HANSUDUNG").FirstOrDefault().CH_GIATRI;
+                                    string vTonToiThieu = objList.Where(x => x.CH_MACH == "CH_MACDINH_TONTOITHIEU").FirstOrDefault().CH_GIATRI;
+                                    string vKhoHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_KHO").FirstOrDefault().CH_GIATRI;
+                                    string vDVT = objList.Where(x => x.CH_MACH == "CH_MACDINH_DONVITINH").FirstOrDefault().CH_GIATRI;
+                                    string vKhachHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_KHACHHANG").FirstOrDefault().CH_GIATRI;
+                                    string vLoaiHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_LOAIHANG").FirstOrDefault().CH_GIATRI;
+                                    string vNPP = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHAPHANPHOI").FirstOrDefault().CH_GIATRI;
+                                    string vNhomHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHOMHANG").FirstOrDefault().CH_GIATRI;
+                                    string vQG = objList.Where(x => x.CH_MACH == "CH_MACDINH_NUOCSANXUAT").FirstOrDefault().CH_GIATRI;
+
+                                    //objHH.HH_GHICHU = txtGhiChu.Text.Trim();
+                                    objHH.HH_GIABANLE = vGiaBanLe != "" ? Decimal.Parse(vGiaBanLe) : 0;
+                                    objHH.HH_GIABANSI = vGiaBanSi != "" ? Decimal.Parse(vGiaBanSi) : 0;
+                                    objHH.HH_GIAMUA = vGiaMua != "" ? Decimal.Parse(vGiaMua) : 0;
+                                    objHH.HH_HSD = int.Parse(vHanSuDung);
+                                    objHH.HH_KICHHOAT = 1;
+                                    //objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
+                                    objHH.HH_MAHANG = ClassController.getMaDanhMuc("HH_MAHANG");
+                                    //objHH.HH_MAUSAC = txtMauSac.Text.Trim();
+                                    //objHH.HH_SIZE = txtSize.Text.Trim();
+                                    //objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
+                                    objHH.HH_TENHANG = vTenHang.Trim();
+                                    objHH.HH_TONTOITHIEU = double.Parse(vTonToiThieu);
+                                    objHH.LH_MALOAI = vLoaiHang;
+                                    objHH.NPP_MANPP = vNPP;
+                                    objHH.NH_MANHOM = vNhomHang;
+                                    objHH.QG_MAQUOCGIA = vQG;
+                                    objHH.DVT_MADONVI = vDVT;
+
+                                    using (SqlConnection connect = ClassController.ConnectDatabase())
+                                    {
+                                        connect.Open();
+                                        SqlCommand sqlCmd = new SqlCommand("InsertDmhhHanghoa", connect);
+                                        sqlCmd.CommandTimeout = 1000;
+                                        sqlCmd.Parameters.AddWithValue("@HH_MAHANG", objHH.HH_MAHANG);
+                                        sqlCmd.Parameters.AddWithValue("@HH_TENHANG", objHH.HH_TENHANG);
+                                        sqlCmd.Parameters.AddWithValue("@HH_TENNGAN", objHH.HH_TENNGAN);
+                                        sqlCmd.Parameters.AddWithValue("@HH_THANHPHAN", objHH.HH_THANHPHAN);
+                                        sqlCmd.Parameters.AddWithValue("@HH_LOAISIZE", objHH.HH_LOAISIZE);
+                                        sqlCmd.Parameters.AddWithValue("@HH_SIZE", objHH.HH_SIZE);
+                                        sqlCmd.Parameters.AddWithValue("@HH_MAUSAC", objHH.HH_MAUSAC);
+                                        sqlCmd.Parameters.AddWithValue("@HH_GIAMUA", objHH.HH_GIAMUA);
+                                        sqlCmd.Parameters.AddWithValue("@HH_GIABANLE", objHH.HH_GIABANLE);
+                                        sqlCmd.Parameters.AddWithValue("@HH_GIABANSI", objHH.HH_GIABANSI);
+                                        sqlCmd.Parameters.AddWithValue("@HH_TONTOITHIEU", objHH.HH_TONTOITHIEU);
+                                        sqlCmd.Parameters.AddWithValue("@HH_KHUYENMAI", objHH.HH_KHUYENMAI);
+
+                                        if (objHH.HH_KMTUNGAY.Year == 1)
+                                        { sqlCmd.Parameters.AddWithValue("@HH_KMTUNGAY", DBNull.Value); }
+                                        else { sqlCmd.Parameters.AddWithValue("@HH_KMTUNGAY", objHH.HH_KMTUNGAY); }
+
+                                        if (objHH.HH_KMDENNGAY.Year == 1)
+                                        { sqlCmd.Parameters.AddWithValue("@HH_KMDENNGAY", DBNull.Value); }
+                                        else { sqlCmd.Parameters.AddWithValue("@HH_KMDENNGAY", objHH.HH_KMDENNGAY); }
+
+                                        if (objHH.HH_HANSUDUNG.Year == 1)
+                                        { sqlCmd.Parameters.AddWithValue("@HH_HANSUDUNG", DBNull.Value); }
+                                        else { sqlCmd.Parameters.AddWithValue("@HH_HANSUDUNG", objHH.HH_HANSUDUNG); }
+
+                                        sqlCmd.Parameters.AddWithValue("@HH_GHICHU", objHH.HH_GHICHU);
+                                        sqlCmd.Parameters.AddWithValue("@HH_KICHHOAT", objHH.HH_KICHHOAT);
+                                        sqlCmd.Parameters.AddWithValue("@DVT_MADONVI", objHH.DVT_MADONVI);
+                                        sqlCmd.Parameters.AddWithValue("@NH_MANHOM", objHH.NH_MANHOM);
+                                        sqlCmd.Parameters.AddWithValue("@LH_MALOAI", objHH.LH_MALOAI);
+                                        sqlCmd.Parameters.AddWithValue("@QG_MAQUOCGIA", objHH.QG_MAQUOCGIA);
+                                        sqlCmd.Parameters.AddWithValue("@NPP_MANPP", objHH.NPP_MANPP);
+                                        sqlCmd.Parameters.AddWithValue("@HH_HSD", objHH.HH_HSD);
+                                        sqlCmd.CommandType = CommandType.StoredProcedure;
+                                        sqlCmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                loadData();
+            }
+            catch
+            {
+                MessageBox.Show("Nội dung không đúng định dạng");
+            }
         }
     }
 }

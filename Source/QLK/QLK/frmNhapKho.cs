@@ -29,9 +29,9 @@ namespace QLK
             lkpDKThanhToan.Properties.DataSource = ClassController.layDSDKThanhToan();
             cbxHienThi.Properties.DataSource = ClassController.layDSThoiGianHD();
             cbxHienThi.EditValue = "0";
-            loadDataHD();
             InitializeDtHDNX();
-            if (gridViewDSHoaDon.DataRowCount > 1)
+            loadDataHD();
+            if (gridViewDSHoaDon.DataRowCount >= 1)
             {
                 gridViewDSHoaDon.FocusedRowHandle = 0;
                 fillDataHHbySHDNB(gridViewDSHoaDon.GetRowCellValue(0, "HDNX_SOHDNB").ToString());
@@ -105,7 +105,7 @@ namespace QLK
                     txtGhiChu.Text = objList[0].HDNX_GHICHU;
 
                     if (dtHH == null)
-                        InitializeDtHDNX();
+                    { InitializeDtHDNX(); }
 
                     dtHH.Clear();
                     foreach (var item in objList)
@@ -270,6 +270,20 @@ namespace QLK
                             return;
                         }
 
+                        if (objHDNX.HDNX_GIAMUA <= 0)
+                        {
+                            MessageBox.Show("Vui lòng nhập giá nhập");
+                            txtGiaNhap.Focus();
+                            return;
+                        }
+
+                        if (objHDNX.HDNX_VAT < 0)
+                        {
+                            MessageBox.Show("VAT không thể âm");
+                            txtVAT.Focus();
+                            return;
+                        }
+
                         if (objHDNX.HDNX_SOLUONG <= 0)
                         {
                             MessageBox.Show("Vui lòng nhập số lượng");
@@ -277,12 +291,6 @@ namespace QLK
                             return;
                         }
 
-                        if (objHDNX.HDNX_GIAMUA <= 0)
-                        {
-                            MessageBox.Show("Vui lòng nhập giá nhập");
-                            txtGiaNhap.Focus();
-                            return;
-                        }
 
                         if (objHDNX.HDNX_GIABAN <= 0)
                         {
@@ -343,13 +351,6 @@ namespace QLK
                             return;
                         }
 
-                        if (objHDNX.HDNX_SOLUONG <= 0)
-                        {
-                            MessageBox.Show("Vui lòng nhập số lượng");
-                            txtSL.Focus();
-                            return;
-                        }
-
                         if (objHDNX.HDNX_GIAMUA <= 0)
                         {
                             MessageBox.Show("Vui lòng nhập giá nhập");
@@ -357,6 +358,20 @@ namespace QLK
                             return;
                         }
 
+                        if (objHDNX.HDNX_VAT < 0)
+                        {
+                            MessageBox.Show("VAT không thể âm");
+                            txtVAT.Focus();
+                            return;
+                        }
+
+                        if (objHDNX.HDNX_SOLUONG <= 0)
+                        {
+                            MessageBox.Show("Vui lòng nhập số lượng");
+                            txtSL.Focus();
+                            return;
+                        }
+                        
                         if (objHDNX.HDNX_GIABAN <= 0)
                         {
                             MessageBox.Show("Vui lòng nhập giá bán");
@@ -520,7 +535,7 @@ namespace QLK
                     setStatusButtonHD(false);
                     btnThemHD.Enabled = true;
                     btnSuaHD.Enabled = true;
-                    txtHoaDon.Text = ClassController.getSoHD("NK");
+                    txtHoaDon.Text = "";// ClassController.getSoHD("NK");
                     txtSoHDNB.Text = ClassController.getSoHDNB("NK");
                     StatusButtonHD = "Them";
                     btnThemHD.Text = "Lưu";
@@ -746,6 +761,9 @@ namespace QLK
                                 return;
                             }
 
+                            List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+                            objList = ClassController.layDSHoaDonNhapKhoTheoSHDNB(objHDNX_NEW.HDNX_SOHDNB);
+
                             using (SqlConnection connect = ClassController.ConnectDatabase())
                             {
                                 connect.Open();
@@ -760,6 +778,32 @@ namespace QLK
                             for (int i = 0; i < dtHH.Rows.Count; i++)
                             {
                                 objHDNX_NEW.HH_MAHANG = dtHH.Rows[i]["HH_MAHANG"].ToString();
+
+                                DateTime vHSD = new DateTime(1900, 1, 1);
+                                DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                                objHH = ClassController.layHangHoaTheoMa(objHDNX_NEW.HH_MAHANG);
+                                List<HD_NHAPXUAT> objList2 = new List<HD_NHAPXUAT>();
+                                objList2 = objList.Where(x => x.HH_MAHANG == objHDNX_NEW.HH_MAHANG).ToList();
+                                foreach (var item in objList2)
+                                {
+                                    if (item.HDNX_HANSUDUNG.Year <= 1900)
+                                    {
+                                        if (objHH.HH_HANSUDUNG.Year != 1 && objHH.HH_HSD != 0)
+                                        {
+                                            vHSD = objHH.HH_HANSUDUNG.AddMonths(objHH.HH_HSD);
+                                        }
+                                        else if (objHH.HH_HANSUDUNG.Year == 1 && objHH.HH_HSD != 0)
+                                        {
+                                            vHSD = DateTime.Now.AddMonths(objHH.HH_HSD);
+                                        }
+                                    }
+                                    else
+                                    {
+                                        vHSD = item.HDNX_HANSUDUNG;
+                                    }
+                                }
+
+                                objHDNX_NEW.HDNX_HANSUDUNG = vHSD;
                                 objHDNX_NEW.HDNX_SOLUONG = Double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString());
                                 objHDNX_NEW.HDNX_GIAMUA = Decimal.Parse(dtHH.Rows[i]["HDNX_GIAMUA"].ToString());
                                 objHDNX_NEW.HDNX_QUIDOI = Int32.Parse(dtHH.Rows[i]["HDNX_QUIDOI"].ToString());
@@ -784,7 +828,7 @@ namespace QLK
                             resetFieldHoaDon();
                             dtHH.Clear();
 
-                            if (gridViewDSHoaDon.DataRowCount > 1 && StatusRowClickHD >= 0)
+                            if (gridViewDSHoaDon.DataRowCount >= 1 && StatusRowClickHD >= 0)
                             {
                                 gridViewDSHoaDon.FocusedRowHandle = StatusRowClickHD;
                                 fillDataHHbySHDNB(gridViewDSHoaDon.GetRowCellValue(StatusRowClickHD, "HDNX_SOHDNB").ToString());

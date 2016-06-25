@@ -168,29 +168,65 @@ namespace QLK
             chartRange.FormulaR1C1 = "DANH SÁCH KHÁCH HÀNG";
             chartRange.HorizontalAlignment = 3;
             chartRange.VerticalAlignment = 3;
-            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
-            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             chartRange.Font.Size = 20;
-
-            chartRange = xlWorkSheet.get_Range("b4", "f4");
-            chartRange.Font.Bold = true;
-
-            /*
-            chartRange = xlWorkSheet.get_Range("b2", "f9");
             chartRange.BorderAround(
                 Excel.XlLineStyle.xlContinuous,
                 Excel.XlBorderWeight.xlThin,
                 Excel.XlColorIndex.xlColorIndexAutomatic,
                 Excel.XlColorIndex.xlColorIndexAutomatic);
-            */
+
+            chartRange = xlWorkSheet.get_Range("b4", "f4");
+            chartRange.Font.Bold = true;
 
             xlWorkSheet.Cells[4, 2] = "STT";
-            xlWorkSheet.Cells[4, 3] = "Mã khách hàng";
-            xlWorkSheet.Cells[4, 4] = "Tên khách hàng";
-            xlWorkSheet.Cells[4, 5] = "Địa chỉ";
-            xlWorkSheet.Cells[4, 6] = "Số điện thoại";
-            xlWorkSheet.Cells[4, 7] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("b4", "b4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
+            xlWorkSheet.Cells[4, 3] = "Mã khách hàng";
+            chartRange = xlWorkSheet.get_Range("c4", "c4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+            xlWorkSheet.Cells[4, 4] = "Tên khách hàng";
+            chartRange = xlWorkSheet.get_Range("d4", "d4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 5] = "Địa chỉ";
+            chartRange = xlWorkSheet.get_Range("e4", "e4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 6] = "Số điện thoại";
+            chartRange = xlWorkSheet.get_Range("f4", "f4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 7] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("g4", "g4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
             xlWorkSheet.Columns[2].ColumnWidth = 14;
             xlWorkSheet.Columns[3].ColumnWidth = 14;
@@ -202,11 +238,52 @@ namespace QLK
             for (int i = 5; i < (dtDVT.Rows.Count + 5); i++)
             {
                 xlWorkSheet.Cells[i, 2] = (i - 4).ToString();
+                chartRange = xlWorkSheet.get_Range("b" + i, "b" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 3] = dtDVT.Rows[i - 5]["NPP_MANPP"].ToString();
+                chartRange = xlWorkSheet.get_Range("c" + i, "c" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 4] = dtDVT.Rows[i - 5]["NPP_TENNPP"].ToString();
+                chartRange = xlWorkSheet.get_Range("d" + i, "d" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 5] = dtDVT.Rows[i - 5]["NPP_DIACHI"].ToString();
+                chartRange = xlWorkSheet.get_Range("e" + i, "e" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 6] = dtDVT.Rows[i - 5]["NPP_DIENTHOAI"].ToString();
+                chartRange = xlWorkSheet.get_Range("f" + i, "f" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 7] = dtDVT.Rows[i - 5]["NPP_KICHHOAT"].ToString() == "1" ? "Còn quản lý" : "Không";
+                chartRange = xlWorkSheet.get_Range("g" + i, "g" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
             }
 
 

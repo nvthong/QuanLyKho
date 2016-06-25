@@ -26,6 +26,18 @@ namespace QLK
 
         private void btnKhoa_Click(object sender, EventArgs e)
         {
+            if(txtTuNgay.DateTime.Year < 2000)
+            {
+                MessageBox.Show("Từ ngày không hợp lệ");
+                return;
+            }
+
+            if (txtDenNgay.DateTime.Year < 2000)
+            {
+                MessageBox.Show("Đến ngày không hợp lệ");
+                return;
+            }
+
             DateTime pTuNgay = txtTuNgay.DateTime;
             DateTime pDenNgay = txtDenNgay.DateTime;
             for (var day = pTuNgay.Date; day.Date <= pDenNgay.Date; day = day.AddDays(1))
@@ -48,6 +60,18 @@ namespace QLK
 
         private void btnMoKhoa_Click(object sender, EventArgs e)
         {
+            if (txtTuNgay.DateTime.Year < 2000)
+            {
+                MessageBox.Show("Từ ngày không hợp lệ");
+                return;
+            }
+
+            if (txtDenNgay.DateTime.Year < 2000)
+            {
+                MessageBox.Show("Đến ngày không hợp lệ");
+                return;
+            }
+
             DateTime pTuNgay = txtTuNgay.DateTime;
             DateTime pDenNgay = txtDenNgay.DateTime;
             for (var day = pTuNgay.Date; day.Date <= pDenNgay.Date; day = day.AddDays(1))

@@ -93,7 +93,7 @@
             this.gridColumn16.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn16.OptionsFilter.AllowFilter = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 14;
+            this.gridColumn16.VisibleIndex = 13;
             this.gridColumn16.Width = 10;
             // 
             // gridColumn14
@@ -108,7 +108,7 @@
             this.gridColumn14.FieldName = "NPP_TENNPP";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 12;
+            this.gridColumn14.VisibleIndex = 11;
             this.gridColumn14.Width = 100;
             // 
             // gridColumn6
@@ -124,8 +124,6 @@
             this.gridColumn6.Caption = "Hạn sử dụng";
             this.gridColumn6.FieldName = "HH_HANSUDUNG";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 11;
             this.gridColumn6.Width = 70;
             // 
             // gridColumn13
@@ -330,6 +328,15 @@
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupedColumns = true;
@@ -364,7 +371,7 @@
             this.gridColumn15.FieldName = "KH_TENKHO";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 13;
+            this.gridColumn15.VisibleIndex = 12;
             this.gridColumn15.Width = 100;
             // 
             // gridControl1
@@ -391,10 +398,12 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.Location = new System.Drawing.Point(523, 38);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.Size = new System.Drawing.Size(75, 31);
             this.btnDong.TabIndex = 8;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -402,10 +411,12 @@
             // btnExcell
             // 
             this.btnExcell.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcell.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnExcell.Appearance.Options.UseFont = true;
             this.btnExcell.Image = ((System.Drawing.Image)(resources.GetObject("btnExcell.Image")));
             this.btnExcell.Location = new System.Drawing.Point(442, 38);
             this.btnExcell.Name = "btnExcell";
-            this.btnExcell.Size = new System.Drawing.Size(75, 23);
+            this.btnExcell.Size = new System.Drawing.Size(75, 31);
             this.btnExcell.TabIndex = 7;
             this.btnExcell.Text = "Excell";
             this.btnExcell.Click += new System.EventHandler(this.btnExcell_Click);
@@ -413,10 +424,12 @@
             // btnXem
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXem.Appearance.Options.UseFont = true;
             this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
             this.btnXem.Location = new System.Drawing.Point(361, 38);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(75, 23);
+            this.btnXem.Size = new System.Drawing.Size(75, 31);
             this.btnXem.TabIndex = 6;
             this.btnXem.Text = "Xem";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
@@ -452,7 +465,7 @@
             // cbxCaNam
             // 
             this.cbxCaNam.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbxCaNam.Location = new System.Drawing.Point(710, 12);
+            this.cbxCaNam.Location = new System.Drawing.Point(674, 13);
             this.cbxCaNam.Name = "cbxCaNam";
             this.cbxCaNam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbxCaNam.Properties.Appearance.Options.UseFont = true;
@@ -464,7 +477,7 @@
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(539, 15);
+            this.labelControl2.Location = new System.Drawing.Point(503, 15);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(59, 16);
             this.labelControl2.TabIndex = 1;
@@ -474,7 +487,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(353, 15);
+            this.labelControl1.Location = new System.Drawing.Point(339, 15);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 16);
             this.labelControl1.TabIndex = 0;
@@ -484,7 +497,7 @@
             // 
             this.dateDenNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateDenNgay.EditValue = null;
-            this.dateDenNgay.Location = new System.Drawing.Point(604, 12);
+            this.dateDenNgay.Location = new System.Drawing.Point(568, 12);
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateDenNgay.Properties.Appearance.Options.UseFont = true;
@@ -503,7 +516,7 @@
             // 
             this.dateTuNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTuNgay.EditValue = null;
-            this.dateTuNgay.Location = new System.Drawing.Point(411, 12);
+            this.dateTuNgay.Location = new System.Drawing.Point(397, 12);
             this.dateTuNgay.Name = "dateTuNgay";
             this.dateTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateTuNgay.Properties.Appearance.Options.UseFont = true;

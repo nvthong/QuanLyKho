@@ -63,6 +63,7 @@
             // 
             // gridView1
             // 
+            this.gridView1.ColumnPanelRowHeight = 25;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaDonVi,
             this.colTenDonVi,
@@ -73,11 +74,26 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowHeight = 25;
             // 
             // colMaDonVi
             // 
+            this.colMaDonVi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colMaDonVi.AppearanceCell.Options.UseFont = true;
+            this.colMaDonVi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colMaDonVi.AppearanceHeader.Options.UseFont = true;
             this.colMaDonVi.AppearanceHeader.Options.UseTextOptions = true;
             this.colMaDonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMaDonVi.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -94,6 +110,10 @@
             // 
             // colTenDonVi
             // 
+            this.colTenDonVi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colTenDonVi.AppearanceCell.Options.UseFont = true;
+            this.colTenDonVi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colTenDonVi.AppearanceHeader.Options.UseFont = true;
             this.colTenDonVi.AppearanceHeader.Options.UseTextOptions = true;
             this.colTenDonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTenDonVi.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -110,6 +130,10 @@
             // 
             // colGhiChu
             // 
+            this.colGhiChu.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colGhiChu.AppearanceCell.Options.UseFont = true;
+            this.colGhiChu.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colGhiChu.AppearanceHeader.Options.UseFont = true;
             this.colGhiChu.AppearanceHeader.Options.UseTextOptions = true;
             this.colGhiChu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colGhiChu.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -168,6 +192,8 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.Location = new System.Drawing.Point(395, 14);
             this.btnDong.Name = "btnDong";
@@ -179,6 +205,8 @@
             // btnChon
             // 
             this.btnChon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChon.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnChon.Appearance.Options.UseFont = true;
             this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
             this.btnChon.Location = new System.Drawing.Point(301, 14);
             this.btnChon.Name = "btnChon";
@@ -196,6 +224,7 @@
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowNhaPhanPhoi_NK";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Nhà phân phối";
             ((System.ComponentModel.ISupportInitialize)(this.gridDVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

@@ -50,7 +50,7 @@ namespace QLK
                 MessageBox.Show("Kết nối thành công!", "Quản Lý Kho", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 myConnection.Close();
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Không thể kết nối!", "Quản Lý Kho", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

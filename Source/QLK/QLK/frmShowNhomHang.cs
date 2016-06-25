@@ -13,6 +13,8 @@ namespace QLK
 {
     public partial class frmShowNhomHang : Form
     {
+        public string dvtMa;
+        public string dvtTen;
         public frmShowNhomHang()
         {
             InitializeComponent();
@@ -55,8 +57,8 @@ namespace QLK
             {
                 if (e.KeyCode == System.Windows.Forms.Keys.Enter)
                 {
-                    string dvtMa = gridView1.GetFocusedRowCellValue("NH_MANHOM").ToString();
-                    string dvtTen = gridView1.GetFocusedRowCellValue("NH_TENNHOM").ToString();
+                    dvtMa = gridView1.GetFocusedRowCellValue("NH_MANHOM").ToString();
+                    dvtTen = gridView1.GetFocusedRowCellValue("NH_TENNHOM").ToString();
                     frmDMHangHoa._frmDMHangHoa.updateNhomHang(dvtMa, dvtTen);
                     this.Close();
                 }
@@ -71,8 +73,8 @@ namespace QLK
         {
             try
             {
-                string dvtMa = gridView1.GetFocusedRowCellValue("NH_MANHOM").ToString();
-                string dvtTen = gridView1.GetFocusedRowCellValue("NH_TENNHOM").ToString();
+                dvtMa = gridView1.GetFocusedRowCellValue("NH_MANHOM").ToString();
+                dvtTen = gridView1.GetFocusedRowCellValue("NH_TENNHOM").ToString();
                 frmDMHangHoa._frmDMHangHoa.updateNhomHang(dvtMa, dvtTen);
                 this.Close();
             }

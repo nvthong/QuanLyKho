@@ -93,7 +93,7 @@
             this.gridColumn16.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn16.OptionsFilter.AllowFilter = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 14;
+            this.gridColumn16.VisibleIndex = 13;
             this.gridColumn16.Width = 10;
             // 
             // gridColumn6
@@ -109,8 +109,6 @@
             this.gridColumn6.Caption = "Hạn sử dụng";
             this.gridColumn6.FieldName = "HDNX_HANSUDUNG";
             this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 12;
             this.gridColumn6.Width = 70;
             // 
             // gridColumn13
@@ -122,12 +120,12 @@
             this.gridColumn13.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn13.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn13.Caption = "Thành tiền";
-            this.gridColumn13.DisplayFormat.FormatString = "n0";
+            this.gridColumn13.DisplayFormat.FormatString = "n1";
             this.gridColumn13.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn13.FieldName = "HDNX_THANHTIEN";
             this.gridColumn13.Name = "gridColumn13";
             this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
-            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n0}")});
+            new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n1}")});
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 11;
             this.gridColumn13.Width = 100;
@@ -141,7 +139,7 @@
             this.gridColumn10.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn10.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn10.Caption = "Giá nhập";
-            this.gridColumn10.DisplayFormat.FormatString = "n0";
+            this.gridColumn10.DisplayFormat.FormatString = "n1";
             this.gridColumn10.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn10.FieldName = "HDNX_GIAMUA";
             this.gridColumn10.Name = "gridColumn10";
@@ -158,7 +156,7 @@
             this.gridColumn8.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn8.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn8.Caption = "Giá VAT";
-            this.gridColumn8.DisplayFormat.FormatString = "n0";
+            this.gridColumn8.DisplayFormat.FormatString = "n1";
             this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "HDNX_GIAVAT";
             this.gridColumn8.Name = "gridColumn8";
@@ -292,12 +290,21 @@
             this.gridView1.GroupCount = 1;
             this.gridView1.GroupSummary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_SOLUONG", this.gridColumn7, ""),
-            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", this.gridColumn13, "{0:n0}")});
+            new DevExpress.XtraGrid.GridGroupSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", this.gridColumn13, "{0:n1}")});
             this.gridView1.HorzScrollVisibility = DevExpress.XtraGrid.Views.Base.ScrollVisibility.Always;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupedColumns = true;
@@ -317,7 +324,7 @@
             this.gridColumn14.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn14.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn14.Caption = "Tổng nhập";
-            this.gridColumn14.DisplayFormat.FormatString = "n0";
+            this.gridColumn14.DisplayFormat.FormatString = "n1";
             this.gridColumn14.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn14.FieldName = "HDNX_TONGMUA";
             this.gridColumn14.Name = "gridColumn14";
@@ -349,7 +356,7 @@
             this.gridColumn9.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn9.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn9.Caption = "Tổng VAT";
-            this.gridColumn9.DisplayFormat.FormatString = "n0";
+            this.gridColumn9.DisplayFormat.FormatString = "n1";
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn9.FieldName = "HDNX_TONGVAT";
             this.gridColumn9.Name = "gridColumn9";
@@ -369,7 +376,7 @@
             this.gridColumn15.FieldName = "KH_TENKHO";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 13;
+            this.gridColumn15.VisibleIndex = 12;
             this.gridColumn15.Width = 100;
             // 
             // gridControl1
@@ -396,10 +403,12 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.Location = new System.Drawing.Point(523, 38);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.Size = new System.Drawing.Size(75, 31);
             this.btnDong.TabIndex = 8;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -407,10 +416,12 @@
             // btnExcell
             // 
             this.btnExcell.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcell.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnExcell.Appearance.Options.UseFont = true;
             this.btnExcell.Image = ((System.Drawing.Image)(resources.GetObject("btnExcell.Image")));
             this.btnExcell.Location = new System.Drawing.Point(442, 38);
             this.btnExcell.Name = "btnExcell";
-            this.btnExcell.Size = new System.Drawing.Size(75, 23);
+            this.btnExcell.Size = new System.Drawing.Size(75, 31);
             this.btnExcell.TabIndex = 7;
             this.btnExcell.Text = "Excell";
             this.btnExcell.Click += new System.EventHandler(this.btnExcell_Click);
@@ -418,10 +429,12 @@
             // btnXem
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXem.Appearance.Options.UseFont = true;
             this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
             this.btnXem.Location = new System.Drawing.Point(361, 38);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(75, 23);
+            this.btnXem.Size = new System.Drawing.Size(75, 31);
             this.btnXem.TabIndex = 6;
             this.btnXem.Text = "Xem";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
@@ -429,7 +442,7 @@
             // lkKho
             // 
             this.lkKho.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lkKho.Location = new System.Drawing.Point(183, 12);
+            this.lkKho.Location = new System.Drawing.Point(213, 12);
             this.lkKho.Name = "lkKho";
             this.lkKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.lkKho.Properties.Appearance.Options.UseFont = true;
@@ -448,7 +461,7 @@
             // 
             this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(155, 15);
+            this.labelControl3.Location = new System.Drawing.Point(185, 15);
             this.labelControl3.Name = "labelControl3";
             this.labelControl3.Size = new System.Drawing.Size(26, 16);
             this.labelControl3.TabIndex = 4;
@@ -457,7 +470,7 @@
             // cbxCaNam
             // 
             this.cbxCaNam.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbxCaNam.Location = new System.Drawing.Point(718, 12);
+            this.cbxCaNam.Location = new System.Drawing.Point(705, 13);
             this.cbxCaNam.Name = "cbxCaNam";
             this.cbxCaNam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbxCaNam.Properties.Appearance.Options.UseFont = true;
@@ -469,7 +482,7 @@
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(547, 15);
+            this.labelControl2.Location = new System.Drawing.Point(534, 15);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(59, 16);
             this.labelControl2.TabIndex = 1;
@@ -479,7 +492,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(361, 15);
+            this.labelControl1.Location = new System.Drawing.Point(370, 15);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 16);
             this.labelControl1.TabIndex = 0;
@@ -489,7 +502,7 @@
             // 
             this.dateDenNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateDenNgay.EditValue = null;
-            this.dateDenNgay.Location = new System.Drawing.Point(612, 12);
+            this.dateDenNgay.Location = new System.Drawing.Point(599, 12);
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateDenNgay.Properties.Appearance.Options.UseFont = true;
@@ -508,7 +521,7 @@
             // 
             this.dateTuNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTuNgay.EditValue = null;
-            this.dateTuNgay.Location = new System.Drawing.Point(419, 12);
+            this.dateTuNgay.Location = new System.Drawing.Point(428, 12);
             this.dateTuNgay.Name = "dateTuNgay";
             this.dateTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateTuNgay.Properties.Appearance.Options.UseFont = true;

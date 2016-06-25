@@ -167,31 +167,82 @@ namespace QLK
             chartRange.FormulaR1C1 = "DANH SÁCH KHO HÀNG";
             chartRange.HorizontalAlignment = 3;
             chartRange.VerticalAlignment = 3;
-            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue);
-            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
+            chartRange.Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Black);
             chartRange.Font.Size = 20;
-
-            chartRange = xlWorkSheet.get_Range("b4", "i4");
-            chartRange.Font.Bold = true;
-
-            /*
-            chartRange = xlWorkSheet.get_Range("b2", "f9");
             chartRange.BorderAround(
                 Excel.XlLineStyle.xlContinuous,
                 Excel.XlBorderWeight.xlThin,
                 Excel.XlColorIndex.xlColorIndexAutomatic,
                 Excel.XlColorIndex.xlColorIndexAutomatic);
-            */
+
+            chartRange = xlWorkSheet.get_Range("b4", "i4");
+            chartRange.Font.Bold = true;
+
 
             xlWorkSheet.Cells[4, 2] = "STT";
-            xlWorkSheet.Cells[4, 3] = "Mã kho";
-            xlWorkSheet.Cells[4, 4] = "Tên kho";
-            xlWorkSheet.Cells[4, 5] = "Kho nhập";
-            xlWorkSheet.Cells[4, 6] = "Kho sỉ";
-            xlWorkSheet.Cells[4, 7] = "Kho lẻ";
-            xlWorkSheet.Cells[4, 8] = "Ghi chú";
-            xlWorkSheet.Cells[4, 9] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("b4", "b4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
+            xlWorkSheet.Cells[4, 3] = "Mã kho";
+            chartRange = xlWorkSheet.get_Range("c4", "c4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 4] = "Tên kho";
+            chartRange = xlWorkSheet.get_Range("d4", "d4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 5] = "Kho nhập";
+            chartRange = xlWorkSheet.get_Range("e4", "e4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 6] = "Kho sỉ";
+            chartRange = xlWorkSheet.get_Range("f4", "f4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 7] = "Kho lẻ";
+            chartRange = xlWorkSheet.get_Range("g4", "g4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 8] = "Ghi chú";
+            chartRange = xlWorkSheet.get_Range("h4", "h4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
+
+            xlWorkSheet.Cells[4, 9] = "Quản lý";
+            chartRange = xlWorkSheet.get_Range("i4", "i4");
+            chartRange.BorderAround(
+                Excel.XlLineStyle.xlContinuous,
+                Excel.XlBorderWeight.xlThin,
+                Excel.XlColorIndex.xlColorIndexAutomatic,
+                Excel.XlColorIndex.xlColorIndexAutomatic);
 
             xlWorkSheet.Columns[2].ColumnWidth = 14;
             xlWorkSheet.Columns[3].ColumnWidth = 14;
@@ -205,13 +256,68 @@ namespace QLK
             for (int i = 5; i < (dtDVT.Rows.Count + 5); i++)
             {
                 xlWorkSheet.Cells[i, 2] = (i - 4).ToString();
+                chartRange = xlWorkSheet.get_Range("b" + i, "b" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 3] = dtDVT.Rows[i - 5]["KH_MAKHO"].ToString();
+                chartRange = xlWorkSheet.get_Range("c" + i, "c" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 4] = dtDVT.Rows[i - 5]["KH_TENKHO"].ToString();
+                chartRange = xlWorkSheet.get_Range("d" + i, "d" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 5] = dtDVT.Rows[i - 5]["KH_KHONHAP"].ToString() == "1" ? "x" : "";
+                chartRange = xlWorkSheet.get_Range("e" + i, "e" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 6] = dtDVT.Rows[i - 5]["KH_BANLE"].ToString() == "1" ? "x" : "";
+                chartRange = xlWorkSheet.get_Range("f" + i, "f" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 7] = dtDVT.Rows[i - 5]["KH_BANSI"].ToString() == "1" ? "x" : "";
+                chartRange = xlWorkSheet.get_Range("g" + i, "g" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 8] = dtDVT.Rows[i - 5]["KH_GHICHU"].ToString();
+                chartRange = xlWorkSheet.get_Range("h" + i, "h" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
+
                 xlWorkSheet.Cells[i, 9] = dtDVT.Rows[i - 5]["KH_GHICHU"].ToString() == "1" ? "Còn quản lý" : "Không";
+                chartRange = xlWorkSheet.get_Range("i" + i, "i" + i);
+                chartRange.BorderAround(
+                    Excel.XlLineStyle.xlContinuous,
+                    Excel.XlBorderWeight.xlThin,
+                    Excel.XlColorIndex.xlColorIndexAutomatic,
+                    Excel.XlColorIndex.xlColorIndexAutomatic);
             }
 
 

@@ -66,6 +66,7 @@
             // 
             // gridView1
             // 
+            this.gridView1.ColumnPanelRowHeight = 25;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMaDonVi,
             this.colTenDonVi,
@@ -79,11 +80,31 @@
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsCustomization.AllowGroup = false;
             this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.ShowCloseButton = false;
+            this.gridView1.OptionsHint.ShowFooterHints = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowDetailButtons = false;
+            this.gridView1.OptionsView.ShowGroupExpandCollapseButtons = false;
             this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.gridView1.RowHeight = 25;
             // 
             // colMaDonVi
             // 
+            this.colMaDonVi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colMaDonVi.AppearanceCell.Options.UseFont = true;
+            this.colMaDonVi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colMaDonVi.AppearanceHeader.Options.UseFont = true;
             this.colMaDonVi.AppearanceHeader.Options.UseTextOptions = true;
             this.colMaDonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colMaDonVi.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -91,15 +112,20 @@
             this.colMaDonVi.FieldName = "HH_MAHANG";
             this.colMaDonVi.Name = "colMaDonVi";
             this.colMaDonVi.OptionsColumn.AllowEdit = false;
+            this.colMaDonVi.OptionsColumn.AllowMove = false;
             this.colMaDonVi.OptionsColumn.ReadOnly = true;
             this.colMaDonVi.OptionsFilter.AllowAutoFilter = false;
             this.colMaDonVi.OptionsFilter.AllowFilter = false;
             this.colMaDonVi.Visible = true;
             this.colMaDonVi.VisibleIndex = 0;
-            this.colMaDonVi.Width = 66;
+            this.colMaDonVi.Width = 113;
             // 
             // colTenDonVi
             // 
+            this.colTenDonVi.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colTenDonVi.AppearanceCell.Options.UseFont = true;
+            this.colTenDonVi.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colTenDonVi.AppearanceHeader.Options.UseFont = true;
             this.colTenDonVi.AppearanceHeader.Options.UseTextOptions = true;
             this.colTenDonVi.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colTenDonVi.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -107,26 +133,38 @@
             this.colTenDonVi.FieldName = "HH_TENHANG";
             this.colTenDonVi.Name = "colTenDonVi";
             this.colTenDonVi.OptionsColumn.AllowEdit = false;
+            this.colTenDonVi.OptionsColumn.AllowMove = false;
             this.colTenDonVi.OptionsColumn.ReadOnly = true;
             this.colTenDonVi.OptionsFilter.AllowAutoFilter = false;
             this.colTenDonVi.OptionsFilter.AllowFilter = false;
             this.colTenDonVi.Visible = true;
             this.colTenDonVi.VisibleIndex = 1;
-            this.colTenDonVi.Width = 166;
+            this.colTenDonVi.Width = 227;
             // 
             // gridColumn1
             // 
+            this.gridColumn1.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn1.AppearanceCell.Options.UseFont = true;
+            this.gridColumn1.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn1.AppearanceHeader.Options.UseFont = true;
             this.gridColumn1.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn1.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn1.Caption = "Đơn vị tính";
             this.gridColumn1.FieldName = "DVT_TENDONVI";
             this.gridColumn1.Name = "gridColumn1";
+            this.gridColumn1.OptionsColumn.AllowMove = false;
+            this.gridColumn1.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn1.OptionsFilter.AllowFilter = false;
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 2;
-            this.gridColumn1.Width = 77;
+            this.gridColumn1.Width = 79;
             // 
             // gridColumn2
             // 
+            this.gridColumn2.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceCell.Options.UseFont = true;
+            this.gridColumn2.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn2.AppearanceHeader.Options.UseFont = true;
             this.gridColumn2.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn2.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn2.Caption = "Giá nhập";
@@ -136,12 +174,19 @@
             this.gridColumn2.GroupFormat.FormatString = "n0";
             this.gridColumn2.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.OptionsColumn.AllowMove = false;
+            this.gridColumn2.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn2.OptionsFilter.AllowFilter = false;
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 3;
-            this.gridColumn2.Width = 85;
+            this.gridColumn2.Width = 70;
             // 
             // gridColumn3
             // 
+            this.gridColumn3.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn3.AppearanceCell.Options.UseFont = true;
+            this.gridColumn3.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn3.AppearanceHeader.Options.UseFont = true;
             this.gridColumn3.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn3.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn3.Caption = "Giá bán lẻ";
@@ -151,12 +196,19 @@
             this.gridColumn3.GroupFormat.FormatString = "n0";
             this.gridColumn3.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.OptionsColumn.AllowMove = false;
+            this.gridColumn3.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 4;
-            this.gridColumn3.Width = 82;
+            this.gridColumn3.Width = 70;
             // 
             // gridColumn5
             // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
             this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn5.Caption = "Giá bán sỉ";
@@ -166,24 +218,38 @@
             this.gridColumn5.GroupFormat.FormatString = "n0";
             this.gridColumn5.GroupFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.OptionsColumn.AllowMove = false;
+            this.gridColumn5.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn5.OptionsFilter.AllowFilter = false;
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 5;
-            this.gridColumn5.Width = 76;
+            this.gridColumn5.Width = 70;
             // 
             // gridColumn4
             // 
+            this.gridColumn4.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn4.AppearanceCell.Options.UseFont = true;
+            this.gridColumn4.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn4.AppearanceHeader.Options.UseFont = true;
             this.gridColumn4.AppearanceHeader.Options.UseTextOptions = true;
             this.gridColumn4.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.gridColumn4.Caption = "Tồn kho";
             this.gridColumn4.CustomizationCaption = "Tồn kho";
             this.gridColumn4.FieldName = "TONKHO";
             this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.OptionsColumn.AllowMove = false;
+            this.gridColumn4.OptionsFilter.AllowAutoFilter = false;
+            this.gridColumn4.OptionsFilter.AllowFilter = false;
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 6;
-            this.gridColumn4.Width = 58;
+            this.gridColumn4.Width = 60;
             // 
             // colGhiChu
             // 
+            this.colGhiChu.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colGhiChu.AppearanceCell.Options.UseFont = true;
+            this.colGhiChu.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.colGhiChu.AppearanceHeader.Options.UseFont = true;
             this.colGhiChu.AppearanceHeader.Options.UseTextOptions = true;
             this.colGhiChu.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colGhiChu.AppearanceHeader.TextOptions.VAlignment = DevExpress.Utils.VertAlignment.Center;
@@ -191,12 +257,13 @@
             this.colGhiChu.FieldName = "HH_GHICHU";
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.OptionsColumn.AllowEdit = false;
+            this.colGhiChu.OptionsColumn.AllowMove = false;
             this.colGhiChu.OptionsColumn.ReadOnly = true;
             this.colGhiChu.OptionsFilter.AllowAutoFilter = false;
             this.colGhiChu.OptionsFilter.AllowFilter = false;
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 7;
-            this.colGhiChu.Width = 156;
+            this.colGhiChu.Width = 77;
             // 
             // colQuanLyCheckEdit
             // 
@@ -220,6 +287,8 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.Location = new System.Drawing.Point(395, 14);
             this.btnDong.Name = "btnDong";
@@ -231,6 +300,8 @@
             // btnChon
             // 
             this.btnChon.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnChon.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnChon.Appearance.Options.UseFont = true;
             this.btnChon.Image = ((System.Drawing.Image)(resources.GetObject("btnChon.Image")));
             this.btnChon.Location = new System.Drawing.Point(301, 14);
             this.btnChon.Name = "btnChon";
@@ -248,6 +319,7 @@
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmShowHangHoa";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Hàng hóa";
             ((System.ComponentModel.ISupportInitialize)(this.gridDVT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();

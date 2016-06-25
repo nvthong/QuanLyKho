@@ -189,10 +189,12 @@
             // btnDong
             // 
             this.btnDong.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
             this.btnDong.Location = new System.Drawing.Point(503, 69);
             this.btnDong.Name = "btnDong";
-            this.btnDong.Size = new System.Drawing.Size(75, 23);
+            this.btnDong.Size = new System.Drawing.Size(75, 31);
             this.btnDong.TabIndex = 18;
             this.btnDong.Text = "Đóng";
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
@@ -200,10 +202,12 @@
             // btnExcell
             // 
             this.btnExcell.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcell.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnExcell.Appearance.Options.UseFont = true;
             this.btnExcell.Image = ((System.Drawing.Image)(resources.GetObject("btnExcell.Image")));
             this.btnExcell.Location = new System.Drawing.Point(422, 69);
             this.btnExcell.Name = "btnExcell";
-            this.btnExcell.Size = new System.Drawing.Size(75, 23);
+            this.btnExcell.Size = new System.Drawing.Size(75, 31);
             this.btnExcell.TabIndex = 17;
             this.btnExcell.Text = "Excell";
             this.btnExcell.Click += new System.EventHandler(this.btnExcell_Click);
@@ -211,10 +215,12 @@
             // btnXem
             // 
             this.btnXem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.btnXem.Appearance.Options.UseFont = true;
             this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
             this.btnXem.Location = new System.Drawing.Point(341, 69);
             this.btnXem.Name = "btnXem";
-            this.btnXem.Size = new System.Drawing.Size(75, 23);
+            this.btnXem.Size = new System.Drawing.Size(75, 31);
             this.btnXem.TabIndex = 16;
             this.btnXem.Text = "Xem";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
@@ -256,6 +262,15 @@
             this.gridView1.OptionsBehavior.AutoExpandAllGroups = true;
             this.gridView1.OptionsBehavior.Editable = false;
             this.gridView1.OptionsBehavior.ReadOnly = true;
+            this.gridView1.OptionsCustomization.AllowColumnMoving = false;
+            this.gridView1.OptionsMenu.EnableColumnMenu = false;
+            this.gridView1.OptionsMenu.EnableFooterMenu = false;
+            this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
+            this.gridView1.OptionsMenu.ShowAddNewSummaryItem = DevExpress.Utils.DefaultBoolean.False;
+            this.gridView1.OptionsMenu.ShowAutoFilterRowItem = false;
+            this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
+            this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
+            this.gridView1.OptionsMenu.ShowSplitItem = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
             this.gridView1.RowHeight = 25;
