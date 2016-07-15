@@ -1034,7 +1034,7 @@
             this.colMaSo.OptionsFilter.AllowFilter = false;
             this.colMaSo.Visible = true;
             this.colMaSo.VisibleIndex = 0;
-            this.colMaSo.Width = 69;
+            this.colMaSo.Width = 100;
             // 
             // colTenKhachHang
             // 
@@ -1055,7 +1055,7 @@
             this.colTenKhachHang.OptionsFilter.AllowFilter = false;
             this.colTenKhachHang.Visible = true;
             this.colTenKhachHang.VisibleIndex = 1;
-            this.colTenKhachHang.Width = 207;
+            this.colTenKhachHang.Width = 197;
             // 
             // colDiaChi
             // 
@@ -1078,7 +1078,7 @@
             this.colDiaChi.OptionsFilter.AllowFilter = false;
             this.colDiaChi.Visible = true;
             this.colDiaChi.VisibleIndex = 2;
-            this.colDiaChi.Width = 85;
+            this.colDiaChi.Width = 80;
             // 
             // gridColumn1
             // 
@@ -1096,7 +1096,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 3;
-            this.gridColumn1.Width = 113;
+            this.gridColumn1.Width = 107;
             // 
             // gridColumn2
             // 
@@ -1114,7 +1114,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 4;
-            this.gridColumn2.Width = 115;
+            this.gridColumn2.Width = 109;
             // 
             // gridColumn3
             // 
@@ -1132,7 +1132,7 @@
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 5;
-            this.gridColumn3.Width = 121;
+            this.gridColumn3.Width = 115;
             // 
             // colDienThoai
             // 
@@ -1150,7 +1150,7 @@
             this.colDienThoai.Name = "colDienThoai";
             this.colDienThoai.Visible = true;
             this.colDienThoai.VisibleIndex = 6;
-            this.colDienThoai.Width = 111;
+            this.colDienThoai.Width = 105;
             // 
             // colQuanLy
             // 
@@ -1172,7 +1172,7 @@
             this.colQuanLy.OptionsFilter.AllowFilter = false;
             this.colQuanLy.Visible = true;
             this.colQuanLy.VisibleIndex = 7;
-            this.colQuanLy.Width = 61;
+            this.colQuanLy.Width = 67;
             // 
             // colQuanLyCheckEdit
             // 

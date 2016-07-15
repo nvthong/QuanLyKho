@@ -373,7 +373,7 @@
             this.colMaKho.OptionsFilter.AllowFilter = false;
             this.colMaKho.Visible = true;
             this.colMaKho.VisibleIndex = 0;
-            this.colMaKho.Width = 87;
+            this.colMaKho.Width = 100;
             // 
             // colTenKho
             // 
@@ -393,7 +393,7 @@
             this.colTenKho.OptionsFilter.AllowFilter = false;
             this.colTenKho.Visible = true;
             this.colTenKho.VisibleIndex = 1;
-            this.colTenKho.Width = 253;
+            this.colTenKho.Width = 272;
             // 
             // colKhoNhap
             // 
@@ -415,6 +415,7 @@
             this.colKhoNhap.OptionsFilter.AllowFilter = false;
             this.colKhoNhap.Visible = true;
             this.colKhoNhap.VisibleIndex = 2;
+            this.colKhoNhap.Width = 80;
             // 
             // colKhoNhapCheckEdit
             // 
@@ -444,6 +445,7 @@
             this.colKhoBanLe.OptionsFilter.AllowFilter = false;
             this.colKhoBanLe.Visible = true;
             this.colKhoBanLe.VisibleIndex = 3;
+            this.colKhoBanLe.Width = 80;
             // 
             // colKhoBanLeCheckEdit
             // 
@@ -472,6 +474,7 @@
             this.colKhoBanSi.OptionsFilter.AllowFilter = false;
             this.colKhoBanSi.Visible = true;
             this.colKhoBanSi.VisibleIndex = 4;
+            this.colKhoBanSi.Width = 80;
             // 
             // colKhoBanSiCheckEdit
             // 
@@ -494,7 +497,7 @@
             this.colGhiChu.Name = "colGhiChu";
             this.colGhiChu.Visible = true;
             this.colGhiChu.VisibleIndex = 5;
-            this.colGhiChu.Width = 159;
+            this.colGhiChu.Width = 171;
             // 
             // colQuanLy
             // 
@@ -516,7 +519,7 @@
             this.colQuanLy.OptionsFilter.AllowFilter = false;
             this.colQuanLy.Visible = true;
             this.colQuanLy.VisibleIndex = 6;
-            this.colQuanLy.Width = 83;
+            this.colQuanLy.Width = 97;
             // 
             // colQuanLyCheckEdit
             // 

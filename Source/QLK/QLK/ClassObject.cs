@@ -1875,6 +1875,8 @@ namespace QLK
     #region BAOCAO_HANDUNG
     public class BAOCAO_HANDUNG
     {
+        private string _hDNX_SOHD = String.Empty;
+        private DateTime _hDNX_NGAYHD;
         private string _hH_MAHANG = String.Empty;
         private string _hH_TENHANG = String.Empty;
         private decimal _hH_GIAMUA;
@@ -1892,9 +1894,11 @@ namespace QLK
 
         }
 
-        public BAOCAO_HANDUNG(string hhMaHang, string hhTenHang, decimal hhGiaMua, decimal hhGiaBanLe, decimal hhGiaBanSi, DateTime hhHanSuDung, int hhKichHoat,
+        public BAOCAO_HANDUNG(string hdnxSoHD, DateTime hdnxNgayHD, string hhMaHang, string hhTenHang, decimal hhGiaMua, decimal hhGiaBanLe, decimal hhGiaBanSi, DateTime hhHanSuDung, int hhKichHoat,
             string dvtTenDonVi, double bcNgayConLai)
         {
+            this.HDNX_SOHD = hdnxSoHD;
+            this.HDNX_NGAYHD = hdnxNgayHD;
             this.HH_MAHANG = hhMaHang;
             this.HH_TENHANG = hhTenHang;
             this.HH_GIAMUA = hhGiaMua;
@@ -1904,6 +1908,12 @@ namespace QLK
             this.HH_KICHHOAT = hhKichHoat;
             this.DVT_TENDONVI = dvtTenDonVi;
             this.BC_NGAYCONLAI = bcNgayConLai;
+        }
+
+        public string HDNX_SOHD
+        {
+            get { return _hDNX_SOHD; }
+            set { _hDNX_SOHD = value; }
         }
 
         public string HH_MAHANG
@@ -1940,6 +1950,12 @@ namespace QLK
         {
             get { return _hDNX_HANSUDUNG; }
             set { _hDNX_HANSUDUNG = value; }
+        }
+
+        public DateTime HDNX_NGAYHD
+        {
+            get { return _hDNX_NGAYHD; }
+            set { _hDNX_NGAYHD = value; }
         }
 
         public int HH_KICHHOAT

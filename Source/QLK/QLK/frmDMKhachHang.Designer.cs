@@ -150,7 +150,7 @@
             this.colMaSo.OptionsFilter.AllowFilter = false;
             this.colMaSo.Visible = true;
             this.colMaSo.VisibleIndex = 0;
-            this.colMaSo.Width = 80;
+            this.colMaSo.Width = 100;
             // 
             // colTenKhachHang
             // 
@@ -170,7 +170,7 @@
             this.colTenKhachHang.OptionsFilter.AllowFilter = false;
             this.colTenKhachHang.Visible = true;
             this.colTenKhachHang.VisibleIndex = 1;
-            this.colTenKhachHang.Width = 255;
+            this.colTenKhachHang.Width = 248;
             // 
             // colDiaChi
             // 
@@ -190,7 +190,7 @@
             this.colDiaChi.OptionsFilter.AllowFilter = false;
             this.colDiaChi.Visible = true;
             this.colDiaChi.VisibleIndex = 2;
-            this.colDiaChi.Width = 302;
+            this.colDiaChi.Width = 294;
             // 
             // colDienThoai
             // 
@@ -205,7 +205,7 @@
             this.colDienThoai.Name = "colDienThoai";
             this.colDienThoai.Visible = true;
             this.colDienThoai.VisibleIndex = 3;
-            this.colDienThoai.Width = 160;
+            this.colDienThoai.Width = 156;
             // 
             // colQuanLy
             // 
@@ -227,7 +227,7 @@
             this.colQuanLy.OptionsFilter.AllowFilter = false;
             this.colQuanLy.Visible = true;
             this.colQuanLy.VisibleIndex = 4;
-            this.colQuanLy.Width = 85;
+            this.colQuanLy.Width = 84;
             // 
             // colQuanLyCheckEdit
             // 

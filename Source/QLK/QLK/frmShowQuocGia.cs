@@ -88,5 +88,20 @@ namespace QLK
         {
             this.Close();
         }
+
+        private void gridDVT_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                dvtMa = gridView1.GetFocusedRowCellValue("QG_MAQUOCGIA").ToString();
+                dvtTen = gridView1.GetFocusedRowCellValue("QG_TENQUOCGIA").ToString();
+                frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
+                this.Close();
+            }
+            catch
+            {
+
+            }
+        }
     }
 }

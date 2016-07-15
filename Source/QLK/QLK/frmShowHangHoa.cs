@@ -126,5 +126,24 @@ namespace QLK
         {
             this.Close();
         }
+
+        private void gridDVT_DoubleClick(object sender, EventArgs e)
+        {
+            try
+            {
+                pHhMa = gridView1.GetFocusedRowCellValue("HH_MAHANG").ToString();
+                pHhTen = gridView1.GetFocusedRowCellValue("HH_TENHANG").ToString();
+                pHhDVT = gridView1.GetFocusedRowCellValue("DVT_TENDONVI").ToString();
+                pHhGiaNhap = gridView1.GetFocusedRowCellValue("HH_GIAMUA").ToString();
+                pHhGiaBan = gridView1.GetFocusedRowCellValue("HH_GIABANLE").ToString();
+                pHhGiaBanSi = gridView1.GetFocusedRowCellValue("HH_GIABANSI").ToString();
+                pHhTonKho = gridView1.GetFocusedRowCellValue("TONKHO").ToString() != "" ? Double.Parse(gridView1.GetFocusedRowCellValue("TONKHO").ToString()) : 0;
+                this.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
     }
 }

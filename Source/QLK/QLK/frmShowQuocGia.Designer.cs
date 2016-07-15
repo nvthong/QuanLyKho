@@ -72,6 +72,7 @@
             this.gridDVT.TabIndex = 2;
             this.gridDVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gridDVT.DoubleClick += new System.EventHandler(this.gridDVT_DoubleClick);
             this.gridDVT.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridDVT_KeyDown);
             // 
             // gridView1

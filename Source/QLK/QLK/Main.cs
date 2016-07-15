@@ -748,6 +748,7 @@ namespace QLK
             {
                 using (SaveFileDialog saveDialog = new SaveFileDialog())
                 {
+                    saveDialog.Filter = "Database (.bak)|*.bak";
                     if (saveDialog.ShowDialog() != DialogResult.Cancel)
                     {
                         string exportFilePath = saveDialog.FileName;

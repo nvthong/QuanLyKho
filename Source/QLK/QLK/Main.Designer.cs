@@ -461,6 +461,7 @@
             this.btnDanhMucMaVach.Name = "btnDanhMucMaVach";
             this.btnDanhMucMaVach.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDanhMucMaVach.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnDanhMucMaVach.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhMucMaVach_ItemClick);
             // 
             // btnDanhMucNPP
@@ -600,6 +601,7 @@
             this.btnCauHinhUngDung.Name = "btnCauHinhUngDung";
             this.btnCauHinhUngDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnCauHinhUngDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnCauHinhUngDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCauHinhUngDung_ItemClick);
             // 
             // btnHeThongNhanVien
@@ -670,6 +672,7 @@
             this.btnHeThongNhatKy.Name = "btnHeThongNhatKy";
             this.btnHeThongNhatKy.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnHeThongNhatKy.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnHeThongNhatKy.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHeThongNhatKy_ItemClick);
             // 
             // btnTienIchSaoLuu
@@ -1005,6 +1008,7 @@
             this.ribbonPageGroup9.ItemLinks.Add(this.btnHeThongNhatKy);
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Phân quyền";
+            this.ribbonPageGroup9.Visible = false;
             // 
             // rpTienIch
             // 

@@ -3559,6 +3559,8 @@ namespace QLK
                         while (dr.Read())
                         {
                             BAOCAO_HANDUNG obj = new BAOCAO_HANDUNG();
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_NGAYHD = dr["HDNX_NGAYHD"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYHD"].ToString()) : new DateTime(1900, 1, 1);
                             obj.HH_MAHANG = dr["HH_MAHANG"].ToString();
                             obj.HH_TENHANG = dr["HH_TENHANG"].ToString();
                             obj.HDNX_HANSUDUNG = dr["HDNX_HANSUDUNG"].ToString() != "" ? DateTime.Parse(dr["HDNX_HANSUDUNG"].ToString()) : new DateTime(1900, 1, 1);

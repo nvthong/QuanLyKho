@@ -84,7 +84,7 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(900, 109);
+            this.groupControl1.Size = new System.Drawing.Size(900, 81);
             this.groupControl1.TabIndex = 2;
             this.groupControl1.Text = "groupControl1";
             // 
@@ -98,6 +98,7 @@
             this.chkVATTrungBinh.Properties.Caption = "VAT trung bình";
             this.chkVATTrungBinh.Size = new System.Drawing.Size(112, 21);
             this.chkVATTrungBinh.TabIndex = 24;
+            this.chkVATTrungBinh.Visible = false;
             // 
             // chkCaNam
             // 
@@ -173,7 +174,7 @@
             // rdLoaiBaoCao
             // 
             this.rdLoaiBaoCao.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.rdLoaiBaoCao.Location = new System.Drawing.Point(386, 38);
+            this.rdLoaiBaoCao.Location = new System.Drawing.Point(587, 47);
             this.rdLoaiBaoCao.Name = "rdLoaiBaoCao";
             this.rdLoaiBaoCao.Properties.Appearance.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
             this.rdLoaiBaoCao.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -185,6 +186,7 @@
             new DevExpress.XtraEditors.Controls.RadioGroupItem(null, "Chi tiết")});
             this.rdLoaiBaoCao.Size = new System.Drawing.Size(164, 25);
             this.rdLoaiBaoCao.TabIndex = 19;
+            this.rdLoaiBaoCao.Visible = false;
             // 
             // btnDong
             // 
@@ -192,7 +194,7 @@
             this.btnDong.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnDong.Appearance.Options.UseFont = true;
             this.btnDong.Image = ((System.Drawing.Image)(resources.GetObject("btnDong.Image")));
-            this.btnDong.Location = new System.Drawing.Point(503, 69);
+            this.btnDong.Location = new System.Drawing.Point(506, 41);
             this.btnDong.Name = "btnDong";
             this.btnDong.Size = new System.Drawing.Size(75, 31);
             this.btnDong.TabIndex = 18;
@@ -205,7 +207,7 @@
             this.btnExcell.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnExcell.Appearance.Options.UseFont = true;
             this.btnExcell.Image = ((System.Drawing.Image)(resources.GetObject("btnExcell.Image")));
-            this.btnExcell.Location = new System.Drawing.Point(422, 69);
+            this.btnExcell.Location = new System.Drawing.Point(425, 41);
             this.btnExcell.Name = "btnExcell";
             this.btnExcell.Size = new System.Drawing.Size(75, 31);
             this.btnExcell.TabIndex = 17;
@@ -218,7 +220,7 @@
             this.btnXem.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnXem.Appearance.Options.UseFont = true;
             this.btnXem.Image = ((System.Drawing.Image)(resources.GetObject("btnXem.Image")));
-            this.btnXem.Location = new System.Drawing.Point(341, 69);
+            this.btnXem.Location = new System.Drawing.Point(344, 41);
             this.btnXem.Name = "btnXem";
             this.btnXem.Size = new System.Drawing.Size(75, 31);
             this.btnXem.TabIndex = 16;
@@ -228,10 +230,10 @@
             // gridControl1
             // 
             this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 109);
+            this.gridControl1.Location = new System.Drawing.Point(0, 81);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(900, 391);
+            this.gridControl1.Size = new System.Drawing.Size(900, 419);
             this.gridControl1.TabIndex = 3;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -290,6 +292,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
+            this.gridColumn1.Width = 86;
             // 
             // gridColumn2
             // 
@@ -304,6 +307,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
+            this.gridColumn2.Width = 73;
             // 
             // gridColumn3
             // 
@@ -328,6 +332,7 @@
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 2;
+            this.gridColumn4.Width = 105;
             // 
             // gridColumn5
             // 
@@ -344,6 +349,7 @@
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.Width = 55;
             // 
             // gridColumn6
             // 
@@ -360,6 +366,7 @@
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 59;
             // 
             // gridColumn7
             // 
@@ -376,6 +383,7 @@
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.Width = 71;
             // 
             // gridColumn8
             // 
@@ -392,6 +400,7 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.Width = 71;
             // 
             // gridColumn9
             // 
@@ -408,6 +417,7 @@
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
             this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.Width = 71;
             // 
             // gridColumn10
             // 
@@ -424,6 +434,7 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.Width = 71;
             // 
             // gridColumn11
             // 
@@ -440,6 +451,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.Width = 82;
             // 
             // gridColumn12
             // 
@@ -458,7 +470,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_LAI", "{0:n0}")});
             this.gridColumn12.Visible = true;
             this.gridColumn12.VisibleIndex = 10;
-            this.gridColumn12.Width = 48;
+            this.gridColumn12.Width = 71;
             // 
             // gridColumn13
             // 
@@ -477,6 +489,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_LO", "{0:n0}")});
             this.gridColumn13.Visible = true;
             this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.Width = 67;
             // 
             // frmBaoCaoLaiLo
             // 

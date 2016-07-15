@@ -815,6 +815,7 @@
             // txtQC
             // 
             this.txtQC.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtQC.Enabled = false;
             this.txtQC.EnterMoveNextControl = true;
             this.txtQC.Location = new System.Drawing.Point(553, 23);
             this.txtQC.Name = "txtQC";
@@ -1168,8 +1169,6 @@
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.OptionsColumn.ReadOnly = true;
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
             this.gridColumn8.Width = 65;
             // 
             // gridColumn11
@@ -1189,7 +1188,7 @@
             this.gridColumn11.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 6;
+            this.gridColumn11.VisibleIndex = 5;
             this.gridColumn11.Width = 65;
             // 
             // gridColumn15
@@ -1207,7 +1206,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 7;
+            this.gridColumn15.VisibleIndex = 6;
             // 
             // gridColumn9
             // 
@@ -1225,7 +1224,7 @@
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.ToolTip = "VAT theo phần trăm";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 8;
+            this.gridColumn9.VisibleIndex = 7;
             this.gridColumn9.Width = 65;
             // 
             // gridColumn10
@@ -1245,7 +1244,7 @@
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.OptionsColumn.ReadOnly = true;
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 9;
+            this.gridColumn10.VisibleIndex = 8;
             this.gridColumn10.Width = 65;
             // 
             // gridColumn16
@@ -1264,7 +1263,7 @@
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.ToolTip = "Giá đã bao gồm VAT";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 10;
+            this.gridColumn16.VisibleIndex = 9;
             // 
             // gridColumn12
             // 
@@ -1285,7 +1284,7 @@
             this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n1}")});
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.VisibleIndex = 10;
             this.gridColumn12.Width = 73;
             // 
             // gridColumn3
@@ -1305,7 +1304,7 @@
             this.gridColumn3.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn3.OptionsFilter.AllowFilter = false;
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 12;
+            this.gridColumn3.VisibleIndex = 11;
             this.gridColumn3.Width = 10;
             // 
             // frmNhapKho
