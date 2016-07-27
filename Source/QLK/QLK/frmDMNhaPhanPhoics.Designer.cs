@@ -31,16 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDMNhaPhanPhoics));
             this.chkQuanLy = new DevExpress.XtraEditors.CheckEdit();
             this.txtGhiChu = new DevExpress.XtraEditors.TextEdit();
-            this.txtNganHang = new DevExpress.XtraEditors.TextEdit();
-            this.txtWebsite = new DevExpress.XtraEditors.TextEdit();
-            this.txtFax = new DevExpress.XtraEditors.TextEdit();
-            this.txtEmail = new DevExpress.XtraEditors.TextEdit();
-            this.txtNguoiDaiDien = new DevExpress.XtraEditors.TextEdit();
-            this.txtTaiKhoan = new DevExpress.XtraEditors.TextEdit();
-            this.txtMST = new DevExpress.XtraEditors.TextEdit();
-            this.txtSDT = new DevExpress.XtraEditors.TextEdit();
             this.btnSua = new System.Windows.Forms.Button();
-            this.txtDiaChi = new DevExpress.XtraEditors.TextEdit();
             this.txtTenKhachHang = new DevExpress.XtraEditors.TextEdit();
             this.txtMaKhachHang = new DevExpress.XtraEditors.TextEdit();
             this.btnExcel = new System.Windows.Forms.Button();
@@ -49,16 +40,7 @@
             this.btnDong = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridDVT = new DevExpress.XtraGrid.GridControl();
@@ -72,15 +54,6 @@
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             ((System.ComponentModel.ISupportInitialize)(this.chkQuanLy.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNganHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNguoiDaiDien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoan.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMST.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKhachHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -98,7 +71,7 @@
             this.chkQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkQuanLy.EditValue = true;
             this.chkQuanLy.EnterMoveNextControl = true;
-            this.chkQuanLy.Location = new System.Drawing.Point(674, 137);
+            this.chkQuanLy.Location = new System.Drawing.Point(674, 39);
             this.chkQuanLy.Name = "chkQuanLy";
             this.chkQuanLy.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chkQuanLy.Properties.Appearance.Options.UseFont = true;
@@ -111,127 +84,15 @@
             // 
             this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGhiChu.EnterMoveNextControl = true;
-            this.txtGhiChu.Location = new System.Drawing.Point(429, 137);
+            this.txtGhiChu.Location = new System.Drawing.Point(175, 39);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
             this.txtGhiChu.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtGhiChu.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtGhiChu.Properties.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(239, 22);
+            this.txtGhiChu.Size = new System.Drawing.Size(493, 22);
             this.txtGhiChu.TabIndex = 11;
-            // 
-            // txtNganHang
-            // 
-            this.txtNganHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNganHang.EnterMoveNextControl = true;
-            this.txtNganHang.Location = new System.Drawing.Point(507, 111);
-            this.txtNganHang.Name = "txtNganHang";
-            this.txtNganHang.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNganHang.Properties.Appearance.Options.UseFont = true;
-            this.txtNganHang.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNganHang.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNganHang.Properties.ReadOnly = true;
-            this.txtNganHang.Size = new System.Drawing.Size(257, 22);
-            this.txtNganHang.TabIndex = 9;
-            // 
-            // txtWebsite
-            // 
-            this.txtWebsite.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtWebsite.EnterMoveNextControl = true;
-            this.txtWebsite.Location = new System.Drawing.Point(507, 85);
-            this.txtWebsite.Name = "txtWebsite";
-            this.txtWebsite.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtWebsite.Properties.Appearance.Options.UseFont = true;
-            this.txtWebsite.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtWebsite.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtWebsite.Properties.ReadOnly = true;
-            this.txtWebsite.Size = new System.Drawing.Size(257, 22);
-            this.txtWebsite.TabIndex = 7;
-            // 
-            // txtFax
-            // 
-            this.txtFax.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtFax.EnterMoveNextControl = true;
-            this.txtFax.Location = new System.Drawing.Point(507, 60);
-            this.txtFax.Name = "txtFax";
-            this.txtFax.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtFax.Properties.Appearance.Options.UseFont = true;
-            this.txtFax.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtFax.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtFax.Properties.ReadOnly = true;
-            this.txtFax.Size = new System.Drawing.Size(257, 22);
-            this.txtFax.TabIndex = 5;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtEmail.EnterMoveNextControl = true;
-            this.txtEmail.Location = new System.Drawing.Point(507, 35);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtEmail.Properties.Appearance.Options.UseFont = true;
-            this.txtEmail.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtEmail.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtEmail.Properties.ReadOnly = true;
-            this.txtEmail.Size = new System.Drawing.Size(257, 22);
-            this.txtEmail.TabIndex = 3;
-            // 
-            // txtNguoiDaiDien
-            // 
-            this.txtNguoiDaiDien.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNguoiDaiDien.EnterMoveNextControl = true;
-            this.txtNguoiDaiDien.Location = new System.Drawing.Point(175, 137);
-            this.txtNguoiDaiDien.Name = "txtNguoiDaiDien";
-            this.txtNguoiDaiDien.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNguoiDaiDien.Properties.Appearance.Options.UseFont = true;
-            this.txtNguoiDaiDien.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNguoiDaiDien.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNguoiDaiDien.Properties.ReadOnly = true;
-            this.txtNguoiDaiDien.Size = new System.Drawing.Size(179, 22);
-            this.txtNguoiDaiDien.TabIndex = 10;
-            // 
-            // txtTaiKhoan
-            // 
-            this.txtTaiKhoan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTaiKhoan.EnterMoveNextControl = true;
-            this.txtTaiKhoan.Location = new System.Drawing.Point(175, 111);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtTaiKhoan.Properties.Appearance.Options.UseFont = true;
-            this.txtTaiKhoan.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtTaiKhoan.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtTaiKhoan.Properties.ReadOnly = true;
-            this.txtTaiKhoan.Size = new System.Drawing.Size(257, 22);
-            this.txtTaiKhoan.TabIndex = 8;
-            // 
-            // txtMST
-            // 
-            this.txtMST.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMST.EnterMoveNextControl = true;
-            this.txtMST.Location = new System.Drawing.Point(175, 85);
-            this.txtMST.Name = "txtMST";
-            this.txtMST.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtMST.Properties.Appearance.Options.UseFont = true;
-            this.txtMST.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtMST.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtMST.Properties.ReadOnly = true;
-            this.txtMST.Size = new System.Drawing.Size(257, 22);
-            this.txtMST.TabIndex = 6;
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtSDT.EnterMoveNextControl = true;
-            this.txtSDT.Location = new System.Drawing.Point(175, 60);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtSDT.Properties.Appearance.Options.UseFont = true;
-            this.txtSDT.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtSDT.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtSDT.Properties.ReadOnly = true;
-            this.txtSDT.Size = new System.Drawing.Size(257, 22);
-            this.txtSDT.TabIndex = 4;
             // 
             // btnSua
             // 
@@ -246,20 +107,6 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = true;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDiaChi.EnterMoveNextControl = true;
-            this.txtDiaChi.Location = new System.Drawing.Point(175, 35);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtDiaChi.Properties.Appearance.Options.UseFont = true;
-            this.txtDiaChi.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtDiaChi.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtDiaChi.Properties.ReadOnly = true;
-            this.txtDiaChi.Size = new System.Drawing.Size(257, 22);
-            this.txtDiaChi.TabIndex = 2;
             // 
             // txtTenKhachHang
             // 
@@ -325,7 +172,7 @@
             this.groupBox1.Controls.Add(this.btnSua);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(2, 160);
+            this.groupBox1.Location = new System.Drawing.Point(2, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(896, 48);
             this.groupBox1.TabIndex = 13;
@@ -363,136 +210,28 @@
             // 
             this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl12.Location = new System.Drawing.Point(376, 140);
+            this.labelControl12.Location = new System.Drawing.Point(82, 42);
             this.labelControl12.Name = "labelControl12";
             this.labelControl12.Size = new System.Drawing.Size(47, 16);
             this.labelControl12.TabIndex = 2;
             this.labelControl12.Text = "Ghi chú:";
             // 
-            // labelControl10
-            // 
-            this.labelControl10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl10.Location = new System.Drawing.Point(438, 114);
-            this.labelControl10.Name = "labelControl10";
-            this.labelControl10.Size = new System.Drawing.Size(66, 16);
-            this.labelControl10.TabIndex = 2;
-            this.labelControl10.Text = "Ngân hàng:";
-            // 
             // groupControl1
             // 
             this.groupControl1.Controls.Add(this.chkQuanLy);
             this.groupControl1.Controls.Add(this.txtGhiChu);
-            this.groupControl1.Controls.Add(this.txtNganHang);
-            this.groupControl1.Controls.Add(this.txtWebsite);
-            this.groupControl1.Controls.Add(this.txtFax);
-            this.groupControl1.Controls.Add(this.txtEmail);
-            this.groupControl1.Controls.Add(this.txtNguoiDaiDien);
-            this.groupControl1.Controls.Add(this.txtTaiKhoan);
-            this.groupControl1.Controls.Add(this.txtMST);
-            this.groupControl1.Controls.Add(this.txtSDT);
-            this.groupControl1.Controls.Add(this.txtDiaChi);
             this.groupControl1.Controls.Add(this.txtTenKhachHang);
             this.groupControl1.Controls.Add(this.txtMaKhachHang);
             this.groupControl1.Controls.Add(this.groupBox1);
             this.groupControl1.Controls.Add(this.labelControl12);
-            this.groupControl1.Controls.Add(this.labelControl10);
-            this.groupControl1.Controls.Add(this.labelControl8);
-            this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.labelControl4);
-            this.groupControl1.Controls.Add(this.labelControl11);
-            this.groupControl1.Controls.Add(this.labelControl9);
-            this.groupControl1.Controls.Add(this.labelControl7);
-            this.groupControl1.Controls.Add(this.labelControl5);
-            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 290);
+            this.groupControl1.Location = new System.Drawing.Point(0, 382);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(900, 210);
+            this.groupControl1.Size = new System.Drawing.Size(900, 118);
             this.groupControl1.TabIndex = 5;
-            // 
-            // labelControl8
-            // 
-            this.labelControl8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl8.Location = new System.Drawing.Point(438, 88);
-            this.labelControl8.Name = "labelControl8";
-            this.labelControl8.Size = new System.Drawing.Size(51, 16);
-            this.labelControl8.TabIndex = 2;
-            this.labelControl8.Text = "Website:";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Location = new System.Drawing.Point(438, 63);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(25, 16);
-            this.labelControl6.TabIndex = 2;
-            this.labelControl6.Text = "Fax:";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl4.Location = new System.Drawing.Point(438, 38);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(36, 16);
-            this.labelControl4.TabIndex = 2;
-            this.labelControl4.Text = "Email:";
-            // 
-            // labelControl11
-            // 
-            this.labelControl11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl11.Location = new System.Drawing.Point(82, 140);
-            this.labelControl11.Name = "labelControl11";
-            this.labelControl11.Size = new System.Drawing.Size(87, 16);
-            this.labelControl11.TabIndex = 2;
-            this.labelControl11.Text = "Người địa diện:";
-            // 
-            // labelControl9
-            // 
-            this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl9.Location = new System.Drawing.Point(82, 114);
-            this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(61, 16);
-            this.labelControl9.TabIndex = 2;
-            this.labelControl9.Text = "Tài khoản:";
-            // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl7.Location = new System.Drawing.Point(82, 88);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(31, 16);
-            this.labelControl7.TabIndex = 2;
-            this.labelControl7.Text = "MST:";
-            // 
-            // labelControl5
-            // 
-            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl5.Location = new System.Drawing.Point(82, 63);
-            this.labelControl5.Name = "labelControl5";
-            this.labelControl5.Size = new System.Drawing.Size(30, 16);
-            this.labelControl5.TabIndex = 2;
-            this.labelControl5.Text = "SĐT:";
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(82, 38);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(44, 16);
-            this.labelControl3.TabIndex = 2;
-            this.labelControl3.Text = "Địa chỉ:";
             // 
             // labelControl2
             // 
@@ -522,7 +261,7 @@
             this.gridDVT.Name = "gridDVT";
             this.gridDVT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.colQuanLyCheckEdit});
-            this.gridDVT.Size = new System.Drawing.Size(896, 286);
+            this.gridDVT.Size = new System.Drawing.Size(896, 378);
             this.gridDVT.TabIndex = 4;
             this.gridDVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -612,8 +351,6 @@
             this.colDiaChi.OptionsColumn.ReadOnly = true;
             this.colDiaChi.OptionsFilter.AllowAutoFilter = false;
             this.colDiaChi.OptionsFilter.AllowFilter = false;
-            this.colDiaChi.Visible = true;
-            this.colDiaChi.VisibleIndex = 2;
             this.colDiaChi.Width = 293;
             // 
             // colDienThoai
@@ -627,8 +364,6 @@
             this.colDienThoai.Caption = "Điện thoại";
             this.colDienThoai.FieldName = "NPP_DIENTHOAI";
             this.colDienThoai.Name = "colDienThoai";
-            this.colDienThoai.Visible = true;
-            this.colDienThoai.VisibleIndex = 3;
             this.colDienThoai.Width = 155;
             // 
             // colQuanLy
@@ -650,7 +385,7 @@
             this.colQuanLy.OptionsFilter.AllowAutoFilter = false;
             this.colQuanLy.OptionsFilter.AllowFilter = false;
             this.colQuanLy.Visible = true;
-            this.colQuanLy.VisibleIndex = 4;
+            this.colQuanLy.VisibleIndex = 2;
             this.colQuanLy.Width = 85;
             // 
             // colQuanLyCheckEdit
@@ -667,7 +402,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(900, 290);
+            this.groupControl2.Size = new System.Drawing.Size(900, 382);
             this.groupControl2.TabIndex = 6;
             this.groupControl2.Text = "groupControl2";
             // 
@@ -683,15 +418,6 @@
             this.Text = "Nhà phân phối";
             ((System.ComponentModel.ISupportInitialize)(this.chkQuanLy.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNganHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtWebsite.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtFax.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEmail.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNguoiDaiDien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTaiKhoan.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMST.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSDT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDiaChi.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenKhachHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaKhachHang.Properties)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -711,16 +437,7 @@
 
         private DevExpress.XtraEditors.CheckEdit chkQuanLy;
         private DevExpress.XtraEditors.TextEdit txtGhiChu;
-        private DevExpress.XtraEditors.TextEdit txtNganHang;
-        private DevExpress.XtraEditors.TextEdit txtWebsite;
-        private DevExpress.XtraEditors.TextEdit txtFax;
-        private DevExpress.XtraEditors.TextEdit txtEmail;
-        private DevExpress.XtraEditors.TextEdit txtNguoiDaiDien;
-        private DevExpress.XtraEditors.TextEdit txtTaiKhoan;
-        private DevExpress.XtraEditors.TextEdit txtMST;
-        private DevExpress.XtraEditors.TextEdit txtSDT;
         private System.Windows.Forms.Button btnSua;
-        private DevExpress.XtraEditors.TextEdit txtDiaChi;
         private DevExpress.XtraEditors.TextEdit txtTenKhachHang;
         private DevExpress.XtraEditors.TextEdit txtMaKhachHang;
         private System.Windows.Forms.Button btnExcel;
@@ -729,16 +446,7 @@
         private System.Windows.Forms.Button btnDong;
         private System.Windows.Forms.Button btnThem;
         private DevExpress.XtraEditors.LabelControl labelControl12;
-        private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraEditors.LabelControl labelControl11;
-        private DevExpress.XtraEditors.LabelControl labelControl9;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraGrid.GridControl gridDVT;

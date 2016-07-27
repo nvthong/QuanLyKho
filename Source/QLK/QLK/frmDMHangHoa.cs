@@ -27,7 +27,7 @@ namespace QLK
             _frmDMHangHoa = this;
             loadData();
             lkuDonViTinh.Properties.DataSource = ClassController.layDSDonViTinh();
-            cbxKieuSize.Properties.DataSource = ClassController.layDSKieuSize();
+            //cbxKieuSize.Properties.DataSource = ClassController.layDSKieuSize();
         }
 
         public void updateLoaiHang(string pLhMa, string pLhTen)
@@ -91,14 +91,14 @@ namespace QLK
         {
             txtGhiChu.Properties.ReadOnly = !status;
             txtGiaBanLe.Properties.ReadOnly = !status;
-            txtGiaBanSi.Properties.ReadOnly = !status;
+            //txtGiaBanSi.Properties.ReadOnly = !status;
             txtGiaMua.Properties.ReadOnly = !status;
-            txtSize.Properties.ReadOnly = !status;
-            txtSize.Properties.ReadOnly = !status;
+            //txtSize.Properties.ReadOnly = !status;
+            //txtSize.Properties.ReadOnly = !status;
             txtLoaiHangMa.Properties.ReadOnly = !status;
             //txtLoaiHangTen.Properties.ReadOnly = status;
             //txtMaHang.Properties.ReadOnly = status;
-            txtMauSac.Properties.ReadOnly = !status;
+            //txtMauSac.Properties.ReadOnly = !status;
             txtNPPMa.Properties.ReadOnly = !status;
             //txtNPPTen.Properties.ReadOnly = status;
             //txtNuocSanXuatTen.Properties.ReadOnly = status;
@@ -106,31 +106,31 @@ namespace QLK
             txtNhomHangMa.Properties.ReadOnly = !status;
             //txtNhomHangTen.Properties.ReadOnly = status;
             txtTenHang.Properties.ReadOnly = !status;
-            txtTenNgan.Properties.ReadOnly = !status;
+            //txtTenNgan.Properties.ReadOnly = !status;
             txtTonToiThieu.Properties.ReadOnly = !status;
-            txtThanhPhan.Properties.ReadOnly = !status;
-            txtKhuyenMai.Properties.ReadOnly = !status;
+            //txtThanhPhan.Properties.ReadOnly = !status;
+            //txtKhuyenMai.Properties.ReadOnly = !status;
             lkuDonViTinh.Properties.ReadOnly = !status;
-            cbxKieuSize.Properties.ReadOnly = !status;
-            dateKMTuNgay.Properties.ReadOnly = !status;
-            dateKMDenNgay.Properties.ReadOnly = !status;
-            dateHanSuDung.Properties.ReadOnly = !status;
+            //cbxKieuSize.Properties.ReadOnly = !status;
+            //dateKMTuNgay.Properties.ReadOnly = !status;
+            //dateKMDenNgay.Properties.ReadOnly = !status;
+            //dateHanSuDung.Properties.ReadOnly = !status;
             chkQuanLy.Properties.ReadOnly = !status;
-            spinEditHSD.Properties.ReadOnly = !status;
+            //spinEditHSD.Properties.ReadOnly = !status;
         }
 
         public void setEmptyField()
         {
             txtGhiChu.Text = "";
             txtGiaBanLe.Text = "";
-            txtGiaBanSi.Text = "";
+            //txtGiaBanSi.Text = "";
             txtGiaMua.Text = "";
-            txtSize.Text = "";
-            txtSize.Text = "";
+            //txtSize.Text = "";
+            //txtSize.Text = "";
             txtLoaiHangMa.Text = "";
             txtLoaiHangTen.Text = "";
             txtMaHang.Text = "";
-            txtMauSac.Text = "";
+            //txtMauSac.Text = "";
             txtNPPMa.Text = "";
             txtNPPTen.Text = "";
             txtNuocSanXuatTen.Text = "";
@@ -138,13 +138,13 @@ namespace QLK
             txtNhomHangMa.Text = "";
             txtNhomHangTen.Text = "";
             txtTenHang.Text = "";
-            txtTenNgan.Text = "";
+            //txtTenNgan.Text = "";
             txtTonToiThieu.Text = "";
-            txtThanhPhan.Text = "";
-            txtKhuyenMai.Text = "";
-            dateHanSuDung.Text = "";
-            dateKMDenNgay.Text = "";
-            dateKMTuNgay.Text = "";
+            //txtThanhPhan.Text = "";
+            //txtKhuyenMai.Text = "";
+            //dateHanSuDung.Text = "";
+            //dateKMDenNgay.Text = "";
+            //dateKMTuNgay.Text = "";
             //lkuDonViTinh.ResetText();
             //cbxKieuSize.ResetText();
         }
@@ -162,13 +162,13 @@ namespace QLK
             {
                 txtGhiChu.Text = gridView1.GetRowCellValue(pRow, "HH_GHICHU").ToString();
                 txtGiaBanLe.Text = ((int)double.Parse(gridView1.GetRowCellValue(pRow, "HH_GIABANLE").ToString())).ToString();
-                txtGiaBanSi.Text = ((int)double.Parse(gridView1.GetRowCellValue(pRow, "HH_GIABANSI").ToString())).ToString();
+                //txtGiaBanSi.Text = ((int)double.Parse(gridView1.GetRowCellValue(pRow, "HH_GIABANSI").ToString())).ToString();
                 txtGiaMua.Text = ((int)double.Parse(gridView1.GetRowCellValue(pRow, "HH_GIAMUA").ToString())).ToString();
-                txtSize.Text = gridView1.GetRowCellValue(pRow, "HH_SIZE").ToString();
+                //txtSize.Text = gridView1.GetRowCellValue(pRow, "HH_SIZE").ToString();
                 txtLoaiHangMa.Text = gridView1.GetRowCellValue(pRow, "LH_MALOAI").ToString();
                 txtLoaiHangTen.Text = gridView1.GetRowCellValue(pRow, "LH_TENLOAI").ToString();
                 txtMaHang.Text = gridView1.GetRowCellValue(pRow, "HH_MAHANG").ToString();
-                txtMauSac.Text = gridView1.GetRowCellValue(pRow, "HH_MAUSAC").ToString();
+                //txtMauSac.Text = gridView1.GetRowCellValue(pRow, "HH_MAUSAC").ToString();
                 txtNPPMa.Text = gridView1.GetRowCellValue(pRow, "NPP_MANPP").ToString();
                 txtNPPTen.Text = gridView1.GetRowCellValue(pRow, "NPP_TENNPP").ToString();
                 txtNuocSanXuatTen.Text = gridView1.GetRowCellValue(pRow, "QG_TENQUOCGIA").ToString();
@@ -176,39 +176,39 @@ namespace QLK
                 txtNhomHangMa.Text = gridView1.GetRowCellValue(pRow, "NH_MANHOM").ToString();
                 txtNhomHangTen.Text = gridView1.GetRowCellValue(pRow, "NH_TENNHOM").ToString();
                 txtTenHang.Text = gridView1.GetRowCellValue(pRow, "HH_TENHANG").ToString();
-                txtTenNgan.Text = gridView1.GetRowCellValue(pRow, "HH_TENNGAN").ToString();
+                //txtTenNgan.Text = gridView1.GetRowCellValue(pRow, "HH_TENNGAN").ToString();
                 txtTonToiThieu.Text = gridView1.GetRowCellValue(pRow, "HH_TONTOITHIEU").ToString();
-                txtThanhPhan.Text = gridView1.GetRowCellValue(pRow, "HH_THANHPHAN").ToString();
-                txtKhuyenMai.Text = gridView1.GetRowCellValue(pRow, "HH_KHUYENMAI").ToString();
+                //txtThanhPhan.Text = gridView1.GetRowCellValue(pRow, "HH_THANHPHAN").ToString();
+                //txtKhuyenMai.Text = gridView1.GetRowCellValue(pRow, "HH_KHUYENMAI").ToString();
                 lkuDonViTinh.EditValue = gridView1.GetRowCellValue(pRow, "DVT_MADONVI").ToString();
-                cbxKieuSize.EditValue = Int32.Parse(gridView1.GetRowCellValue(pRow, "HH_LOAISIZE").ToString());
+                //cbxKieuSize.EditValue = Int32.Parse(gridView1.GetRowCellValue(pRow, "HH_LOAISIZE").ToString());
 
-                if (gridView1.GetRowCellValue(pRow, "HH_HANSUDUNG").ToString() != "")
-                {
-                    dateHanSuDung.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_HANSUDUNG").ToString());
-                }
-                else
-                {
-                    dateHanSuDung.Text = "";
-                }
+                //if (gridView1.GetRowCellValue(pRow, "HH_HANSUDUNG").ToString() != "")
+                //{
+                //    dateHanSuDung.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_HANSUDUNG").ToString());
+                //}
+                //else
+                //{
+                //    dateHanSuDung.Text = "";
+                //}
 
-                if (gridView1.GetRowCellValue(pRow, "HH_KMDENNGAY").ToString() != "")
-                {
-                    dateKMDenNgay.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_KMDENNGAY").ToString());
-                }
-                else
-                {
-                    dateKMDenNgay.Text = "";
-                }
+                //if (gridView1.GetRowCellValue(pRow, "HH_KMDENNGAY").ToString() != "")
+                //{
+                //    dateKMDenNgay.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_KMDENNGAY").ToString());
+                //}
+                //else
+                //{
+                //    dateKMDenNgay.Text = "";
+                //}
 
-                if (gridView1.GetRowCellValue(pRow, "HH_KMTUNGAY").ToString() != "")
-                {
-                    dateKMTuNgay.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_KMTUNGAY").ToString());
-                }
-                else
-                {
-                    dateKMTuNgay.Text = "";
-                }
+                //if (gridView1.GetRowCellValue(pRow, "HH_KMTUNGAY").ToString() != "")
+                //{
+                //    dateKMTuNgay.DateTime = DateTime.Parse(gridView1.GetRowCellValue(pRow, "HH_KMTUNGAY").ToString());
+                //}
+                //else
+                //{
+                //    dateKMTuNgay.Text = "";
+                //}
 
 
                 if (gridView1.GetRowCellValue(pRow, "HH_KICHHOAT").ToString() == "0")
@@ -219,7 +219,7 @@ namespace QLK
                 {
                     chkQuanLy.Checked = true;
                 }
-                spinEditHSD.Value = gridView1.GetRowCellValue(pRow, "HH_HSD").ToString() != "" ? int.Parse(gridView1.GetRowCellValue(pRow, "HH_HSD").ToString()) : 0;
+                //spinEditHSD.Value = gridView1.GetRowCellValue(pRow, "HH_HSD").ToString() != "" ? int.Parse(gridView1.GetRowCellValue(pRow, "HH_HSD").ToString()) : 0;
             }
         }
 
@@ -572,28 +572,28 @@ namespace QLK
                     DMHH_HANGHOA objHH = new DMHH_HANGHOA();
                     objHH.HH_GHICHU = txtGhiChu.Text.Trim();
                     objHH.HH_GIABANLE = txtGiaBanLe.Text.Trim() != "" ? Decimal.Parse(txtGiaBanLe.Text.Trim()) : 0;
-                    objHH.HH_GIABANSI = txtGiaBanSi.Text.Trim() != "" ? Decimal.Parse(txtGiaBanSi.Text.Trim()) : 0;
+                    //objHH.HH_GIABANSI = txtGiaBanSi.Text.Trim() != "" ? Decimal.Parse(txtGiaBanSi.Text.Trim()) : 0;
                     objHH.HH_GIAMUA = txtGiaMua.Text.Trim() != "" ? Decimal.Parse(txtGiaMua.Text.Trim()) : 0;
-                    objHH.HH_HANSUDUNG = dateHanSuDung.DateTime.Date;
+                    //objHH.HH_HANSUDUNG = dateHanSuDung.DateTime.Date;
                     objHH.HH_KICHHOAT = chkQuanLy.Checked ? 1 : 0;
-                    objHH.HH_KMDENNGAY = dateKMDenNgay.DateTime.Date;
-                    objHH.HH_KMTUNGAY = dateKMTuNgay.DateTime.Date;
-                    objHH.HH_KHUYENMAI = txtKhuyenMai.Text.Trim() != "" ? Double.Parse(txtKhuyenMai.Text.Trim()) : 0;
-                    objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
+                    //objHH.HH_KMDENNGAY = dateKMDenNgay.DateTime.Date;
+                    //objHH.HH_KMTUNGAY = dateKMTuNgay.DateTime.Date;
+                    //objHH.HH_KHUYENMAI = txtKhuyenMai.Text.Trim() != "" ? Double.Parse(txtKhuyenMai.Text.Trim()) : 0;
+                    //objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
                     objHH.HH_MAHANG = txtMaHang.Text.Trim();
-                    objHH.HH_MAUSAC = txtMauSac.Text.Trim();
-                    objHH.HH_SIZE = txtSize.Text.Trim();
-                    objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
+                    //objHH.HH_MAUSAC = txtMauSac.Text.Trim();
+                    //objHH.HH_SIZE = txtSize.Text.Trim();
+                    //objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
                     objHH.HH_TENHANG = txtTenHang.Text.Trim();
                     objHH.HH_TONTOITHIEU = txtTonToiThieu.Text.Trim() != "" ? Double.Parse(txtTonToiThieu.Text.Trim()) : 0;
-                    objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
+                    //objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
                     //objHH.KH_MAKHO = "KHO000001";
                     objHH.LH_MALOAI = txtLoaiHangMa.Text.Trim();
                     objHH.NPP_MANPP = txtNPPMa.Text.Trim();
                     objHH.NH_MANHOM = txtNhomHangMa.Text.Trim();
                     objHH.QG_MAQUOCGIA = txtNuocSXMa.Text.Trim();
                     objHH.DVT_MADONVI = lkuDonViTinh.EditValue == null ? "" : lkuDonViTinh.EditValue.ToString();
-                    objHH.HH_HSD = (int) spinEditHSD.Value;
+                    //objHH.HH_HSD = (int) spinEditHSD.Value;
 
                     if (objHH.HH_TENHANG == "")
                     {
@@ -714,28 +714,28 @@ namespace QLK
                     DMHH_HANGHOA objHH = new DMHH_HANGHOA();
                     objHH.HH_GHICHU = txtGhiChu.Text.Trim();
                     objHH.HH_GIABANLE = txtGiaBanLe.Text.Trim() != "" ? Decimal.Parse(txtGiaBanLe.Text.Trim()) : 0;
-                    objHH.HH_GIABANSI = txtGiaBanSi.Text.Trim() != "" ? Decimal.Parse(txtGiaBanSi.Text.Trim()) : 0;
+                    //objHH.HH_GIABANSI = txtGiaBanSi.Text.Trim() != "" ? Decimal.Parse(txtGiaBanSi.Text.Trim()) : 0;
                     objHH.HH_GIAMUA = txtGiaMua.Text.Trim() != "" ? Decimal.Parse(txtGiaMua.Text.Trim()) : 0;
-                    objHH.HH_HANSUDUNG = dateHanSuDung.DateTime.Date;
+                    //objHH.HH_HANSUDUNG = dateHanSuDung.DateTime.Date;
                     objHH.HH_KICHHOAT = chkQuanLy.Checked ? 1 : 0;
-                    objHH.HH_KMDENNGAY = dateKMDenNgay.DateTime.Date;
-                    objHH.HH_KMTUNGAY = dateKMTuNgay.DateTime.Date;
-                    objHH.HH_KHUYENMAI = txtKhuyenMai.Text.Trim() != "" ? Double.Parse(txtKhuyenMai.Text.Trim()) : 0;
-                    objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
+                    //objHH.HH_KMDENNGAY = dateKMDenNgay.DateTime.Date;
+                    //objHH.HH_KMTUNGAY = dateKMTuNgay.DateTime.Date;
+                    //objHH.HH_KHUYENMAI = txtKhuyenMai.Text.Trim() != "" ? Double.Parse(txtKhuyenMai.Text.Trim()) : 0;
+                    //objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
                     objHH.HH_MAHANG = txtMaHang.Text.Trim();
-                    objHH.HH_MAUSAC = txtMauSac.Text.Trim();
-                    objHH.HH_SIZE = txtSize.Text.Trim();
-                    objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
+                    //objHH.HH_MAUSAC = txtMauSac.Text.Trim();
+                    //objHH.HH_SIZE = txtSize.Text.Trim();
+                    //objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
                     objHH.HH_TENHANG = txtTenHang.Text.Trim();
                     objHH.HH_TONTOITHIEU = txtTonToiThieu.Text.Trim() != "" ? Double.Parse(txtTonToiThieu.Text.Trim()) : 0;
-                    objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
+                    //objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
                     //objHH.KH_MAKHO = "KHO000001";
                     objHH.LH_MALOAI = txtLoaiHangMa.Text.Trim();
                     objHH.NPP_MANPP = txtNPPMa.Text.Trim();
                     objHH.NH_MANHOM = txtNhomHangMa.Text.Trim();
                     objHH.QG_MAQUOCGIA = txtNuocSXMa.Text.Trim();
                     objHH.DVT_MADONVI = lkuDonViTinh.EditValue == null ? "" : lkuDonViTinh.EditValue.ToString();
-                    objHH.HH_HSD = (int)spinEditHSD.Value;
+                    //objHH.HH_HSD = (int)spinEditHSD.Value;
 
                     if (objHH.HH_TENHANG == "")
                     {

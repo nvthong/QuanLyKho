@@ -33,8 +33,6 @@
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnExcell = new DevExpress.XtraEditors.SimpleButton();
             this.btnXem = new DevExpress.XtraEditors.SimpleButton();
-            this.lkKho = new DevExpress.XtraEditors.LookUpEdit();
-            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cbxCaNam = new DevExpress.XtraEditors.CheckEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
@@ -61,7 +59,6 @@
             this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkKho.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCaNam.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).BeginInit();
@@ -78,8 +75,6 @@
             this.groupControl1.Controls.Add(this.btnDong);
             this.groupControl1.Controls.Add(this.btnExcell);
             this.groupControl1.Controls.Add(this.btnXem);
-            this.groupControl1.Controls.Add(this.lkKho);
-            this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.cbxCaNam);
             this.groupControl1.Controls.Add(this.labelControl2);
             this.groupControl1.Controls.Add(this.labelControl1);
@@ -131,38 +126,10 @@
             this.btnXem.Text = "Xem";
             this.btnXem.Click += new System.EventHandler(this.btnXem_Click);
             // 
-            // lkKho
-            // 
-            this.lkKho.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lkKho.Location = new System.Drawing.Point(213, 12);
-            this.lkKho.Name = "lkKho";
-            this.lkKho.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.lkKho.Properties.Appearance.Options.UseFont = true;
-            this.lkKho.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.lkKho.Properties.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KH_MAKHO", 5, "Mã"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("KH_TENKHO", "Tên kho")});
-            this.lkKho.Properties.DisplayMember = "KH_TENKHO";
-            this.lkKho.Properties.NullText = "";
-            this.lkKho.Properties.ValueMember = "KH_MAKHO";
-            this.lkKho.Size = new System.Drawing.Size(150, 22);
-            this.lkKho.TabIndex = 5;
-            // 
-            // labelControl3
-            // 
-            this.labelControl3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl3.Location = new System.Drawing.Point(185, 15);
-            this.labelControl3.Name = "labelControl3";
-            this.labelControl3.Size = new System.Drawing.Size(26, 16);
-            this.labelControl3.TabIndex = 4;
-            this.labelControl3.Text = "Kho:";
-            // 
             // cbxCaNam
             // 
             this.cbxCaNam.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbxCaNam.Location = new System.Drawing.Point(705, 13);
+            this.cbxCaNam.Location = new System.Drawing.Point(629, 13);
             this.cbxCaNam.Name = "cbxCaNam";
             this.cbxCaNam.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.cbxCaNam.Properties.Appearance.Options.UseFont = true;
@@ -174,7 +141,7 @@
             // 
             this.labelControl2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl2.Location = new System.Drawing.Point(534, 15);
+            this.labelControl2.Location = new System.Drawing.Point(458, 15);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(59, 16);
             this.labelControl2.TabIndex = 1;
@@ -184,7 +151,7 @@
             // 
             this.labelControl1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl1.Location = new System.Drawing.Point(370, 15);
+            this.labelControl1.Location = new System.Drawing.Point(294, 15);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(52, 16);
             this.labelControl1.TabIndex = 0;
@@ -194,7 +161,7 @@
             // 
             this.dateDenNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateDenNgay.EditValue = null;
-            this.dateDenNgay.Location = new System.Drawing.Point(599, 12);
+            this.dateDenNgay.Location = new System.Drawing.Point(523, 12);
             this.dateDenNgay.Name = "dateDenNgay";
             this.dateDenNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateDenNgay.Properties.Appearance.Options.UseFont = true;
@@ -213,7 +180,7 @@
             // 
             this.dateTuNgay.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dateTuNgay.EditValue = null;
-            this.dateTuNgay.Location = new System.Drawing.Point(428, 12);
+            this.dateTuNgay.Location = new System.Drawing.Point(352, 12);
             this.dateTuNgay.Name = "dateTuNgay";
             this.dateTuNgay.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.dateTuNgay.Properties.Appearance.Options.UseFont = true;
@@ -585,7 +552,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.lkKho.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbxCaNam.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateDenNgay.Properties)).EndInit();
@@ -603,8 +569,6 @@
 
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.LookUpEdit lkKho;
-        private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.CheckEdit cbxCaNam;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.LabelControl labelControl1;

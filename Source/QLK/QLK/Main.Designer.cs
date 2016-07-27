@@ -193,6 +193,7 @@
             this.btnXuaBanSi.Name = "btnXuaBanSi";
             this.btnXuaBanSi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnXuaBanSi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnXuaBanSi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuaBanSi_ItemClick);
             // 
             // btnXuatBanLe
@@ -209,7 +210,8 @@
             this.btnXuatBanLe.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10F);
             this.btnXuatBanLe.ItemAppearance.Pressed.Options.UseFont = true;
             this.btnXuatBanLe.Name = "btnXuatBanLe";
-            this.btnXuatBanLe.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            this.btnXuatBanLe.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnXuatBanLe.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatBanLe_ItemClick);
             // 
             // btnBangKeBanSi
@@ -229,6 +231,7 @@
             this.btnBangKeBanSi.Name = "btnBangKeBanSi";
             this.btnBangKeBanSi.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBangKeBanSi.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnBangKeBanSi.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangKeBanSi_ItemClick);
             // 
             // btnBangKeBanLe
@@ -284,6 +287,7 @@
             this.btnNhapKhac.Name = "btnNhapKhac";
             this.btnNhapKhac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnNhapKhac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnNhapKhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapKhac_ItemClick);
             // 
             // btnBangKeNhapKho
@@ -318,6 +322,7 @@
             this.btnBangKeNhapKhac.Name = "btnBangKeNhapKhac";
             this.btnBangKeNhapKhac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBangKeNhapKhac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnBangKeNhapKhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangKeNhapKhac_ItemClick);
             // 
             // btnTonKhoHangHoa
@@ -356,6 +361,7 @@
             this.btnHanSuDung.Name = "btnHanSuDung";
             this.btnHanSuDung.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnHanSuDung.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnHanSuDung.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnHanSuDung_ItemClick);
             // 
             // btnDinhMucTonKho
@@ -498,6 +504,7 @@
             this.btnDanhMucKhoHang.Name = "btnDanhMucKhoHang";
             this.btnDanhMucKhoHang.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnDanhMucKhoHang.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnDanhMucKhoHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhMucKhoHang_ItemClick);
             // 
             // btnDanhMucNuocSanXuat
@@ -797,6 +804,7 @@
             this.btnXuatKhac.Name = "btnXuatKhac";
             this.btnXuatKhac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnXuatKhac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnXuatKhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatKhac_ItemClick);
             // 
             // btnBangKeXuatKhac
@@ -816,6 +824,7 @@
             this.btnBangKeXuatKhac.Name = "btnBangKeXuatKhac";
             this.btnBangKeXuatKhac.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.btnBangKeXuatKhac.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.btnBangKeXuatKhac.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnBangKeXuatKhac_ItemClick);
             // 
             // barButtonItem5
@@ -882,11 +891,12 @@
             this.ribbonPageGroup2});
             this.rpXuatBan.Image = ((System.Drawing.Image)(resources.GetObject("rpXuatBan.Image")));
             this.rpXuatBan.Name = "rpXuatBan";
-            this.rpXuatBan.Text = "Xuất bán";
+            this.rpXuatBan.Text = "Hoá đơn";
             // 
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXuatBanLe);
+            this.ribbonPageGroup1.ItemLinks.Add(this.btnBangKeBanLe);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXuaBanSi);
             this.ribbonPageGroup1.ItemLinks.Add(this.btnXuatKhac);
             this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem5);
@@ -897,12 +907,12 @@
             // 
             // ribbonPageGroup2
             // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeBanLe);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeBanSi);
             this.ribbonPageGroup2.ItemLinks.Add(this.btnBangKeXuatKhac);
             this.ribbonPageGroup2.ItemLinks.Add(this.barButtonItem8);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Bảng kê";
+            this.ribbonPageGroup2.Visible = false;
             // 
             // rpNhapKho
             // 
@@ -918,6 +928,7 @@
             // ribbonPageGroup3
             // 
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNhapKho);
+            this.ribbonPageGroup3.ItemLinks.Add(this.btnBangKeNhapKho);
             this.ribbonPageGroup3.ItemLinks.Add(this.btnNhapKhac);
             this.ribbonPageGroup3.ItemLinks.Add(this.barButtonItem9);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
@@ -925,10 +936,10 @@
             // 
             // ribbonPageGroup4
             // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.btnBangKeNhapKho);
             this.ribbonPageGroup4.ItemLinks.Add(this.btnBangKeNhapKhac);
             this.ribbonPageGroup4.Name = "ribbonPageGroup4";
             this.ribbonPageGroup4.Text = "Bảng kê";
+            this.ribbonPageGroup4.Visible = false;
             // 
             // rpBaoCao
             // 

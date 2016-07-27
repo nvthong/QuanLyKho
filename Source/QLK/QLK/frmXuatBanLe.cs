@@ -82,7 +82,7 @@ namespace QLK
         {
             dateNgayHoaDon.Properties.ReadOnly = !pStatus;
             txtKhachHangMa.Properties.ReadOnly = !pStatus;
-            txtXuatKhoMa.Properties.ReadOnly = !pStatus;
+            //txtXuatKhoMa.Properties.ReadOnly = !pStatus;
             txtGhiChu.Properties.ReadOnly = !pStatus;
         }
 
@@ -119,8 +119,8 @@ namespace QLK
             dateNgayHoaDon.Text = "";
             txtKhachHangMa.Text = "";
             txtKhachHangTen.Text = "";
-            txtXuatKhoMa.Text = "";
-            txtXuatKhoTen.Text = "";
+            //txtXuatKhoMa.Text = "";
+            //txtXuatKhoTen.Text = "";
             txtGhiChu.Text = "";
         }
 
@@ -128,7 +128,7 @@ namespace QLK
         {
             txtMaHang.Text = "";
             txtTenHang.Text = "";
-            txtDonViTinh.Text = "";
+            //txtDonViTinh.Text = "";
             txtSoLuong.Text = "";
             txtGiaBan.Text = "";
             txtThanhTien.Text = "";
@@ -155,13 +155,15 @@ namespace QLK
                     vIdHH = gridViewHangHoa.GetRowCellValue(pRowNumber, "ID").ToString();
                     txtMaHang.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_MAHANG").ToString();
                     txtTenHang.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_TENHANG").ToString();
-                    txtDonViTinh.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "DVT_TENDONVI").ToString();
+                    //txtDonViTinh.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "DVT_TENDONVI").ToString();
                     txtGiaBan.Text = double.Parse(gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_GIABAN").ToString()).ToString();
                     txtSoLuong.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_SOLUONG").ToString();
                     txtThanhTien.Text = double.Parse(gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_THANHTIEN").ToString()).ToString();
+                    //txtTonKho.Text = ClassController.layTonKhoHangHoa(
+                    //    gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_MAHANG").ToString(),
+                    //    txtXuatKhoMa.Text.Trim()).ToString();
                     txtTonKho.Text = ClassController.layTonKhoHangHoa(
-                        gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_MAHANG").ToString(),
-                        txtXuatKhoMa.Text.Trim()).ToString();
+                        gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_MAHANG").ToString(), "KHO000001").ToString();
                 }
             }
             catch (Exception ex)
@@ -181,8 +183,8 @@ namespace QLK
                     txtHoaDon.Text = objList[0].HDNX_SOHD;
                     txtKhachHangMa.Text = objList[0].NPP_MANPP;
                     txtKhachHangTen.Text = ClassController.layKhachHangTheoMa(objList[0].NPP_MANPP).NPP_TENNPP;
-                    txtXuatKhoMa.Text = objList[0].KH_MAKHO;
-                    txtXuatKhoTen.Text = ClassController.layKhoHangTheoMa(objList[0].KH_MAKHO).KH_TENKHO;
+                    //txtXuatKhoMa.Text = objList[0].KH_MAKHO;
+                    //txtXuatKhoTen.Text = ClassController.layKhoHangTheoMa(objList[0].KH_MAKHO).KH_TENKHO;
                     txtHoaDon.Text = objList[0].HDNX_SOHDNB;
                     dateNgayHoaDon.DateTime = objList[0].HDNX_NGAYHD;
                     txtGhiChu.Text = objList[0].HDNX_GHICHU;
@@ -403,7 +405,7 @@ namespace QLK
                         }
 
                         double vTonKho = 0;
-                        vTonKho = ClassController.layTonKhoHangHoaKhiSua(txtMaHang.Text.Trim(), txtHoaDon.Text.Trim(), txtXuatKhoMa.Text.Trim());
+                        vTonKho = ClassController.layTonKhoHangHoaKhiSua(txtMaHang.Text.Trim(), txtHoaDon.Text.Trim(), "KHO000001");
                         if (vTonKho < (double.Parse(txtSoLuong.Text.Trim()) + vSoLuongXuat))
                         {
                             MessageBox.Show("Tồn kho không đủ xuất");
@@ -450,7 +452,7 @@ namespace QLK
                     else
                     {
                         List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
-                        listHH = ClassController.layDSHangHoaNhapKhoByMaHang(txtXuatKhoMa.Text.Trim(), objHDNX.HH_MAHANG);
+                        listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
 
                         if (listHH.Count == 1)
                         {
@@ -630,7 +632,7 @@ namespace QLK
                         }
 
                         double vTonKho = 0;
-                        vTonKho = ClassController.layTonKhoHangHoaKhiSua(txtMaHang.Text.Trim(), txtHoaDon.Text.Trim(), txtXuatKhoMa.Text.Trim());
+                        vTonKho = ClassController.layTonKhoHangHoaKhiSua(txtMaHang.Text.Trim(), txtHoaDon.Text.Trim(), "KHO000001");
                         if (vTonKho < (double.Parse(txtSoLuong.Text.Trim()) + vSoLuongXuat))
                         {
                             MessageBox.Show("Tồn kho không đủ xuất");
@@ -640,7 +642,7 @@ namespace QLK
                     }
 
                     List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
-                    listHH = ClassController.layDSHangHoaNhapKhoByMaHang(txtXuatKhoMa.Text.Trim(), objHDNX.HH_MAHANG);
+                    listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
 
                     if (listHH.Count == 1)
                     {
@@ -892,12 +894,12 @@ namespace QLK
                         return;
                     }
 
-                    if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
-                    {
-                        MessageBox.Show("Vui lòng chọn kho xuất");
-                        txtXuatKhoMa.Focus();
-                        return;
-                    }
+                    //if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
+                    //{
+                    //    MessageBox.Show("Vui lòng chọn kho xuất");
+                    //    txtXuatKhoMa.Focus();
+                    //    return;
+                    //}
 
                     HD_NHAPXUAT obj = new HD_NHAPXUAT();
                     obj.HDNX_LOAIHD = "XL";
@@ -908,7 +910,7 @@ namespace QLK
                     obj.HDNX_SONGAYHD = Int32.Parse(dateNgayHoaDon.DateTime.Year + "" + dateNgayHoaDon.DateTime.Month + "" + dateNgayHoaDon.DateTime.Day);
                     obj.NPP_MANPP = txtKhachHangMa.Text.Trim();
                     obj.HDNX_GHICHU = txtGhiChu.Text.Trim();
-                    obj.KH_MAKHO = txtXuatKhoMa.Text.Trim();
+                    obj.KH_MAKHO = "KHO000001";
                     obj.HDNX_GIAMKHAC = -(txtGiamGiaKhac.Text.Trim() != "" ? Decimal.Parse(txtGiamGiaKhac.Text.Trim()) : 0);
                     obj.HDNX_KHACHDUA = txtTienKhachTra.Text.Trim() != "" ? Decimal.Parse(txtTienKhachTra.Text.Trim()) : 0;
                     obj.HDNX_THOILAI = txtTienThoiLai.Text.Trim() != "" ? Decimal.Parse(txtTienThoiLai.Text.Trim()) : 0;
@@ -958,12 +960,12 @@ namespace QLK
                             return;
                         }
 
-                        if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
-                        {
-                            MessageBox.Show("Vui lòng chọn kho xuất");
-                            txtXuatKhoMa.Focus();
-                            return;
-                        }
+                        //if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
+                        //{
+                        //    MessageBox.Show("Vui lòng chọn kho xuất");
+                        //    txtXuatKhoMa.Focus();
+                        //    return;
+                        //}
 
                         HD_NHAPXUAT objHDNX_OLD = new HD_NHAPXUAT();
                         objHDNX_OLD = ClassController.layThongTinHoaDonXuatLe(HDNX_SOHDNB);
@@ -989,7 +991,7 @@ namespace QLK
                         objHDNX_NEW.HDNX_SONGAYHD = Int32.Parse(dateNgayHoaDon.DateTime.Year + "" + dateNgayHoaDon.DateTime.Month + "" + dateNgayHoaDon.DateTime.Day);
                         objHDNX_NEW.NPP_MANPP = txtKhachHangMa.Text.Trim();
                         objHDNX_NEW.HDNX_GHICHU = txtGhiChu.Text.Trim();
-                        objHDNX_NEW.KH_MAKHO = txtXuatKhoMa.Text.Trim();
+                        objHDNX_NEW.KH_MAKHO = "KHO000001";
                         objHDNX_NEW.HDNX_GIAMKHAC = -(txtGiamGiaKhac.Text.Trim() != "" ? Decimal.Parse(txtGiamGiaKhac.Text.Trim()) : 0);
                         objHDNX_NEW.HDNX_KHACHDUA = txtTienKhachTra.Text.Trim() != "" ? Decimal.Parse(txtTienKhachTra.Text.Trim()) : 0;
                         objHDNX_NEW.HDNX_THOILAI = txtTienThoiLai.Text.Trim() != "" ? Decimal.Parse(txtTienThoiLai.Text.Trim()) : 0;
@@ -1414,31 +1416,31 @@ namespace QLK
             {
                 if (StatusButtonHD != "")
                 {
-                    if (txtXuatKhoMa.Text.Trim() == "")
-                    {
-                        frmShowNhapKho frm = new frmShowNhapKho();
-                        frm.ShowDialog(this);
-                        txtXuatKhoMa.Text = frm.dvtMa;
-                        txtXuatKhoTen.Text = frm.dvtTen;
-                    }
-                    else
-                    {
-                        DM_KHOHANG objKH = new DM_KHOHANG();
-                        objKH = ClassController.layKhoHangTheoMa(txtXuatKhoMa.Text.Trim());
-                        if (objKH != null && objKH.KH_MAKHO != "")
-                        {
-                            txtXuatKhoMa.Text = objKH.KH_MAKHO;
-                            txtXuatKhoTen.Text = objKH.KH_TENKHO;
-                        }
-                        else
-                        {
-                            frmShowNhapKho frm = new frmShowNhapKho();
-                            frm.ShowDialog(this);
-                            txtXuatKhoMa.Text = frm.dvtMa;
-                            txtXuatKhoTen.Text = frm.dvtTen;
-                            txtXuatKhoTen.Focus();
-                        }
-                    }
+                    //if (txtXuatKhoMa.Text.Trim() == "")
+                    //{
+                    //    frmShowNhapKho frm = new frmShowNhapKho();
+                    //    frm.ShowDialog(this);
+                    //    txtXuatKhoMa.Text = frm.dvtMa;
+                    //    txtXuatKhoTen.Text = frm.dvtTen;
+                    //}
+                    //else
+                    //{
+                    //    DM_KHOHANG objKH = new DM_KHOHANG();
+                    //    objKH = ClassController.layKhoHangTheoMa(txtXuatKhoMa.Text.Trim());
+                    //    if (objKH != null && objKH.KH_MAKHO != "")
+                    //    {
+                    //        txtXuatKhoMa.Text = objKH.KH_MAKHO;
+                    //        txtXuatKhoTen.Text = objKH.KH_TENKHO;
+                    //    }
+                    //    else
+                    //    {
+                    //        frmShowNhapKho frm = new frmShowNhapKho();
+                    //        frm.ShowDialog(this);
+                    //        txtXuatKhoMa.Text = frm.dvtMa;
+                    //        txtXuatKhoTen.Text = frm.dvtTen;
+                    //        txtXuatKhoTen.Focus();
+                    //    }
+                    //}
                 }
             }
         }
@@ -1449,15 +1451,15 @@ namespace QLK
             {
                 if (StatusButtonHD != "" && StatusButtonHH != "")
                 {
-                    if (txtXuatKhoMa.Text != "" || txtXuatKhoTen.Text != "")
-                    {
+                    //if (txtXuatKhoMa.Text != "" || txtXuatKhoTen.Text != "")
+                    //{
                         if (txtMaHang.Text.Trim() == "")
                         {
-                            frmShowHangHoa frm = new frmShowHangHoa(txtXuatKhoMa.Text.Trim());
+                            frmShowHangHoa frm = new frmShowHangHoa("KHO000001");
                             frm.ShowDialog(this);
                             if (frm.pHhMa != null)
                             {
-                                txtDonViTinh.Text = frm.pHhDVT;
+                                //txtDonViTinh.Text = frm.pHhDVT;
                                 txtGiaBan.Text = ((int)double.Parse(frm.pHhGiaBan)).ToString();
                                 txtMaHang.Text = frm.pHhMa;
                                 txtTenHang.Text = frm.pHhTen;
@@ -1476,19 +1478,19 @@ namespace QLK
                             {
                                 txtMaHang.Text = objHH.HH_MAHANG;
                                 txtTenHang.Text = objHH.HH_TENHANG;
-                                txtDonViTinh.Text = ClassController.layDonViTinhTheoMa(objHH.DVT_MADONVI).DVT_TENDONVI;
+                                //txtDonViTinh.Text = ClassController.layDonViTinhTheoMa(objHH.DVT_MADONVI).DVT_TENDONVI;
                                 txtGiaBan.Text = ((int)objHH.HH_GIABANLE).ToString();
-                                txtTonKho.Text = ClassController.layTonKhoHangHoa(objHH.HH_MAHANG, txtXuatKhoMa.Text.Trim()).ToString();
+                                txtTonKho.Text = ClassController.layTonKhoHangHoa(objHH.HH_MAHANG, "KHO000001").ToString();
                             }
                             else
                             {
-                                frmShowHangHoa frm = new frmShowHangHoa(txtXuatKhoMa.Text.Trim());
+                                frmShowHangHoa frm = new frmShowHangHoa("KHO000001");
                                 frm.ShowDialog(this);
                                 if (frm.pHhMa != null)
                                 {
                                     txtMaHang.Text = frm.pHhMa;
                                     txtTenHang.Text = frm.pHhTen;
-                                    txtDonViTinh.Text = frm.pHhDVT;
+                                    //txtDonViTinh.Text = frm.pHhDVT;
                                     txtGiaBan.Text = ((int)Double.Parse(frm.pHhGiaBan)).ToString();
                                     txtTonKho.Text = frm.pHhTonKho.ToString();
                                 }
@@ -1498,11 +1500,11 @@ namespace QLK
                                 }
                             }
                         }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Bạn chưa chọn kho xuất");
-                    }
+                    //}
+                    //else
+                    //{
+                    //    MessageBox.Show("Bạn chưa chọn kho xuất");
+                    //}
                 }
 
             }

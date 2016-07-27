@@ -53,33 +53,33 @@ namespace QLK
         {
             //txtMaKhachHang.Properties.ReadOnly = !status;
             txtTenKhachHang.Properties.ReadOnly = !status;
-            txtWebsite.Properties.ReadOnly = !status;
-            txtSDT.Properties.ReadOnly = !status;
+            //txtWebsite.Properties.ReadOnly = !status;
+            //txtSDT.Properties.ReadOnly = !status;
             txtGhiChu.Properties.ReadOnly = !status;
-            txtNguoiDaiDien.Properties.ReadOnly = !status;
-            txtNganHang.Properties.ReadOnly = !status;
-            txtMST.Properties.ReadOnly = !status;
-            txtFax.Properties.ReadOnly = !status;
-            txtEmail.Properties.ReadOnly = !status;
+            //txtNguoiDaiDien.Properties.ReadOnly = !status;
+            //txtNganHang.Properties.ReadOnly = !status;
+            //txtMST.Properties.ReadOnly = !status;
+            //txtFax.Properties.ReadOnly = !status;
+            //txtEmail.Properties.ReadOnly = !status;
             chkQuanLy.Properties.ReadOnly = !status;
-            txtDiaChi.Properties.ReadOnly = !status;
-            txtTaiKhoan.Properties.ReadOnly = !status;
+            //txtDiaChi.Properties.ReadOnly = !status;
+            //txtTaiKhoan.Properties.ReadOnly = !status;
         }
 
         public void setEmptyField()
         {
             txtMaKhachHang.Text = "";
             txtTenKhachHang.Text = "";
-            txtWebsite.Text = "";
-            txtSDT.Text = "";
+            //txtWebsite.Text = "";
+            //txtSDT.Text = "";
             txtGhiChu.Text = "";
-            txtNguoiDaiDien.Text = "";
-            txtNganHang.Text = "";
-            txtMST.Text = "";
-            txtFax.Text = "";
-            txtEmail.Text = "";
-            txtTaiKhoan.Text = "";
-            txtDiaChi.Text = "";
+            //txtNguoiDaiDien.Text = "";
+            //txtNganHang.Text = "";
+            //txtMST.Text = "";
+            //txtFax.Text = "";
+            //txtEmail.Text = "";
+            //txtTaiKhoan.Text = "";
+            //txtDiaChi.Text = "";
         }
 
         public void setStatusButton(bool status)
@@ -126,18 +126,18 @@ namespace QLK
         {
             if (gridView1.GetRowCellValue(pRow, "NPP_MANPP") != null)
             {
-                txtDiaChi.Text = gridView1.GetRowCellValue(pRow, "NPP_DIACHI").ToString();
-                txtEmail.Text = gridView1.GetRowCellValue(pRow, "NPP_EMAIL").ToString();
-                txtFax.Text = gridView1.GetRowCellValue(pRow, "NPP_FAX").ToString();
+                //txtDiaChi.Text = gridView1.GetRowCellValue(pRow, "NPP_DIACHI").ToString();
+                //txtEmail.Text = gridView1.GetRowCellValue(pRow, "NPP_EMAIL").ToString();
+                //txtFax.Text = gridView1.GetRowCellValue(pRow, "NPP_FAX").ToString();
                 txtGhiChu.Text = gridView1.GetRowCellValue(pRow, "NPP_GHICHU").ToString();
                 txtMaKhachHang.Text = gridView1.GetRowCellValue(pRow, "NPP_MANPP").ToString();
-                txtMST.Text = gridView1.GetRowCellValue(pRow, "NPP_MST").ToString();
-                txtNganHang.Text = gridView1.GetRowCellValue(pRow, "NPP_NGANHANG").ToString();
-                txtNguoiDaiDien.Text = gridView1.GetRowCellValue(pRow, "NPP_NGUOIDAIDIEN").ToString();
-                txtSDT.Text = gridView1.GetRowCellValue(pRow, "NPP_DIENTHOAI").ToString();
-                txtTaiKhoan.Text = gridView1.GetRowCellValue(pRow, "NPP_TAIKHOAN").ToString();
+                //txtMST.Text = gridView1.GetRowCellValue(pRow, "NPP_MST").ToString();
+                //txtNganHang.Text = gridView1.GetRowCellValue(pRow, "NPP_NGANHANG").ToString();
+                //txtNguoiDaiDien.Text = gridView1.GetRowCellValue(pRow, "NPP_NGUOIDAIDIEN").ToString();
+                //txtSDT.Text = gridView1.GetRowCellValue(pRow, "NPP_DIENTHOAI").ToString();
+                //txtTaiKhoan.Text = gridView1.GetRowCellValue(pRow, "NPP_TAIKHOAN").ToString();
                 txtTenKhachHang.Text = gridView1.GetRowCellValue(pRow, "NPP_TENNPP").ToString();
-                txtWebsite.Text = gridView1.GetRowCellValue(pRow, "NPP_WEBSITE").ToString();
+                //txtWebsite.Text = gridView1.GetRowCellValue(pRow, "NPP_WEBSITE").ToString();
                 if (gridView1.GetRowCellValue(pRow, "NPP_KICHHOAT").ToString() == "0")
                 {
                     chkQuanLy.Checked = false;
@@ -327,19 +327,19 @@ namespace QLK
                 if (StatusButton == "Them")
                 {
                     DM_NHAPHANPHOI objNPP = new DM_NHAPHANPHOI();
-                    objNPP.NPP_DIACHI = txtDiaChi.Text.Trim();
-                    objNPP.NPP_DIENTHOAI = txtSDT.Text.Trim();
-                    objNPP.NPP_EMAIL = txtEmail.Text.Trim();
-                    objNPP.NPP_FAX = txtFax.Text.Trim();
+                    //objNPP.NPP_DIACHI = txtDiaChi.Text.Trim();
+                    //objNPP.NPP_DIENTHOAI = txtSDT.Text.Trim();
+                    //objNPP.NPP_EMAIL = txtEmail.Text.Trim();
+                    //objNPP.NPP_FAX = txtFax.Text.Trim();
                     objNPP.NPP_GHICHU = txtGhiChu.Text.Trim();
-                    objNPP.NPP_WEBSITE = txtWebsite.Text.Trim();
+                    //objNPP.NPP_WEBSITE = txtWebsite.Text.Trim();
                     objNPP.NPP_LOAIKH = 1; //0: khách hàng/ 1:Nhà phân phối
                     objNPP.NPP_LOAINPP = 0;
                     objNPP.NPP_MANPP = txtMaKhachHang.Text.Trim();
-                    objNPP.NPP_MST = txtMST.Text.Trim();
-                    objNPP.NPP_NGANHANG = txtNganHang.Text.Trim();
-                    objNPP.NPP_NGUOIDAIDIEN = txtNguoiDaiDien.Text.Trim();
-                    objNPP.NPP_TAIKHOAN = txtTaiKhoan.Text.Trim();
+                    //objNPP.NPP_MST = txtMST.Text.Trim();
+                    //objNPP.NPP_NGANHANG = txtNganHang.Text.Trim();
+                    //objNPP.NPP_NGUOIDAIDIEN = txtNguoiDaiDien.Text.Trim();
+                    //objNPP.NPP_TAIKHOAN = txtTaiKhoan.Text.Trim();
                     objNPP.NPP_TENNPP = txtTenKhachHang.Text.Trim();
                     objNPP.NPP_KICHHOAT = chkQuanLy.Checked ? 1 : 0;
 
@@ -412,19 +412,19 @@ namespace QLK
                 else if (StatusButton == "Sua")
                 {
                     DM_NHAPHANPHOI objNPP = new DM_NHAPHANPHOI();
-                    objNPP.NPP_DIACHI = txtDiaChi.Text.Trim();
-                    objNPP.NPP_DIENTHOAI = txtSDT.Text.Trim();
-                    objNPP.NPP_EMAIL = txtEmail.Text.Trim();
-                    objNPP.NPP_FAX = txtFax.Text.Trim();
+                    //objNPP.NPP_DIACHI = txtDiaChi.Text.Trim();
+                    //objNPP.NPP_DIENTHOAI = txtSDT.Text.Trim();
+                    //objNPP.NPP_EMAIL = txtEmail.Text.Trim();
+                    //objNPP.NPP_FAX = txtFax.Text.Trim();
                     objNPP.NPP_GHICHU = txtGhiChu.Text.Trim();
-                    objNPP.NPP_WEBSITE = txtWebsite.Text.Trim();
+                    //objNPP.NPP_WEBSITE = txtWebsite.Text.Trim();
                     objNPP.NPP_LOAIKH = 1; //0: Khách hàng / 1: Nhà phân phối
                     objNPP.NPP_LOAINPP = 0;
                     objNPP.NPP_MANPP = txtMaKhachHang.Text.Trim();
-                    objNPP.NPP_MST = txtMST.Text.Trim();
-                    objNPP.NPP_NGANHANG = txtNganHang.Text.Trim();
-                    objNPP.NPP_NGUOIDAIDIEN = txtNguoiDaiDien.Text.Trim();
-                    objNPP.NPP_TAIKHOAN = txtTaiKhoan.Text.Trim();
+                    //objNPP.NPP_MST = txtMST.Text.Trim();
+                    //objNPP.NPP_NGANHANG = txtNganHang.Text.Trim();
+                    //objNPP.NPP_NGUOIDAIDIEN = txtNguoiDaiDien.Text.Trim();
+                    //objNPP.NPP_TAIKHOAN = txtTaiKhoan.Text.Trim();
                     objNPP.NPP_TENNPP = txtTenKhachHang.Text.Trim();
                     objNPP.NPP_KICHHOAT = chkQuanLy.Checked ? 1 : 0;
 

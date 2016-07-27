@@ -22,7 +22,7 @@ namespace QLK
         public frmBangKeNhapKho()
         {
             InitializeComponent();
-            lkKho.Properties.DataSource = ClassController.layDSKhoHang();
+            //lkKho.Properties.DataSource = ClassController.layDSKhoHang();
             dateDenNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
             dateTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
         }
@@ -624,19 +624,19 @@ namespace QLK
         {
             try
             {
-                if (lkKho.EditValue != null)
-                {
+                //if (lkKho.EditValue != null)
+                //{
                     dtBK.Clear();
-                    string vMaKho = lkKho.EditValue.ToString();
+                    string vMaKho = "KHO000001";
                     DateTime vTuNgay = dateTuNgay.DateTime;
                     DateTime vDenNgay = dateDenNgay.DateTime;
                     dtBK = ClassController.bangKeNhapKho(vMaKho, vTuNgay, vDenNgay, cbxCaNam.Checked);
                     gridControl1.DataSource = dtBK;
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn kho nhập");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Vui lòng chọn kho nhập");
+                //}
             }
             catch(Exception ex)
             {

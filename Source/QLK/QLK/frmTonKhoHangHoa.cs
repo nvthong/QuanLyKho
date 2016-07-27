@@ -21,7 +21,7 @@ namespace QLK
         public frmTonKhoHangHoa()
         {
             InitializeComponent();
-            lkKho.Properties.DataSource = ClassController.layDSKhoHang();
+            //lkKho.Properties.DataSource = ClassController.layDSKhoHang();
             dateDenNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
             dateTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
         }
@@ -363,9 +363,9 @@ namespace QLK
         {
             try
             {
-                if (lkKho.EditValue != null)
-                {
-                    string vMaKho = lkKho.EditValue.ToString();
+                //if (lkKho.EditValue != null)
+                //{
+                    string vMaKho = "KHO000001";
                     DateTime vTuNgay = dateTuNgay.DateTime;
                     DateTime vDenNgay = dateDenNgay.DateTime;
                     DataTable dt = new DataTable();
@@ -405,11 +405,11 @@ namespace QLK
                         item.BC_TIENTON = (decimal) vTienTon;
                     }
                     gridControl1.DataSource = objBC;
-                }
-                else
-                {
-                    MessageBox.Show("Vui lòng chọn kho nhập");
-                }
+                //}
+                //else
+                //{
+                //    MessageBox.Show("Vui lòng chọn kho nhập");
+                //}
             }
             catch (Exception ex)
             {

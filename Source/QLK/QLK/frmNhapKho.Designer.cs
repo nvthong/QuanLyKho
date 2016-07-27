@@ -44,18 +44,15 @@
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.txtSoHDNB = new DevExpress.XtraEditors.TextEdit();
             this.txtNhanVienTen = new DevExpress.XtraEditors.TextEdit();
-            this.txtNhapVaoKhoTen = new DevExpress.XtraEditors.TextEdit();
             this.txtNhaCungCapTen = new DevExpress.XtraEditors.TextEdit();
             this.dateNgayHoaDon = new DevExpress.XtraEditors.DateEdit();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.lkpDKThanhToan = new DevExpress.XtraEditors.LookUpEdit();
             this.txtNhanVienMa = new DevExpress.XtraEditors.TextEdit();
-            this.txtNhapVaoKhoMa = new DevExpress.XtraEditors.TextEdit();
             this.txtNhaCungCapMa = new DevExpress.XtraEditors.TextEdit();
             this.txtHoaDon = new DevExpress.XtraEditors.TextEdit();
             this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.txtGhiChu = new DevExpress.XtraEditors.TextEdit();
@@ -63,10 +60,7 @@
             this.groupCtrlBottomTop = new DevExpress.XtraEditors.GroupControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtGiaBan = new DevExpress.XtraEditors.TextEdit();
@@ -74,10 +68,7 @@
             this.btnSuaHH = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemHH = new DevExpress.XtraEditors.SimpleButton();
             this.txtSL = new DevExpress.XtraEditors.TextEdit();
-            this.txtVAT = new DevExpress.XtraEditors.TextEdit();
-            this.txtQC = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaNhap = new DevExpress.XtraEditors.TextEdit();
-            this.txtDVT = new DevExpress.XtraEditors.TextEdit();
             this.txtTenHang = new DevExpress.XtraEditors.TextEdit();
             this.txtMaHang = new DevExpress.XtraEditors.TextEdit();
             this.groupCtrlBottomBottom = new DevExpress.XtraEditors.GroupControl();
@@ -115,13 +106,11 @@
             this.groupCtrlTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHDNB.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhapVaoKhoTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties.VistaTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpDKThanhToan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienMa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhapVaoKhoMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoaDon.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
@@ -131,10 +120,7 @@
             this.groupCtrlBottomTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSL.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVAT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtQC.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtrlBottomBottom)).BeginInit();
@@ -305,25 +291,22 @@
             this.groupCtrlTop.Controls.Add(this.labelControl15);
             this.groupCtrlTop.Controls.Add(this.txtSoHDNB);
             this.groupCtrlTop.Controls.Add(this.txtNhanVienTen);
-            this.groupCtrlTop.Controls.Add(this.txtNhapVaoKhoTen);
             this.groupCtrlTop.Controls.Add(this.txtNhaCungCapTen);
             this.groupCtrlTop.Controls.Add(this.dateNgayHoaDon);
             this.groupCtrlTop.Controls.Add(this.labelControl16);
             this.groupCtrlTop.Controls.Add(this.labelControl14);
             this.groupCtrlTop.Controls.Add(this.lkpDKThanhToan);
             this.groupCtrlTop.Controls.Add(this.txtNhanVienMa);
-            this.groupCtrlTop.Controls.Add(this.txtNhapVaoKhoMa);
             this.groupCtrlTop.Controls.Add(this.txtNhaCungCapMa);
             this.groupCtrlTop.Controls.Add(this.txtHoaDon);
             this.groupCtrlTop.Controls.Add(this.labelControl13);
-            this.groupCtrlTop.Controls.Add(this.labelControl12);
             this.groupCtrlTop.Controls.Add(this.labelControl11);
             this.groupCtrlTop.Controls.Add(this.labelControl10);
             this.groupCtrlTop.Controls.Add(this.txtGhiChu);
             this.groupCtrlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupCtrlTop.Location = new System.Drawing.Point(200, 0);
             this.groupCtrlTop.Name = "groupCtrlTop";
-            this.groupCtrlTop.Size = new System.Drawing.Size(700, 138);
+            this.groupCtrlTop.Size = new System.Drawing.Size(700, 115);
             this.groupCtrlTop.TabIndex = 10;
             this.groupCtrlTop.Text = "Thông tin hóa đơn";
             // 
@@ -331,7 +314,7 @@
             // 
             this.labelControl17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl17.Location = new System.Drawing.Point(4, 112);
+            this.labelControl17.Location = new System.Drawing.Point(4, 88);
             this.labelControl17.Name = "labelControl17";
             this.labelControl17.Size = new System.Drawing.Size(61, 16);
             this.labelControl17.TabIndex = 11;
@@ -360,12 +343,13 @@
             this.txtSoHDNB.Properties.ReadOnly = true;
             this.txtSoHDNB.Size = new System.Drawing.Size(165, 22);
             this.txtSoHDNB.TabIndex = 12;
+            this.txtSoHDNB.Visible = false;
             // 
             // txtNhanVienTen
             // 
             this.txtNhanVienTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhanVienTen.EnterMoveNextControl = true;
-            this.txtNhanVienTen.Location = new System.Drawing.Point(231, 109);
+            this.txtNhanVienTen.Location = new System.Drawing.Point(231, 85);
             this.txtNhanVienTen.Name = "txtNhanVienTen";
             this.txtNhanVienTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtNhanVienTen.Properties.Appearance.Options.UseFont = true;
@@ -374,20 +358,6 @@
             this.txtNhanVienTen.Properties.ReadOnly = true;
             this.txtNhanVienTen.Size = new System.Drawing.Size(227, 22);
             this.txtNhanVienTen.TabIndex = 18;
-            // 
-            // txtNhapVaoKhoTen
-            // 
-            this.txtNhapVaoKhoTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNhapVaoKhoTen.EnterMoveNextControl = true;
-            this.txtNhapVaoKhoTen.Location = new System.Drawing.Point(231, 83);
-            this.txtNhapVaoKhoTen.Name = "txtNhapVaoKhoTen";
-            this.txtNhapVaoKhoTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNhapVaoKhoTen.Properties.Appearance.Options.UseFont = true;
-            this.txtNhapVaoKhoTen.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNhapVaoKhoTen.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNhapVaoKhoTen.Properties.ReadOnly = true;
-            this.txtNhapVaoKhoTen.Size = new System.Drawing.Size(227, 22);
-            this.txtNhapVaoKhoTen.TabIndex = 16;
             // 
             // txtNhaCungCapTen
             // 
@@ -435,6 +405,7 @@
             this.labelControl16.TabIndex = 6;
             this.labelControl16.Text = "Số HĐNB:";
             this.labelControl16.ToolTip = "Số hóa đơn do phần mềm quản lý";
+            this.labelControl16.Visible = false;
             // 
             // labelControl14
             // 
@@ -472,7 +443,7 @@
             // 
             this.txtNhanVienMa.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtNhanVienMa.EnterMoveNextControl = true;
-            this.txtNhanVienMa.Location = new System.Drawing.Point(97, 109);
+            this.txtNhanVienMa.Location = new System.Drawing.Point(97, 85);
             this.txtNhanVienMa.Name = "txtNhanVienMa";
             this.txtNhanVienMa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtNhanVienMa.Properties.Appearance.Options.UseFont = true;
@@ -484,23 +455,6 @@
             this.txtNhanVienMa.Size = new System.Drawing.Size(128, 22);
             this.txtNhanVienMa.TabIndex = 17;
             this.txtNhanVienMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNhanVienMa_KeyDown);
-            // 
-            // txtNhapVaoKhoMa
-            // 
-            this.txtNhapVaoKhoMa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNhapVaoKhoMa.EnterMoveNextControl = true;
-            this.txtNhapVaoKhoMa.Location = new System.Drawing.Point(97, 83);
-            this.txtNhapVaoKhoMa.Name = "txtNhapVaoKhoMa";
-            this.txtNhapVaoKhoMa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNhapVaoKhoMa.Properties.Appearance.Options.UseFont = true;
-            this.txtNhapVaoKhoMa.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNhapVaoKhoMa.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNhapVaoKhoMa.Properties.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNhapVaoKhoMa.Properties.MaxLength = 50;
-            this.txtNhapVaoKhoMa.Properties.ReadOnly = true;
-            this.txtNhapVaoKhoMa.Size = new System.Drawing.Size(128, 22);
-            this.txtNhapVaoKhoMa.TabIndex = 15;
-            this.txtNhapVaoKhoMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNhapVaoKhoMa_KeyDown);
             // 
             // txtNhaCungCapMa
             // 
@@ -533,7 +487,7 @@
             this.txtHoaDon.Properties.MaxLength = 50;
             this.txtHoaDon.Properties.ReadOnly = true;
             this.txtHoaDon.Properties.ValidateOnEnterKey = true;
-            this.txtHoaDon.Size = new System.Drawing.Size(128, 22);
+            this.txtHoaDon.Size = new System.Drawing.Size(361, 22);
             this.txtHoaDon.TabIndex = 11;
             // 
             // labelControl13
@@ -546,16 +500,6 @@
             this.labelControl13.TabIndex = 3;
             this.labelControl13.Text = "ĐK Thanh toán:";
             this.labelControl13.ToolTip = "Điều kiện thanh toán";
-            // 
-            // labelControl12
-            // 
-            this.labelControl12.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl12.Location = new System.Drawing.Point(4, 86);
-            this.labelControl12.Name = "labelControl12";
-            this.labelControl12.Size = new System.Drawing.Size(82, 16);
-            this.labelControl12.TabIndex = 2;
-            this.labelControl12.Text = "Nhập vào kho:";
             // 
             // labelControl11
             // 
@@ -607,10 +551,7 @@
             // 
             this.groupCtrlBottomTop.Controls.Add(this.labelControl9);
             this.groupCtrlBottomTop.Controls.Add(this.labelControl8);
-            this.groupCtrlBottomTop.Controls.Add(this.labelControl7);
-            this.groupCtrlBottomTop.Controls.Add(this.labelControl6);
             this.groupCtrlBottomTop.Controls.Add(this.labelControl5);
-            this.groupCtrlBottomTop.Controls.Add(this.labelControl4);
             this.groupCtrlBottomTop.Controls.Add(this.labelControl3);
             this.groupCtrlBottomTop.Controls.Add(this.labelControl2);
             this.groupCtrlBottomTop.Controls.Add(this.txtGiaBan);
@@ -618,10 +559,7 @@
             this.groupCtrlBottomTop.Controls.Add(this.btnSuaHH);
             this.groupCtrlBottomTop.Controls.Add(this.btnThemHH);
             this.groupCtrlBottomTop.Controls.Add(this.txtSL);
-            this.groupCtrlBottomTop.Controls.Add(this.txtVAT);
-            this.groupCtrlBottomTop.Controls.Add(this.txtQC);
             this.groupCtrlBottomTop.Controls.Add(this.txtGiaNhap);
-            this.groupCtrlBottomTop.Controls.Add(this.txtDVT);
             this.groupCtrlBottomTop.Controls.Add(this.txtTenHang);
             this.groupCtrlBottomTop.Controls.Add(this.txtMaHang);
             this.groupCtrlBottomTop.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -635,11 +573,11 @@
             // 
             this.labelControl9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl9.Location = new System.Drawing.Point(287, 52);
+            this.labelControl9.Location = new System.Drawing.Point(430, 4);
             this.labelControl9.Name = "labelControl9";
-            this.labelControl9.Size = new System.Drawing.Size(48, 16);
+            this.labelControl9.Size = new System.Drawing.Size(43, 16);
             this.labelControl9.TabIndex = 18;
-            this.labelControl9.Text = "Giá bán:";
+            this.labelControl9.Text = "Giá bán";
             // 
             // labelControl8
             // 
@@ -652,47 +590,15 @@
             this.labelControl8.Text = "SL";
             this.labelControl8.ToolTip = "Số lượng";
             // 
-            // labelControl7
-            // 
-            this.labelControl7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl7.Location = new System.Drawing.Point(590, 4);
-            this.labelControl7.Name = "labelControl7";
-            this.labelControl7.Size = new System.Drawing.Size(46, 16);
-            this.labelControl7.TabIndex = 16;
-            this.labelControl7.Text = "VAT(%)";
-            this.labelControl7.ToolTip = "VAT theo phần trăm";
-            // 
-            // labelControl6
-            // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Location = new System.Drawing.Point(553, 4);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(17, 16);
-            this.labelControl6.TabIndex = 15;
-            this.labelControl6.Text = "QC";
-            this.labelControl6.ToolTip = "Quy cách";
-            // 
             // labelControl5
             // 
             this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl5.Location = new System.Drawing.Point(447, 4);
+            this.labelControl5.Location = new System.Drawing.Point(536, 4);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(50, 16);
             this.labelControl5.TabIndex = 14;
             this.labelControl5.Text = "Giá nhập";
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl4.Location = new System.Drawing.Point(341, 4);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(61, 16);
-            this.labelControl4.TabIndex = 13;
-            this.labelControl4.Text = "Đơn vị tính";
             // 
             // labelControl3
             // 
@@ -718,7 +624,7 @@
             // 
             this.txtGiaBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGiaBan.EnterMoveNextControl = true;
-            this.txtGiaBan.Location = new System.Drawing.Point(341, 49);
+            this.txtGiaBan.Location = new System.Drawing.Point(430, 23);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGiaBan.Properties.Appearance.Options.UseFont = true;
@@ -792,52 +698,11 @@
             this.txtSL.Size = new System.Drawing.Size(46, 22);
             this.txtSL.TabIndex = 29;
             // 
-            // txtVAT
-            // 
-            this.txtVAT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtVAT.EnterMoveNextControl = true;
-            this.txtVAT.Location = new System.Drawing.Point(590, 23);
-            this.txtVAT.Name = "txtVAT";
-            this.txtVAT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtVAT.Properties.Appearance.Options.UseFont = true;
-            this.txtVAT.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtVAT.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtVAT.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtVAT.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtVAT.Properties.Mask.EditMask = "n1";
-            this.txtVAT.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtVAT.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtVAT.Properties.MaxLength = 6;
-            this.txtVAT.Properties.ReadOnly = true;
-            this.txtVAT.Size = new System.Drawing.Size(44, 22);
-            this.txtVAT.TabIndex = 28;
-            // 
-            // txtQC
-            // 
-            this.txtQC.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtQC.Enabled = false;
-            this.txtQC.EnterMoveNextControl = true;
-            this.txtQC.Location = new System.Drawing.Point(553, 23);
-            this.txtQC.Name = "txtQC";
-            this.txtQC.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtQC.Properties.Appearance.Options.UseFont = true;
-            this.txtQC.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtQC.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtQC.Properties.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtQC.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.txtQC.Properties.Mask.EditMask = "n0";
-            this.txtQC.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtQC.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtQC.Properties.MaxLength = 1;
-            this.txtQC.Properties.ReadOnly = true;
-            this.txtQC.Size = new System.Drawing.Size(31, 22);
-            this.txtQC.TabIndex = 27;
-            // 
             // txtGiaNhap
             // 
             this.txtGiaNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGiaNhap.EnterMoveNextControl = true;
-            this.txtGiaNhap.Location = new System.Drawing.Point(447, 23);
+            this.txtGiaNhap.Location = new System.Drawing.Point(536, 23);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGiaNhap.Properties.Appearance.Options.UseFont = true;
@@ -855,20 +720,6 @@
             this.txtGiaNhap.Size = new System.Drawing.Size(100, 22);
             this.txtGiaNhap.TabIndex = 26;
             // 
-            // txtDVT
-            // 
-            this.txtDVT.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDVT.EnterMoveNextControl = true;
-            this.txtDVT.Location = new System.Drawing.Point(341, 23);
-            this.txtDVT.Name = "txtDVT";
-            this.txtDVT.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtDVT.Properties.Appearance.Options.UseFont = true;
-            this.txtDVT.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtDVT.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtDVT.Properties.ReadOnly = true;
-            this.txtDVT.Size = new System.Drawing.Size(100, 22);
-            this.txtDVT.TabIndex = 25;
-            // 
             // txtTenHang
             // 
             this.txtTenHang.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -881,7 +732,7 @@
             this.txtTenHang.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtTenHang.Properties.MaxLength = 200;
             this.txtTenHang.Properties.ReadOnly = true;
-            this.txtTenHang.Size = new System.Drawing.Size(232, 22);
+            this.txtTenHang.Size = new System.Drawing.Size(321, 22);
             this.txtTenHang.TabIndex = 24;
             // 
             // txtMaHang
@@ -989,10 +840,10 @@
             // 
             this.groupCtrlCenter.Controls.Add(this.gridCtrlDSHangHoa);
             this.groupCtrlCenter.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupCtrlCenter.Location = new System.Drawing.Point(200, 138);
+            this.groupCtrlCenter.Location = new System.Drawing.Point(200, 115);
             this.groupCtrlCenter.Name = "groupCtrlCenter";
             this.groupCtrlCenter.ShowCaption = false;
-            this.groupCtrlCenter.Size = new System.Drawing.Size(700, 242);
+            this.groupCtrlCenter.Size = new System.Drawing.Size(700, 265);
             this.groupCtrlCenter.TabIndex = 3;
             // 
             // gridCtrlDSHangHoa
@@ -1001,7 +852,7 @@
             this.gridCtrlDSHangHoa.Location = new System.Drawing.Point(2, 2);
             this.gridCtrlDSHangHoa.MainView = this.gridViewDSHangHoa;
             this.gridCtrlDSHangHoa.Name = "gridCtrlDSHangHoa";
-            this.gridCtrlDSHangHoa.Size = new System.Drawing.Size(696, 238);
+            this.gridCtrlDSHangHoa.Size = new System.Drawing.Size(696, 261);
             this.gridCtrlDSHangHoa.TabIndex = 22;
             this.gridCtrlDSHangHoa.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDSHangHoa});
@@ -1109,8 +960,6 @@
             this.gridColumn6.OptionsColumn.AllowEdit = false;
             this.gridColumn6.OptionsColumn.ReadOnly = true;
             this.gridColumn6.ToolTip = "Đơn vị tính";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
             this.gridColumn6.Width = 65;
             // 
             // gridColumn13
@@ -1223,8 +1072,6 @@
             this.gridColumn9.OptionsColumn.AllowEdit = false;
             this.gridColumn9.OptionsColumn.ReadOnly = true;
             this.gridColumn9.ToolTip = "VAT theo phần trăm";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
             this.gridColumn9.Width = 65;
             // 
             // gridColumn10
@@ -1243,8 +1090,6 @@
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.OptionsColumn.AllowEdit = false;
             this.gridColumn10.OptionsColumn.ReadOnly = true;
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
             this.gridColumn10.Width = 65;
             // 
             // gridColumn16
@@ -1262,8 +1107,6 @@
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.OptionsColumn.AllowEdit = false;
             this.gridColumn16.ToolTip = "Giá đã bao gồm VAT";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 9;
             // 
             // gridColumn12
             // 
@@ -1334,13 +1177,11 @@
             this.groupCtrlTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoHDNB.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhapVaoKhoTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties.VistaTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.lkpDKThanhToan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhanVienMa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNhapVaoKhoMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtNhaCungCapMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtHoaDon.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
@@ -1351,10 +1192,7 @@
             this.groupCtrlBottomTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSL.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtVAT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtQC.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDVT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupCtrlBottomBottom)).EndInit();
@@ -1380,10 +1218,7 @@
         private DevExpress.XtraEditors.GroupControl groupCtrlCenter;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraEditors.LabelControl labelControl8;
-        private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl5;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.TextEdit txtGiaBan;
@@ -1391,10 +1226,7 @@
         private DevExpress.XtraEditors.SimpleButton btnSuaHH;
         private DevExpress.XtraEditors.SimpleButton btnThemHH;
         private DevExpress.XtraEditors.TextEdit txtSL;
-        private DevExpress.XtraEditors.TextEdit txtVAT;
-        private DevExpress.XtraEditors.TextEdit txtQC;
         private DevExpress.XtraEditors.TextEdit txtGiaNhap;
-        private DevExpress.XtraEditors.TextEdit txtDVT;
         private DevExpress.XtraEditors.TextEdit txtTenHang;
         private DevExpress.XtraEditors.TextEdit txtMaHang;
         private System.Windows.Forms.Button btnDongHD;
@@ -1405,16 +1237,13 @@
         private DevExpress.XtraGrid.GridControl gridCtrlDSHoaDon;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDSHoaDon;
         private DevExpress.XtraEditors.LabelControl labelControl15;
-        private DevExpress.XtraEditors.TextEdit txtNhapVaoKhoTen;
         private DevExpress.XtraEditors.TextEdit txtNhaCungCapTen;
         private DevExpress.XtraEditors.DateEdit dateNgayHoaDon;
         private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LookUpEdit lkpDKThanhToan;
-        private DevExpress.XtraEditors.TextEdit txtNhapVaoKhoMa;
         private DevExpress.XtraEditors.TextEdit txtNhaCungCapMa;
         private DevExpress.XtraEditors.TextEdit txtHoaDon;
         private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraGrid.GridControl gridCtrlDSHangHoa;
