@@ -15,16 +15,18 @@ namespace QLK
     {
         public string dvtMa;
         public string dvtTen;
-
+        List<DM_NHAPHANPHOI> listNPP = new List<DM_NHAPHANPHOI>();
         public frmShowKhachHang()
         {
             InitializeComponent();
             loadData();
         }
+
         public void loadData()
         {
             try
             {
+                SqlDataReader dr;
                 using (SqlConnection connect = ClassController.ConnectDatabase())
                 {
                     connect.Open();
@@ -32,10 +34,24 @@ namespace QLK
                     SqlCommand sqlCmd = new SqlCommand("SelectDmKhachhangsAll", connect);
                     sqlCmd.CommandTimeout = 1000;
                     sqlCmd.CommandType = CommandType.StoredProcedure;
-                    SqlDataAdapter da = new SqlDataAdapter();
-                    da.SelectCommand = sqlCmd;
-                    da.Fill(dtDVT);
-                    gridDVT.DataSource = dtDVT;
+                    //SqlDataAdapter da = new SqlDataAdapter();
+                    //da.SelectCommand = sqlCmd;
+                    //da.Fill(dtDVT);
+                    //gridDVT.DataSource = dtDVT;
+
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            DM_NHAPHANPHOI obj = new DM_NHAPHANPHOI();
+                            obj.NPP_MANPP = dr["NPP_MANPP"].ToString();
+                            obj.NPP_TENNPP = dr["NPP_TENNPP"].ToString();
+                            obj.NPP_GHICHU = dr["NPP_GHICHU"].ToString();
+                            listNPP.Add(obj);
+                        }
+                    }
+                    gridDVT.DataSource = listNPP;
                     connect.Close();
                 }
             }
@@ -92,6 +108,35 @@ namespace QLK
             catch
             {
 
+            }
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            search();
+        }
+
+        public void search()
+        {
+            string vKeyWord = txtTimKiem.Text.Trim();
+            List<DM_NHAPHANPHOI> listSearch = new List<DM_NHAPHANPHOI>();
+            listSearch = listNPP.Where(
+                x => (x.NPP_MANPP.ToLower().Contains(vKeyWord.ToLower()) || x.NPP_TENNPP.ToLower().Contains(vKeyWord.ToLower())) ||
+                    (x.NPP_MANPP.ToLower().StartsWith(vKeyWord.ToLower()) || x.NPP_TENNPP.ToLower().EndsWith(vKeyWord.ToLower())) ||
+                    (x.NPP_MANPP.ToLower().StartsWith(vKeyWord.ToLower()) || x.NPP_TENNPP.ToLower().EndsWith(vKeyWord.ToLower()))
+                ).ToList();
+
+            if (listSearch.Count > 0)
+            {
+                gridDVT.DataSource = listSearch;
+            }
+        }
+
+        private void txtTimKiem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                gridDVT.Focus();
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace QLK
 {
-    partial class frmRptPhieuXuatKho
+    partial class frmBaoCaoKhachHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,33 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.rptViewerPhieuXuatSi = new Microsoft.Reporting.WinForms.ReportViewer();
             this.SuspendLayout();
             // 
-            // rptViewerPhieuXuatSi
-            // 
-            this.rptViewerPhieuXuatSi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rptViewerPhieuXuatSi.Location = new System.Drawing.Point(0, 0);
-            this.rptViewerPhieuXuatSi.Name = "rptViewerPhieuXuatSi";
-            this.rptViewerPhieuXuatSi.Size = new System.Drawing.Size(900, 472);
-            this.rptViewerPhieuXuatSi.TabIndex = 0;
-            // 
-            // frmRptPhieuXuatKho
+            // frmBaoCaoKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(900, 472);
-            this.Controls.Add(this.rptViewerPhieuXuatSi);
-            this.Name = "frmRptPhieuXuatKho";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Hóa đơn bán lẻ";
-            this.Load += new System.EventHandler(this.frmRptPhieuXuatSi_Load);
+            this.ClientSize = new System.Drawing.Size(900, 500);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmBaoCaoKhachHang";
+            this.Text = "Hoá đơn khách hàng";
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private Microsoft.Reporting.WinForms.ReportViewer rptViewerPhieuXuatSi;
     }
 }

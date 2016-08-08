@@ -40,23 +40,26 @@
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
             this.btnDong = new DevExpress.XtraEditors.SimpleButton();
             this.btnChon = new DevExpress.XtraEditors.SimpleButton();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.txtTimKiem = new DevExpress.XtraEditors.TextEdit();
             ((System.ComponentModel.ISupportInitialize)(this.gridDVT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colQuanLyCheckEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // gridDVT
             // 
-            this.gridDVT.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridDVT.Location = new System.Drawing.Point(0, 0);
+            this.gridDVT.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gridDVT.Location = new System.Drawing.Point(0, 37);
             this.gridDVT.MainView = this.gridView1;
             this.gridDVT.Name = "gridDVT";
             this.gridDVT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.colQuanLyCheckEdit});
-            this.gridDVT.Size = new System.Drawing.Size(784, 401);
-            this.gridDVT.TabIndex = 6;
+            this.gridDVT.Size = new System.Drawing.Size(784, 364);
+            this.gridDVT.TabIndex = 2;
             this.gridDVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             this.gridDVT.DoubleClick += new System.EventHandler(this.gridDVT_DoubleClick);
@@ -77,7 +80,7 @@
             this.gridView1.OptionsBehavior.ReadOnly = true;
             this.gridView1.OptionsCustomization.AllowColumnMoving = false;
             this.gridView1.OptionsCustomization.AllowGroup = false;
-            this.gridView1.OptionsFind.AlwaysVisible = true;
+            this.gridView1.OptionsFind.AllowFindPanel = false;
             this.gridView1.OptionsMenu.EnableColumnMenu = false;
             this.gridView1.OptionsMenu.EnableFooterMenu = false;
             this.gridView1.OptionsMenu.EnableGroupPanelMenu = false;
@@ -216,11 +219,33 @@
             this.btnChon.Text = "Chọn";
             this.btnChon.Click += new System.EventHandler(this.btnChon_Click);
             // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelControl1.Location = new System.Drawing.Point(12, 12);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(59, 16);
+            this.labelControl1.TabIndex = 8;
+            this.labelControl1.Text = "Tìm kiếm:";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(77, 9);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtTimKiem.Properties.Appearance.Options.UseFont = true;
+            this.txtTimKiem.Size = new System.Drawing.Size(406, 22);
+            this.txtTimKiem.TabIndex = 1;
+            this.txtTimKiem.TextChanged += new System.EventHandler(this.txtTimKiem_TextChanged);
+            this.txtTimKiem.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTimKiem_KeyDown);
+            // 
             // frmShowKhachHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.txtTimKiem);
+            this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.gridDVT);
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -232,7 +257,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.colQuanLyCheckEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtTimKiem.Properties)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,5 +276,7 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraEditors.SimpleButton btnDong;
         private DevExpress.XtraEditors.SimpleButton btnChon;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.TextEdit txtTimKiem;
     }
 }

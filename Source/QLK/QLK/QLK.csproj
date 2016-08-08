@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>QLK</RootNamespace>
     <AssemblyName>QLK</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -84,6 +85,12 @@
     </Compile>
     <Compile Include="frmBangKeXuatKhac.Designer.cs">
       <DependentUpon>frmBangKeXuatKhac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmBaoCaoKhachHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBaoCaoKhachHang.Designer.cs">
+      <DependentUpon>frmBaoCaoKhachHang.cs</DependentUpon>
     </Compile>
     <Compile Include="frmBaoCaoLaiLo.cs">
       <SubType>Form</SubType>
@@ -361,6 +368,12 @@
     <Compile Include="frmTonKhoHangHoa.Designer.cs">
       <DependentUpon>frmTonKhoHangHoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTraHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTraHang.Designer.cs">
+      <DependentUpon>frmTraHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmXuatBanLe.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +415,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBangKeXuatKhac.resx">
       <DependentUpon>frmBangKeXuatKhac.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBaoCaoKhachHang.resx">
+      <DependentUpon>frmBaoCaoKhachHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBaoCaoLaiLo.resx">
       <DependentUpon>frmBaoCaoLaiLo.cs</DependentUpon>
@@ -526,6 +542,9 @@
     <EmbeddedResource Include="frmTonKhoHangHoa.resx">
       <DependentUpon>frmTonKhoHangHoa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTraHang.resx">
+      <DependentUpon>frmTraHang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmXuatBanLe.resx">
       <DependentUpon>frmXuatBanLe.cs</DependentUpon>
     </EmbeddedResource>
@@ -547,6 +566,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="rptPhieuNhap.rdlc" />
     <EmbeddedResource Include="rptPhieuXuatKho.rdlc" />

@@ -46,7 +46,7 @@
             this.ClientSize = new System.Drawing.Size(884, 464);
             this.Controls.Add(this.rptViewerHoaDonXuatKho);
             this.Name = "frmRptHoaDonXuatKho";
-            this.Text = "frmRptHoaDonXuatKho";
+            this.Text = "Hoá đơn xuất kho";
             this.Load += new System.EventHandler(this.frmRptHoaDonXuatKho_Load);
             this.ResumeLayout(false);
 

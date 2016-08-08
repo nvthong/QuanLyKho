@@ -59,7 +59,7 @@ namespace QLK
                 {
                     dvtMa = gridView1.GetFocusedRowCellValue("QG_MAQUOCGIA").ToString();
                     dvtTen = gridView1.GetFocusedRowCellValue("QG_TENQUOCGIA").ToString();
-                    frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
+                    //frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
                     this.Close();
                 }
             }
@@ -75,7 +75,7 @@ namespace QLK
             {
                 dvtMa = gridView1.GetFocusedRowCellValue("QG_MAQUOCGIA").ToString();
                 dvtTen = gridView1.GetFocusedRowCellValue("QG_TENQUOCGIA").ToString();
-                frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
+                //frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
                 this.Close();
             }
             catch
@@ -95,7 +95,7 @@ namespace QLK
             {
                 dvtMa = gridView1.GetFocusedRowCellValue("QG_MAQUOCGIA").ToString();
                 dvtTen = gridView1.GetFocusedRowCellValue("QG_TENQUOCGIA").ToString();
-                frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
+                //frmDMHangHoa._frmDMHangHoa.updateQuocGia(dvtMa, dvtTen);
                 this.Close();
             }
             catch

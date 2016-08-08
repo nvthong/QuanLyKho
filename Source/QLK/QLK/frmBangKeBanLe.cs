@@ -21,7 +21,6 @@ namespace QLK
         public frmBangKeBanLe()
         {
             InitializeComponent();
-            //lkKho.Properties.DataSource = ClassController.layDSKhoHang();
             dateDenNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
             dateTuNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
         }
@@ -593,25 +592,33 @@ namespace QLK
         {
             try
             {
-                //if (lkKho.EditValue != null)
-                //{
-                    dtBK.Clear();
-                    string vMaKho = "KHO000001";
-                    DateTime vTuNgay = dateTuNgay.DateTime;
-                    DateTime vDenNgay = dateDenNgay.DateTime;
-                    dtBK = ClassController.bangKeXuatLe(vMaKho, vTuNgay, vDenNgay, cbxCaNam.Checked);
-                    for (int i = 0; i < dtBK.Rows.Count; i++)
-                    {
-                        dtBK.Rows[i]["HDNX_SOLUONG"] = (-double.Parse(dtBK.Rows[i]["HDNX_SOLUONG"].ToString())).ToString();
-                        dtBK.Rows[i]["HDNX_TONGBAN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString())).ToString();
-                        dtBK.Rows[i]["HDNX_THANHTIEN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_THANHTIEN"].ToString())).ToString();
-                    }
-                    gridControl1.DataSource = dtBK;
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Vui lòng chọn kho");
-                //}
+                dtBK.Clear();
+                string vMaKho = "KHO000001";
+                DateTime vTuNgay = dateTuNgay.DateTime;
+                DateTime vDenNgay = dateDenNgay.DateTime;
+                dtBK = ClassController.bangKeXuatLe(vMaKho, vTuNgay, vDenNgay, cbxCaNam.Checked);
+
+                decimal vDonGia = 0;
+                decimal vTongDonGia = 0;
+                decimal vGiamKhac = (-Decimal.Parse(dtBK.Rows[0]["HDNX_GIAMKHAC"].ToString()));
+                decimal vChiecKhau = (Decimal.Parse(dtBK.Rows[0]["HDNX_CHIECKHAU"].ToString()));
+                decimal vTienChiecKhau = 0;
+                decimal vTongThanhToan = 0;
+
+                for (int i = 0; i < dtBK.Rows.Count; i++)
+                {
+                    vDonGia = (-Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString()));
+                    vTongDonGia += vDonGia;
+                    dtBK.Rows[i]["HDNX_SOLUONG"] = (-double.Parse(dtBK.Rows[i]["HDNX_SOLUONG"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_TONGBAN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_THANHTIEN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_THANHTIEN"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_GIAMKHAC"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_GIAMKHAC"].ToString())).ToString();
+                }
+
+                vTienChiecKhau = (vTongDonGia * vChiecKhau) / 100;
+                vTongThanhToan = vTongDonGia - (vGiamKhac + vTienChiecKhau);
+                gridControl1.DataSource = dtBK;
+                
             }
             catch (Exception ex)
             {
@@ -628,7 +635,6 @@ namespace QLK
             }
             using (SaveFileDialog saveDialog = new SaveFileDialog())
             {
-                //saveDialog.Filter = "Excel (2003)(.xls)|*.xls|Excel (2010) (.xlsx)|*.xlsx Database (.bak)|*.bak";
                 saveDialog.Filter = "Excel (2003)(.xls)|*.xls";
                 if (saveDialog.ShowDialog() != DialogResult.Cancel)
                 {
@@ -677,6 +683,41 @@ namespace QLK
                     " Tổng tiền: " +
                     "</color> ";
             }
+        }
+
+        private void gridView1_CellMerge(object sender, CellMergeEventArgs e)
+        {
+            //if (e.Column.FieldName == "HDNX_CHIECKHAU")
+            //{
+            //    int value1 = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle1, e.Column));
+            //    int value2 = Convert.ToInt32(gridView1.GetRowCellValue(e.RowHandle2, e.Column));
+            //    if (Math.Sign(value1) == Math.Sign(value2))
+            //    {
+            //        e.Merge = true;
+            //        e.Handled = true;
+            //    }
+            //}
+        }
+
+        private void gridView1_CustomDrawCell(object sender, DevExpress.XtraGrid.Views.Base.RowCellCustomDrawEventArgs e)
+        {
+            //if (e.Column.FieldName == "HDNX_CHIECKHAU")
+            //{
+            //    switch (Math.Sign(Convert.ToInt32(e.CellValue)))
+            //    {
+            //        case -1:
+            //            e.DisplayText = "Negative";
+            //            break;
+            //        case 0:
+            //            e.DisplayText = "Zero";
+            //            break;
+            //        case 1:
+            //            e.DisplayText = "Positive";
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
         }
     
     }

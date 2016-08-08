@@ -1015,6 +1015,7 @@ namespace QLK
         private string _kH_MAKHO = String.Empty;
         private int _hDNX_TRANGTHAI;
         private DateTime _hDNX_HANSUDUNG;
+        private int _hDNX_GHINO;
 
         public HD_NHAPXUAT()
         {
@@ -1285,6 +1286,12 @@ namespace QLK
         {
             get { return _hDNX_HANSUDUNG; }
             set { _hDNX_HANSUDUNG = value; }
+        }
+
+        public int HDNX_GHINO
+        {
+            get { return _hDNX_GHINO; }
+            set { _hDNX_GHINO = value; }
         }
         #endregion
 
@@ -1724,6 +1731,338 @@ namespace QLK
 
     }
     #endregion
+
+    #region BANGKE_BANLE
+    public class BANGKE_BANLE
+    {
+        private int _id;
+        private string _hDNX_LOAIHD = String.Empty;
+        private int _hDNX_DAIN;
+        private DateTime _hDNX_NGAYIN;
+        private string _hDNX_SOHDNB = String.Empty;
+        private DateTime _hDNX_NGAYLAP;
+        private string _hH_MAHANG = String.Empty;
+        private double _hDNX_SOLUONG;
+        private decimal _hDNX_GIAMUA;
+        private int _hDNX_QUIDOI;
+        private decimal _hDNX_TONGMUA;
+        private double _hDNX_VAT;
+        private decimal _hDNX_GIAVAT;
+        private decimal _hDNX_TONGVAT;
+        private decimal _hDNX_GIABAN;
+        private decimal _hDNX_TONGBAN;
+        private decimal _hDNX_THANHTIEN;
+        private double _hDNX_CHIECKHAU;
+        private decimal _hDNX_TONGCHIECKHAU;
+        private decimal _hDNX_GIAMKHAC;
+        private decimal _hDNX_KHACHDUA;
+        private decimal _hDNX_THOILAI;
+        private int _hDNX_TRAHANG;
+        private int _hDNX_STT;
+        private string _hDNX_SOHD = String.Empty;
+        private DateTime _hDNX_NGAYHD;
+        private int _hDNX_SONGAYHD;
+        private string _nPP_MANPP = String.Empty;
+        private string _nV_MANV = String.Empty;
+        private string _nV_TAIKHOAN = String.Empty;
+        private string _hDTT_MATT = String.Empty;
+        private DateTime _hDNX_NGAYTT;
+        private DateTime _hDNX_NGAYCAPNHAT;
+        private string _hDNX_GHICHU = String.Empty;
+        private string _kH_MAKHO = String.Empty;
+        private int _hDNX_TRANGTHAI;
+        private DateTime _hDNX_HANSUDUNG;
+        private int _hDNX_GHINO;
+
+        private decimal _hDNX_TONGTHANHTOAN;
+
+        public BANGKE_BANLE()
+        {
+        }
+
+        public BANGKE_BANLE(string pHdnxLoaiHd, int pHdnxDaIn, DateTime pHdnxNgayIn, string pHdnxSoHdnb,
+            DateTime pHdnxNgayLap, string pHdnxMaHang, double pHdnxSoLuong, decimal pHdnxGiaMua,
+            int pHdnxQuyDoi, decimal pHdnxTongMua, double pHdnxVat, decimal pHdnxGiaVat, decimal pHdnxTongVat,
+            decimal pHdnxTongBan, decimal pHdnxThanhTien, double pHdnxChiecKhau, decimal pHdnxTongChiecKhau,
+            decimal pHdnxGiamKhac, decimal pHdnxKhachDua, decimal pHdnxThoiLai, int pHdnxTraHang, int pHdnxStt, string pHdnxSoHd,
+            int pHdnxSoNgayHd, string pHdnxNpp, string pHdnxMaNhanVien, string pHdnxTaiKhoan, string pHdnxMaTt,
+            DateTime pHdnxNgayTt, DateTime pHdnxNgayCapNhat, string pHdnxGhiChu, string pHdnxMaKho, int pHdnxTrangThai, DateTime pHdnxHanSuDung)
+        {
+            this.HDNX_LOAIHD = pHdnxLoaiHd;
+            this.HDNX_DAIN = pHdnxDaIn;
+            this.HDNX_NGAYIN = pHdnxNgayIn;
+            this.HDNX_SOHDNB = pHdnxSoHdnb;
+            this.HDNX_NGAYLAP = pHdnxNgayLap;
+            this.HH_MAHANG = pHdnxMaHang;
+            this.HDNX_SOLUONG = pHdnxSoLuong;
+            this.HDNX_GIAMUA = pHdnxGiaMua;
+            this.HDNX_QUIDOI = pHdnxQuyDoi;
+            this.HDNX_TONGMUA = pHdnxTongMua;
+            this.HDNX_VAT = pHdnxVat;
+            this.HDNX_GIAVAT = pHdnxGiaVat;
+            this.HDNX_TONGVAT = pHdnxTongVat;
+            this.HDNX_TONGBAN = pHdnxTongBan;
+            this.HDNX_THANHTIEN = pHdnxThanhTien;
+            this.HDNX_CHIECKHAU = pHdnxChiecKhau;
+            this.HDNX_TONGCHIECKHAU = pHdnxTongChiecKhau;
+            this.HDNX_GIAMKHAC = pHdnxGiamKhac;
+            this.HDNX_KHACHDUA = pHdnxKhachDua;
+            this.HDNX_THOILAI = pHdnxThoiLai;
+            this.HDNX_TRAHANG = pHdnxTraHang;
+            this.HDNX_STT = pHdnxStt;
+            this.HDNX_SOHD = pHdnxSoHd;
+            this.HDNX_SONGAYHD = pHdnxSoNgayHd;
+            this.NPP_MANPP = pHdnxNpp;
+            this.NV_MANV = pHdnxMaNhanVien;
+            this.NV_TAIKHOAN = pHdnxTaiKhoan;
+            this.HDTT_MATT = pHdnxMaTt;
+            this.HDNX_NGAYTT = pHdnxNgayTt;
+            this.HDNX_NGAYCAPNHAT = pHdnxNgayCapNhat;
+            this.HDNX_GHICHU = pHdnxGhiChu;
+            this.KH_MAKHO = pHdnxMaKho;
+            this.HDNX_TRANGTHAI = pHdnxTrangThai;
+            this.HDNX_HANSUDUNG = pHdnxHanSuDung;
+        }
+
+        #region Public Properties
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+
+        public string HDNX_LOAIHD
+        {
+            get { return _hDNX_LOAIHD; }
+            set { _hDNX_LOAIHD = value; }
+        }
+
+        public int HDNX_DAIN
+        {
+            get { return _hDNX_DAIN; }
+            set { _hDNX_DAIN = value; }
+        }
+
+        public DateTime HDNX_NGAYIN
+        {
+            get { return _hDNX_NGAYIN; }
+            set { _hDNX_NGAYIN = value; }
+        }
+
+        public string HDNX_SOHDNB
+        {
+            get { return _hDNX_SOHDNB; }
+            set { _hDNX_SOHDNB = value; }
+        }
+
+        public DateTime HDNX_NGAYLAP
+        {
+            get { return _hDNX_NGAYLAP; }
+            set { _hDNX_NGAYLAP = value; }
+        }
+
+        public string HH_MAHANG
+        {
+            get { return _hH_MAHANG; }
+            set { _hH_MAHANG = value; }
+        }
+
+        public double HDNX_SOLUONG
+        {
+            get { return _hDNX_SOLUONG; }
+            set { _hDNX_SOLUONG = value; }
+        }
+
+        public decimal HDNX_GIAMUA
+        {
+            get { return _hDNX_GIAMUA; }
+            set { _hDNX_GIAMUA = value; }
+        }
+
+        public int HDNX_QUIDOI
+        {
+            get { return _hDNX_QUIDOI; }
+            set { _hDNX_QUIDOI = value; }
+        }
+
+        public decimal HDNX_TONGMUA
+        {
+            get { return _hDNX_TONGMUA; }
+            set { _hDNX_TONGMUA = value; }
+        }
+
+        public double HDNX_VAT
+        {
+            get { return _hDNX_VAT; }
+            set { _hDNX_VAT = value; }
+        }
+
+        public decimal HDNX_GIAVAT
+        {
+            get { return _hDNX_GIAVAT; }
+            set { _hDNX_GIAVAT = value; }
+        }
+
+        public decimal HDNX_TONGVAT
+        {
+            get { return _hDNX_TONGVAT; }
+            set { _hDNX_TONGVAT = value; }
+        }
+
+        public decimal HDNX_GIABAN
+        {
+            get { return _hDNX_GIABAN; }
+            set { _hDNX_GIABAN = value; }
+        }
+
+        public decimal HDNX_TONGBAN
+        {
+            get { return _hDNX_TONGBAN; }
+            set { _hDNX_TONGBAN = value; }
+        }
+
+        public decimal HDNX_THANHTIEN
+        {
+            get { return _hDNX_THANHTIEN; }
+            set { _hDNX_THANHTIEN = value; }
+        }
+
+        public double HDNX_CHIECKHAU
+        {
+            get { return _hDNX_CHIECKHAU; }
+            set { _hDNX_CHIECKHAU = value; }
+        }
+
+        public decimal HDNX_TONGCHIECKHAU
+        {
+            get { return _hDNX_TONGCHIECKHAU; }
+            set { _hDNX_TONGCHIECKHAU = value; }
+        }
+
+        public decimal HDNX_GIAMKHAC
+        {
+            get { return _hDNX_GIAMKHAC; }
+            set { _hDNX_GIAMKHAC = value; }
+        }
+
+        public decimal HDNX_THOILAI
+        {
+            get { return _hDNX_THOILAI; }
+            set { _hDNX_THOILAI = value; }
+        }
+
+        public decimal HDNX_KHACHDUA
+        {
+            get { return _hDNX_KHACHDUA; }
+            set { _hDNX_KHACHDUA = value; }
+        }
+
+        public int HDNX_TRAHANG
+        {
+            get { return _hDNX_TRAHANG; }
+            set { _hDNX_TRAHANG = value; }
+        }
+
+        public int HDNX_STT
+        {
+            get { return _hDNX_STT; }
+            set { _hDNX_STT = value; }
+        }
+
+        public string HDNX_SOHD
+        {
+            get { return _hDNX_SOHD; }
+            set { _hDNX_SOHD = value; }
+        }
+
+        public DateTime HDNX_NGAYHD
+        {
+            get { return _hDNX_NGAYHD; }
+            set { _hDNX_NGAYHD = value; }
+        }
+
+        public int HDNX_SONGAYHD
+        {
+            get { return _hDNX_SONGAYHD; }
+            set { _hDNX_SONGAYHD = value; }
+        }
+
+        public string NPP_MANPP
+        {
+            get { return _nPP_MANPP; }
+            set { _nPP_MANPP = value; }
+        }
+
+        public string NV_MANV
+        {
+            get { return _nV_MANV; }
+            set { _nV_MANV = value; }
+        }
+
+        public string NV_TAIKHOAN
+        {
+            get { return _nV_TAIKHOAN; }
+            set { _nV_TAIKHOAN = value; }
+        }
+
+        public string HDTT_MATT
+        {
+            get { return _hDTT_MATT; }
+            set { _hDTT_MATT = value; }
+        }
+
+        public DateTime HDNX_NGAYTT
+        {
+            get { return _hDNX_NGAYTT; }
+            set { _hDNX_NGAYTT = value; }
+        }
+
+        public DateTime HDNX_NGAYCAPNHAT
+        {
+            get { return _hDNX_NGAYCAPNHAT; }
+            set { _hDNX_NGAYCAPNHAT = value; }
+        }
+
+        public string HDNX_GHICHU
+        {
+            get { return _hDNX_GHICHU; }
+            set { _hDNX_GHICHU = value; }
+        }
+
+        public string KH_MAKHO
+        {
+            get { return _kH_MAKHO; }
+            set { _kH_MAKHO = value; }
+        }
+
+        public int HDNX_TRANGTHAI
+        {
+            get { return _hDNX_TRANGTHAI; }
+            set { _hDNX_TRANGTHAI = value; }
+        }
+
+        public DateTime HDNX_HANSUDUNG
+        {
+            get { return _hDNX_HANSUDUNG; }
+            set { _hDNX_HANSUDUNG = value; }
+        }
+
+        public int HDNX_GHINO
+        {
+            get { return _hDNX_GHINO; }
+            set { _hDNX_GHINO = value; }
+        }
+
+        public decimal HDNX_TONGTHANHTOAN
+        {
+            get { return _hDNX_TONGTHANHTOAN; }
+            set { _hDNX_TONGBAN = value; }
+        }
+        #endregion
+
+    }
+    #endregion
+
 
     #region BAOCAO_TONKHO
     public class BAOCAO_TONKHO 
@@ -2235,5 +2574,145 @@ namespace QLK
         #endregion
 
     }
+    #endregion
+
+    #region SHOW_HANGHOA
+    public class SHOW_HANGHOA
+    {
+        private string _hH_MAHANG = String.Empty;
+        private string _hH_TENHANG = String.Empty;
+        private decimal _hH_GIAMUA;
+        private decimal _hH_GIABANLE;
+        private decimal _hH_GIABANSI;
+        private DateTime _hH_HANSUDUNG;
+        private int _hH_KICHHOAT;
+
+        private string _dVT_TENDONVI = String.Empty;
+
+        private double _bc_NHAPKHO;
+        private double _bc_NHAPKHAC;
+        private double _bc_XUATSI;
+        private double _bc_XUATLE;
+        private double _bc_XUATKHAC;
+        private double _bc_TONKHO;
+
+        private string _hH_GHICHU = String.Empty;
+
+        public SHOW_HANGHOA()
+        {
+
+        }
+
+        public SHOW_HANGHOA(string hhMaHang, string hhTenHang, decimal hhGiaMua, decimal hhGiaBanLe, decimal hhGiaBanSi, DateTime hhHanSuDung, int hhKichHoat,
+            string dvtTenDonVi, double bcNhapKho, double bcNhapKhac, double bcXuatSi, double bcXuatLe, double bcXuatKhac, double bcTonKho, string hhGhiChu)
+        {
+            this.HH_MAHANG = hhMaHang;
+            this.HH_TENHANG = hhTenHang;
+            this.HH_GIAMUA = hhGiaMua;
+            this.HH_GIABANLE = hhGiaBanLe;
+            this.HH_GIABANSI = hhGiaBanSi;
+            this.HH_HANSUDUNG = hhHanSuDung;
+            this.HH_KICHHOAT = hhKichHoat;
+            this.DVT_TENDONVI = dvtTenDonVi;
+            this.TONKHO = bcTonKho;
+            this.BC_TONGNHAPKHAC = bcNhapKhac;
+            this.BC_TONGNHAPKHO = bcNhapKho;
+            this.BC_TONGXUATKHAC = bcXuatKhac;
+            this.BC_TONGXUATLE = bcXuatLe;
+            this.BC_TONGXUATSI = bcXuatSi;
+            this.HH_GHICHU = hhGhiChu;
+        }
+
+        public string HH_MAHANG
+        {
+            get { return _hH_MAHANG; }
+            set { _hH_MAHANG = value; }
+        }
+
+        public string HH_TENHANG
+        {
+            get { return _hH_TENHANG; }
+            set { _hH_TENHANG = value; }
+        }
+
+        public decimal HH_GIAMUA
+        {
+            get { return _hH_GIAMUA; }
+            set { _hH_GIAMUA = value; }
+        }
+
+        public decimal HH_GIABANLE
+        {
+            get { return _hH_GIABANLE; }
+            set { _hH_GIABANLE = value; }
+        }
+
+        public decimal HH_GIABANSI
+        {
+            get { return _hH_GIABANSI; }
+            set { _hH_GIABANSI = value; }
+        }
+
+        public DateTime HH_HANSUDUNG
+        {
+            get { return _hH_HANSUDUNG; }
+            set { _hH_HANSUDUNG = value; }
+        }
+
+        public int HH_KICHHOAT
+        {
+            get { return _hH_KICHHOAT; }
+            set { _hH_KICHHOAT = value; }
+        }
+
+        public string DVT_TENDONVI
+        {
+            get { return _dVT_TENDONVI; }
+            set { _dVT_TENDONVI = value; }
+        }
+
+        public double BC_TONGNHAPKHO
+        {
+            get { return _bc_NHAPKHO; }
+            set { _bc_NHAPKHO = value; }
+        }
+
+        public double BC_TONGNHAPKHAC
+        {
+            get { return _bc_NHAPKHAC; }
+            set { _bc_NHAPKHAC = value; }
+        }
+
+        public double BC_TONGXUATSI
+        {
+            get { return _bc_XUATSI; }
+            set { _bc_XUATSI = value; }
+        }
+
+        public double BC_TONGXUATLE
+        {
+            get { return _bc_XUATLE; }
+            set { _bc_XUATLE = value; }
+        }
+
+        public double BC_TONGXUATKHAC
+        {
+            get { return _bc_XUATKHAC; }
+            set { _bc_XUATKHAC = value; }
+        }
+
+        public double TONKHO
+        {
+            get { return _bc_TONKHO; }
+            set { _bc_TONKHO = value; }
+        }
+
+        public string HH_GHICHU
+        {
+            get { return _hH_GHICHU; }
+            set { _hH_GHICHU = value; }
+        }
+    }
+
     #endregion
 }

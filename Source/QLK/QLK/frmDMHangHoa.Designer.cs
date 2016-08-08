@@ -47,29 +47,23 @@
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl14 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl15 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnNhapExcel = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnExcel = new System.Windows.Forms.Button();
             this.btnDong = new System.Windows.Forms.Button();
+            this.btnExcel = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnNhapExcel = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.txtLoaiHangMa = new DevExpress.XtraEditors.TextEdit();
             this.txtLoaiHangTen = new DevExpress.XtraEditors.TextEdit();
             this.txtNhomHangTen = new DevExpress.XtraEditors.TextEdit();
             this.txtNhomHangMa = new DevExpress.XtraEditors.TextEdit();
             this.txtTenHang = new DevExpress.XtraEditors.TextEdit();
             this.txtMaHang = new DevExpress.XtraEditors.TextEdit();
-            this.txtNuocSXMa = new DevExpress.XtraEditors.TextEdit();
-            this.txtNPPMa = new DevExpress.XtraEditors.TextEdit();
-            this.txtNuocSanXuatTen = new DevExpress.XtraEditors.TextEdit();
-            this.txtNPPTen = new DevExpress.XtraEditors.TextEdit();
             this.txtGhiChu = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaMua = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaBanLe = new DevExpress.XtraEditors.TextEdit();
@@ -90,10 +84,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNhomHangMa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNuocSXMa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNPPMa.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNuocSanXuatTen.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNPPTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanLe.Properties)).BeginInit();
@@ -113,7 +103,7 @@
             this.gridDVT.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.colQuanLyCheckEdit,
             this.repositoryItemTextEdit1});
-            this.gridDVT.Size = new System.Drawing.Size(896, 294);
+            this.gridDVT.Size = new System.Drawing.Size(896, 325);
             this.gridDVT.TabIndex = 4;
             this.gridDVT.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -264,7 +254,7 @@
             this.gridColumn3.FieldName = "HH_GIABANLE";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 5;
+            this.gridColumn3.VisibleIndex = 4;
             this.gridColumn3.Width = 115;
             // 
             // colDienThoai
@@ -324,7 +314,7 @@
             this.groupControl2.Location = new System.Drawing.Point(0, 0);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.ShowCaption = false;
-            this.groupControl2.Size = new System.Drawing.Size(900, 298);
+            this.groupControl2.Size = new System.Drawing.Size(900, 329);
             this.groupControl2.TabIndex = 5;
             // 
             // openFileDialog1
@@ -372,31 +362,11 @@
             this.labelControl18.TabIndex = 2;
             this.labelControl18.Text = "Đơn vị tính:";
             // 
-            // labelControl13
-            // 
-            this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl13.Location = new System.Drawing.Point(77, 98);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(54, 16);
-            this.labelControl13.TabIndex = 2;
-            this.labelControl13.Text = "Nước SX:";
-            // 
-            // labelControl14
-            // 
-            this.labelControl14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl14.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl14.Location = new System.Drawing.Point(77, 126);
-            this.labelControl14.Name = "labelControl14";
-            this.labelControl14.Size = new System.Drawing.Size(87, 16);
-            this.labelControl14.TabIndex = 2;
-            this.labelControl14.Text = "Nhà phân phối:";
-            // 
             // labelControl6
             // 
             this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl6.Location = new System.Drawing.Point(443, 98);
+            this.labelControl6.Location = new System.Drawing.Point(77, 98);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(47, 16);
             this.labelControl6.TabIndex = 2;
@@ -441,81 +411,11 @@
             this.groupBox1.Controls.Add(this.btnNhapExcel);
             this.groupBox1.Controls.Add(this.btnThem);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupBox1.Location = new System.Drawing.Point(2, 152);
+            this.groupBox1.Location = new System.Drawing.Point(2, 121);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(896, 48);
             this.groupBox1.TabIndex = 27;
             this.groupBox1.TabStop = false;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(215, 11);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(95, 31);
-            this.btnThem.TabIndex = 28;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnNhapExcel
-            // 
-            this.btnNhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnNhapExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhapExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapExcel.Image")));
-            this.btnNhapExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapExcel.Location = new System.Drawing.Point(741, 11);
-            this.btnNhapExcel.Name = "btnNhapExcel";
-            this.btnNhapExcel.Size = new System.Drawing.Size(145, 31);
-            this.btnNhapExcel.TabIndex = 33;
-            this.btnNhapExcel.Text = "Nhập từ Excel";
-            this.btnNhapExcel.UseVisualStyleBackColor = true;
-            this.btnNhapExcel.Click += new System.EventHandler(this.btnNhapExcel_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(310, 11);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(95, 31);
-            this.btnSua.TabIndex = 29;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(405, 11);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(95, 31);
-            this.btnXoa.TabIndex = 30;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
-            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnExcel.Location = new System.Drawing.Point(500, 11);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(95, 31);
-            this.btnExcel.TabIndex = 31;
-            this.btnExcel.Text = "Excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
             // 
             // btnDong
             // 
@@ -531,6 +431,76 @@
             this.btnDong.UseVisualStyleBackColor = true;
             this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
+            // btnExcel
+            // 
+            this.btnExcel.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnExcel.Image")));
+            this.btnExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcel.Location = new System.Drawing.Point(500, 11);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(95, 31);
+            this.btnExcel.TabIndex = 31;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = true;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(405, 11);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(95, 31);
+            this.btnXoa.TabIndex = 30;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(310, 11);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(95, 31);
+            this.btnSua.TabIndex = 29;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnNhapExcel
+            // 
+            this.btnNhapExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNhapExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhapExcel.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapExcel.Image")));
+            this.btnNhapExcel.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNhapExcel.Location = new System.Drawing.Point(741, 11);
+            this.btnNhapExcel.Name = "btnNhapExcel";
+            this.btnNhapExcel.Size = new System.Drawing.Size(145, 31);
+            this.btnNhapExcel.TabIndex = 33;
+            this.btnNhapExcel.Text = "Nhập từ Excel";
+            this.btnNhapExcel.UseVisualStyleBackColor = true;
+            this.btnNhapExcel.Click += new System.EventHandler(this.btnNhapExcel_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThem.Location = new System.Drawing.Point(215, 11);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(95, 31);
+            this.btnThem.TabIndex = 28;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // txtLoaiHangMa
             // 
             this.txtLoaiHangMa.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -542,8 +512,8 @@
             this.txtLoaiHangMa.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtLoaiHangMa.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtLoaiHangMa.Properties.ReadOnly = true;
-            this.txtLoaiHangMa.Size = new System.Drawing.Size(72, 20);
-            this.txtLoaiHangMa.TabIndex = 3;
+            this.txtLoaiHangMa.Size = new System.Drawing.Size(72, 22);
+            this.txtLoaiHangMa.TabIndex = 9;
             this.txtLoaiHangMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtLoaiHangMa_KeyDown);
             // 
             // txtLoaiHangTen
@@ -557,8 +527,8 @@
             this.txtLoaiHangTen.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtLoaiHangTen.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtLoaiHangTen.Properties.ReadOnly = true;
-            this.txtLoaiHangTen.Size = new System.Drawing.Size(179, 20);
-            this.txtLoaiHangTen.TabIndex = 4;
+            this.txtLoaiHangTen.Size = new System.Drawing.Size(179, 22);
+            this.txtLoaiHangTen.TabIndex = 10;
             // 
             // txtNhomHangTen
             // 
@@ -571,8 +541,8 @@
             this.txtNhomHangTen.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtNhomHangTen.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtNhomHangTen.Properties.ReadOnly = true;
-            this.txtNhomHangTen.Size = new System.Drawing.Size(179, 20);
-            this.txtNhomHangTen.TabIndex = 6;
+            this.txtNhomHangTen.Size = new System.Drawing.Size(179, 22);
+            this.txtNhomHangTen.TabIndex = 12;
             // 
             // txtNhomHangMa
             // 
@@ -585,8 +555,8 @@
             this.txtNhomHangMa.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtNhomHangMa.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtNhomHangMa.Properties.ReadOnly = true;
-            this.txtNhomHangMa.Size = new System.Drawing.Size(72, 20);
-            this.txtNhomHangMa.TabIndex = 5;
+            this.txtNhomHangMa.Size = new System.Drawing.Size(72, 22);
+            this.txtNhomHangMa.TabIndex = 11;
             this.txtNhomHangMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNhomHangMa_KeyDown);
             // 
             // txtTenHang
@@ -600,8 +570,8 @@
             this.txtTenHang.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtTenHang.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtTenHang.Properties.ReadOnly = true;
-            this.txtTenHang.Size = new System.Drawing.Size(179, 20);
-            this.txtTenHang.TabIndex = 1;
+            this.txtTenHang.Size = new System.Drawing.Size(179, 22);
+            this.txtTenHang.TabIndex = 8;
             // 
             // txtMaHang
             // 
@@ -614,80 +584,22 @@
             this.txtMaHang.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtMaHang.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtMaHang.Properties.ReadOnly = true;
-            this.txtMaHang.Size = new System.Drawing.Size(72, 20);
+            this.txtMaHang.Size = new System.Drawing.Size(72, 22);
             this.txtMaHang.TabIndex = 7;
-            // 
-            // txtNuocSXMa
-            // 
-            this.txtNuocSXMa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNuocSXMa.EnterMoveNextControl = true;
-            this.txtNuocSXMa.Location = new System.Drawing.Point(173, 95);
-            this.txtNuocSXMa.Name = "txtNuocSXMa";
-            this.txtNuocSXMa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNuocSXMa.Properties.Appearance.Options.UseFont = true;
-            this.txtNuocSXMa.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNuocSXMa.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNuocSXMa.Properties.ReadOnly = true;
-            this.txtNuocSXMa.Size = new System.Drawing.Size(72, 22);
-            this.txtNuocSXMa.TabIndex = 12;
-            this.txtNuocSXMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNuocSXMa_KeyDown);
-            // 
-            // txtNPPMa
-            // 
-            this.txtNPPMa.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNPPMa.EnterMoveNextControl = true;
-            this.txtNPPMa.Location = new System.Drawing.Point(173, 123);
-            this.txtNPPMa.Name = "txtNPPMa";
-            this.txtNPPMa.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNPPMa.Properties.Appearance.Options.UseFont = true;
-            this.txtNPPMa.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNPPMa.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNPPMa.Properties.ReadOnly = true;
-            this.txtNPPMa.Size = new System.Drawing.Size(72, 22);
-            this.txtNPPMa.TabIndex = 14;
-            this.txtNPPMa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtNPPMa_KeyDown);
-            // 
-            // txtNuocSanXuatTen
-            // 
-            this.txtNuocSanXuatTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNuocSanXuatTen.EnterMoveNextControl = true;
-            this.txtNuocSanXuatTen.Location = new System.Drawing.Point(251, 95);
-            this.txtNuocSanXuatTen.Name = "txtNuocSanXuatTen";
-            this.txtNuocSanXuatTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNuocSanXuatTen.Properties.Appearance.Options.UseFont = true;
-            this.txtNuocSanXuatTen.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNuocSanXuatTen.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNuocSanXuatTen.Properties.ReadOnly = true;
-            this.txtNuocSanXuatTen.Size = new System.Drawing.Size(179, 22);
-            this.txtNuocSanXuatTen.TabIndex = 13;
-            // 
-            // txtNPPTen
-            // 
-            this.txtNPPTen.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtNPPTen.EnterMoveNextControl = true;
-            this.txtNPPTen.Location = new System.Drawing.Point(251, 123);
-            this.txtNPPTen.Name = "txtNPPTen";
-            this.txtNPPTen.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtNPPTen.Properties.Appearance.Options.UseFont = true;
-            this.txtNPPTen.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtNPPTen.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtNPPTen.Properties.ReadOnly = true;
-            this.txtNPPTen.Size = new System.Drawing.Size(179, 22);
-            this.txtNPPTen.TabIndex = 15;
             // 
             // txtGhiChu
             // 
             this.txtGhiChu.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtGhiChu.EnterMoveNextControl = true;
-            this.txtGhiChu.Location = new System.Drawing.Point(531, 95);
+            this.txtGhiChu.Location = new System.Drawing.Point(173, 95);
             this.txtGhiChu.Name = "txtGhiChu";
             this.txtGhiChu.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.txtGhiChu.Properties.Appearance.Options.UseFont = true;
             this.txtGhiChu.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
             this.txtGhiChu.Properties.AppearanceReadOnly.Options.UseBackColor = true;
             this.txtGhiChu.Properties.ReadOnly = true;
-            this.txtGhiChu.Size = new System.Drawing.Size(270, 22);
-            this.txtGhiChu.TabIndex = 26;
+            this.txtGhiChu.Size = new System.Drawing.Size(519, 22);
+            this.txtGhiChu.TabIndex = 21;
             // 
             // txtGiaMua
             // 
@@ -705,9 +617,12 @@
             this.txtGiaMua.Properties.Mask.EditMask = "n0";
             this.txtGiaMua.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtGiaMua.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtGiaMua.Properties.MaxLength = 15;
             this.txtGiaMua.Properties.ReadOnly = true;
             this.txtGiaMua.Size = new System.Drawing.Size(270, 22);
-            this.txtGiaMua.TabIndex = 18;
+            this.txtGiaMua.TabIndex = 19;
+            this.txtGiaMua.TextChanged += new System.EventHandler(this.txtGiaMua_TextChanged);
+            this.txtGiaMua.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtGiaMua_KeyDown);
             // 
             // txtGiaBanLe
             // 
@@ -749,21 +664,21 @@
             this.txtTonToiThieu.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtTonToiThieu.Properties.ReadOnly = true;
             this.txtTonToiThieu.Size = new System.Drawing.Size(58, 22);
-            this.txtTonToiThieu.TabIndex = 17;
+            this.txtTonToiThieu.TabIndex = 18;
             // 
             // chkQuanLy
             // 
             this.chkQuanLy.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.chkQuanLy.EditValue = true;
             this.chkQuanLy.EnterMoveNextControl = true;
-            this.chkQuanLy.Location = new System.Drawing.Point(709, 123);
+            this.chkQuanLy.Location = new System.Drawing.Point(709, 95);
             this.chkQuanLy.Name = "chkQuanLy";
             this.chkQuanLy.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
             this.chkQuanLy.Properties.Appearance.Options.UseFont = true;
             this.chkQuanLy.Properties.Caption = "Còn quản lý";
             this.chkQuanLy.Properties.ReadOnly = true;
             this.chkQuanLy.Size = new System.Drawing.Size(92, 21);
-            this.chkQuanLy.TabIndex = 27;
+            this.chkQuanLy.TabIndex = 22;
             // 
             // lkuDonViTinh
             // 
@@ -786,7 +701,7 @@
             this.lkuDonViTinh.Properties.ReadOnly = true;
             this.lkuDonViTinh.Properties.ValueMember = "DVT_MADONVI";
             this.lkuDonViTinh.Size = new System.Drawing.Size(107, 22);
-            this.lkuDonViTinh.TabIndex = 8;
+            this.lkuDonViTinh.TabIndex = 17;
             // 
             // groupControl1
             // 
@@ -796,10 +711,6 @@
             this.groupControl1.Controls.Add(this.txtGiaBanLe);
             this.groupControl1.Controls.Add(this.txtGiaMua);
             this.groupControl1.Controls.Add(this.txtGhiChu);
-            this.groupControl1.Controls.Add(this.txtNPPTen);
-            this.groupControl1.Controls.Add(this.txtNuocSanXuatTen);
-            this.groupControl1.Controls.Add(this.txtNPPMa);
-            this.groupControl1.Controls.Add(this.txtNuocSXMa);
             this.groupControl1.Controls.Add(this.txtMaHang);
             this.groupControl1.Controls.Add(this.txtTenHang);
             this.groupControl1.Controls.Add(this.txtNhomHangMa);
@@ -811,17 +722,15 @@
             this.groupControl1.Controls.Add(this.labelControl15);
             this.groupControl1.Controls.Add(this.labelControl8);
             this.groupControl1.Controls.Add(this.labelControl6);
-            this.groupControl1.Controls.Add(this.labelControl14);
-            this.groupControl1.Controls.Add(this.labelControl13);
             this.groupControl1.Controls.Add(this.labelControl18);
             this.groupControl1.Controls.Add(this.labelControl5);
             this.groupControl1.Controls.Add(this.labelControl3);
             this.groupControl1.Controls.Add(this.labelControl1);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.groupControl1.Location = new System.Drawing.Point(0, 298);
+            this.groupControl1.Location = new System.Drawing.Point(0, 329);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.ShowCaption = false;
-            this.groupControl1.Size = new System.Drawing.Size(900, 202);
+            this.groupControl1.Size = new System.Drawing.Size(900, 171);
             this.groupControl1.TabIndex = 0;
             // 
             // frmDMHangHoa
@@ -847,10 +756,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtNhomHangMa.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTenHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaHang.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNuocSXMa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNPPMa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNuocSanXuatTen.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNPPTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaMua.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBanLe.Properties)).EndInit();
@@ -884,8 +789,6 @@
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl18;
-        private DevExpress.XtraEditors.LabelControl labelControl13;
-        private DevExpress.XtraEditors.LabelControl labelControl14;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.LabelControl labelControl15;
@@ -903,10 +806,6 @@
         private DevExpress.XtraEditors.TextEdit txtNhomHangMa;
         private DevExpress.XtraEditors.TextEdit txtTenHang;
         private DevExpress.XtraEditors.TextEdit txtMaHang;
-        private DevExpress.XtraEditors.TextEdit txtNuocSXMa;
-        private DevExpress.XtraEditors.TextEdit txtNPPMa;
-        private DevExpress.XtraEditors.TextEdit txtNuocSanXuatTen;
-        private DevExpress.XtraEditors.TextEdit txtNPPTen;
         private DevExpress.XtraEditors.TextEdit txtGhiChu;
         private DevExpress.XtraEditors.TextEdit txtGiaMua;
         private DevExpress.XtraEditors.TextEdit txtGiaBanLe;

@@ -447,6 +447,7 @@ namespace QLK
                     double[] arrHD_XUATSI = new double[dtDS.Rows.Count];
                     double[] arrHD_XUATLE = new double[dtDS.Rows.Count];
                     double[] arrHD_XUATKHAC = new double[dtDS.Rows.Count];
+                    double[] arrHD_TRAHANG = new double[dtDS.Rows.Count];
 
                     for (int i = 0; i < dtDS.Rows.Count; i++)
                     {
@@ -479,6 +480,11 @@ namespace QLK
                             vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
                             arrHD_XUATKHAC[i] = Convert.ToInt64(vPreNumber);
                         }
+                        else if (vPreName == "TH")
+                        {
+                            vPreNumber = dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Substring(10, (dtDS.Rows[i]["HDNX_SOHDNB"].ToString().Length - 10));
+                            arrHD_TRAHANG[i] = Convert.ToInt64(vPreNumber);
+                        }
                     }
 
                     switch (pPrefix)
@@ -497,6 +503,9 @@ namespace QLK
                             break;
                         case "XC":
                             vNumber = (arrHD_XUATKHAC.Max() + 1).ToString();
+                            break;
+                        case "TH":
+                            vNumber = (arrHD_TRAHANG.Max() + 1).ToString();
                             break;
                     }
 
@@ -953,7 +962,7 @@ namespace QLK
                     {
                         while (dr.Read())
                         {
-                            vTon = double.Parse(dr["TONKHO"].ToString());
+                            vTon = dr["TONKHO"].ToString() == "" ? 0 : double.Parse(dr["TONKHO"].ToString());
                         }
                     }
                 }
@@ -1002,6 +1011,48 @@ namespace QLK
             }
 
             return vReturn;
+        }
+
+        public static void capNhatGiaNhap(DMHH_HANGHOA objHH)
+        {
+            try
+            {
+                using (SqlConnection connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("UpdateDmhhHangHoaGiaNhap", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.Parameters.AddWithValue("@HH_MAHANG", objHH.HH_MAHANG);
+                    sqlCmd.Parameters.AddWithValue("@HH_GIAMUA", objHH.HH_GIAMUA);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        public static void capNhatGiaBan(DMHH_HANGHOA objHH)
+        {
+            try
+            {
+                using (SqlConnection connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("UpdateDmhhHangHoaGiaBan", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.Parameters.AddWithValue("@HH_MAHANG", objHH.HH_MAHANG);
+                    sqlCmd.Parameters.AddWithValue("@HH_GIABANLE", objHH.HH_GIABANLE);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    sqlCmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+
+            }
         }
 
         #endregion
@@ -2704,6 +2755,7 @@ namespace QLK
                 sqlCmd.Parameters.AddWithValue("@HDNX_GIAVAT", pObj.HDNX_GIAVAT);
                 sqlCmd.Parameters.AddWithValue("@HDNX_TONGVAT", pObj.HDNX_TONGVAT);
                 sqlCmd.Parameters.AddWithValue("@HDNX_TONGMUA", pObj.HDNX_TONGMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHINO", pObj.HDNX_GHINO);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.ExecuteNonQuery();
             }
@@ -2745,6 +2797,7 @@ namespace QLK
                 sqlCmd.Parameters.AddWithValue("@HDNX_GIAVAT", pObj.HDNX_GIAVAT);
                 sqlCmd.Parameters.AddWithValue("@HDNX_TONGVAT", pObj.HDNX_TONGVAT);
                 sqlCmd.Parameters.AddWithValue("@HDNX_TONGMUA", pObj.HDNX_TONGMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHINO", pObj.HDNX_GHINO);
                 sqlCmd.CommandType = CommandType.StoredProcedure;
                 sqlCmd.ExecuteNonQuery();
             }
@@ -3482,6 +3535,225 @@ namespace QLK
             return dt;
         }
         #endregion
+
+        #region TRẢ HÀNG
+        public static List<HD_NHAPXUAT> layDSHoaDonTraHangTheoSHDNB(string pSHDNB)
+        {
+            SqlDataReader dr;
+            SqlConnection connect;
+            List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+            try
+            {
+                using (connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SelectHdTraHangBySHDNB", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.Parameters.AddWithValue("@HDNX_SOHDNB", pSHDNB);
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            HD_NHAPXUAT obj = new HD_NHAPXUAT();
+                            obj.HDNX_LOAIHD = dr["HDNX_LOAIHD"].ToString();
+                            obj.HDNX_SOHDNB = dr["HDNX_SOHDNB"].ToString();
+                            obj.HDNX_NGAYLAP = DateTime.Parse(dr["HDNX_NGAYLAP"].ToString());
+                            obj.HH_MAHANG = dr["HH_MAHANG"].ToString();
+                            obj.HDNX_SOLUONG = Double.Parse(dr["HDNX_SOLUONG"].ToString());
+                            obj.HDNX_VAT = Double.Parse(dr["HDNX_VAT"].ToString());
+                            obj.HDNX_GIAVAT = Decimal.Parse(dr["HDNX_GIAVAT"].ToString());
+                            obj.HDNX_TONGVAT = Decimal.Parse(dr["HDNX_TONGVAT"].ToString());
+                            obj.HDNX_GIAMUA = Decimal.Parse(dr["HDNX_GIAMUA"].ToString());
+                            obj.HDNX_TONGMUA = Decimal.Parse(dr["HDNX_TONGMUA"].ToString());
+                            obj.HDNX_GIABAN = Decimal.Parse(dr["HDNX_GIABAN"].ToString());
+                            obj.HDNX_TONGBAN = Decimal.Parse(dr["HDNX_TONGBAN"].ToString());
+                            obj.HDNX_THANHTIEN = Decimal.Parse(dr["HDNX_THANHTIEN"].ToString());
+                            obj.HDNX_CHIECKHAU = double.Parse(dr["HDNX_CHIECKHAU"].ToString());
+                            obj.HDNX_TONGCHIECKHAU = Decimal.Parse(dr["HDNX_TONGCHIECKHAU"].ToString());
+                            obj.HDNX_GIAMKHAC = Decimal.Parse(dr["HDNX_GIAMKHAC"].ToString());
+                            obj.HDNX_KHACHDUA = Decimal.Parse(dr["HDNX_KHACHDUA"].ToString());
+                            obj.HDNX_THOILAI = dr["HDNX_THOILAI"].ToString() != "" ? Decimal.Parse(dr["HDNX_THOILAI"].ToString()) : 0;
+                            obj.HDNX_TRAHANG = dr["HDNX_TRAHANG"].ToString() != "" ? Int32.Parse(dr["HDNX_TRAHANG"].ToString()) : 0;
+                            obj.HDNX_STT = Int32.Parse(dr["HDNX_STT"].ToString());
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_NGAYHD = DateTime.Parse(dr["HDNX_NGAYHD"].ToString());
+                            obj.NPP_MANPP = dr["NPP_MANPP"].ToString();
+                            obj.HDNX_GHICHU = dr["HDNX_GHICHU"].ToString();
+                            obj.KH_MAKHO = dr["KH_MAKHO"].ToString();
+                            obj.HDNX_TRANGTHAI = Int32.Parse(dr["HDNX_TRANGTHAI"].ToString());
+                            objList.Add(obj);
+                        }
+                    }
+                }
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return objList;
+        }
+
+        public static List<HD_NHAPXUAT> layDSHoaDonTraHangDSLeft()
+        {
+            SqlDataReader dr;
+            SqlConnection connect;
+            List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+            try
+            {
+                using (connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SelectHdTraHangDSLeft", connect);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            HD_NHAPXUAT obj = new HD_NHAPXUAT();
+                            obj.HDNX_NGAYHD = DateTime.Parse(dr["HDNX_NGAYHD"].ToString());
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_SOHDNB = dr["HDNX_SOHDNB"].ToString();
+                            objList.Add(obj);
+                        }
+                    }
+                }
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return objList;
+        }
+
+        public static HD_NHAPXUAT layThongTinHoaDonTraHang(string pMa)
+        {
+            SqlDataReader dr;
+            SqlConnection connect;
+            HD_NHAPXUAT obj = new HD_NHAPXUAT();
+            try
+            {
+                using (connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SelectHdThongTinCoBanTraHangBySHDNB", connect);
+                    sqlCmd.Parameters.AddWithValue("@HDNX_SOHDNB", pMa);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            obj.HDNX_NGAYHD = DateTime.Parse(dr["HDNX_NGAYHD"].ToString());
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_SOHDNB = dr["HDNX_SOHDNB"].ToString();
+                            obj.HDNX_NGAYLAP = DateTime.Parse(dr["HDNX_NGAYLAP"].ToString());
+                        }
+                    }
+                }
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return obj;
+        }
+
+        public static void themHoaDonTraHang(HD_NHAPXUAT pObj)
+        {
+            using (SqlConnection connect = ConnectDatabase())
+            {
+                connect.Open();
+                SqlCommand sqlCmd = new SqlCommand("InsertHdTraHang", connect);
+                sqlCmd.CommandTimeout = 1000;
+                sqlCmd.Parameters.AddWithValue("@HDNX_LOAIHD", pObj.HDNX_LOAIHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOHDNB", pObj.HDNX_SOHDNB);
+                sqlCmd.Parameters.AddWithValue("@HDNX_NGAYLAP", pObj.HDNX_NGAYLAP);
+                sqlCmd.Parameters.AddWithValue("@HH_MAHANG", pObj.HH_MAHANG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOLUONG", pObj.HDNX_SOLUONG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIABAN", pObj.HDNX_GIABAN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGBAN", pObj.HDNX_TONGBAN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_THANHTIEN", pObj.HDNX_THANHTIEN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_CHIECKHAU", pObj.HDNX_CHIECKHAU);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGCHIECKHAU", pObj.HDNX_TONGCHIECKHAU);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAMKHAC", pObj.HDNX_GIAMKHAC);
+                sqlCmd.Parameters.AddWithValue("@HDNX_KHACHDUA", pObj.HDNX_KHACHDUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_THOILAI", pObj.HDNX_THOILAI);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TRAHANG", pObj.HDNX_TRAHANG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_STT", pObj.HDNX_STT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOHD", pObj.HDNX_SOHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_NGAYHD", pObj.HDNX_NGAYHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SONGAYHD", pObj.HDNX_SONGAYHD);
+                sqlCmd.Parameters.AddWithValue("@NPP_MANPP", pObj.NPP_MANPP);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHICHU", pObj.HDNX_GHICHU);
+                sqlCmd.Parameters.AddWithValue("@KH_MAKHO", pObj.KH_MAKHO);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TRANGTHAI", pObj.HDNX_TRANGTHAI);
+                //
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAMUA", pObj.HDNX_GIAMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_VAT", pObj.HDNX_VAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAVAT", pObj.HDNX_GIAVAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGVAT", pObj.HDNX_TONGVAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGMUA", pObj.HDNX_TONGMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHINO", pObj.HDNX_GHINO);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+
+        public static void capNhatHoaDonTraHang(HD_NHAPXUAT pObj)
+        {
+            using (SqlConnection connect = ConnectDatabase())
+            {
+                connect.Open();
+                SqlCommand sqlCmd = new SqlCommand("InsertHdTraHang2", connect);
+                sqlCmd.CommandTimeout = 1000;
+                sqlCmd.Parameters.AddWithValue("@HDNX_LOAIHD", pObj.HDNX_LOAIHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOHDNB", pObj.HDNX_SOHDNB);
+                sqlCmd.Parameters.AddWithValue("@HDNX_NGAYLAP", pObj.HDNX_NGAYLAP);
+                sqlCmd.Parameters.AddWithValue("@HDNX_NGAYCAPNHAT", pObj.HDNX_NGAYCAPNHAT);
+                sqlCmd.Parameters.AddWithValue("@HH_MAHANG", pObj.HH_MAHANG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOLUONG", pObj.HDNX_SOLUONG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIABAN", pObj.HDNX_GIABAN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGBAN", pObj.HDNX_TONGBAN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_THANHTIEN", pObj.HDNX_THANHTIEN);
+                sqlCmd.Parameters.AddWithValue("@HDNX_CHIECKHAU", pObj.HDNX_CHIECKHAU);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGCHIECKHAU", pObj.HDNX_TONGCHIECKHAU);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAMKHAC", pObj.HDNX_GIAMKHAC);
+                sqlCmd.Parameters.AddWithValue("@HDNX_KHACHDUA", pObj.HDNX_KHACHDUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_THOILAI", pObj.HDNX_THOILAI);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TRAHANG", pObj.HDNX_TRAHANG);
+                sqlCmd.Parameters.AddWithValue("@HDNX_STT", pObj.HDNX_STT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SOHD", pObj.HDNX_SOHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_NGAYHD", pObj.HDNX_NGAYHD);
+                sqlCmd.Parameters.AddWithValue("@HDNX_SONGAYHD", pObj.HDNX_SONGAYHD);
+                sqlCmd.Parameters.AddWithValue("@NPP_MANPP", pObj.NPP_MANPP);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHICHU", pObj.HDNX_GHICHU);
+                sqlCmd.Parameters.AddWithValue("@KH_MAKHO", pObj.KH_MAKHO);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TRANGTHAI", pObj.HDNX_TRANGTHAI);
+                //
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAMUA", pObj.HDNX_GIAMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_VAT", pObj.HDNX_VAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GIAVAT", pObj.HDNX_GIAVAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGVAT", pObj.HDNX_TONGVAT);
+                sqlCmd.Parameters.AddWithValue("@HDNX_TONGMUA", pObj.HDNX_TONGMUA);
+                sqlCmd.Parameters.AddWithValue("@HDNX_GHINO", pObj.HDNX_GHINO);
+                sqlCmd.CommandType = CommandType.StoredProcedure;
+                sqlCmd.ExecuteNonQuery();
+            }
+        }
+
+        #endregion 
+
         #endregion
 
         #region Báo cáo

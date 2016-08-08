@@ -261,7 +261,6 @@
             this.gridView1.OptionsMenu.ShowDateTimeGroupIntervalItems = false;
             this.gridView1.OptionsMenu.ShowGroupSortSummaryItems = false;
             this.gridView1.OptionsMenu.ShowSplitItem = false;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowFooter = true;
             this.gridView1.OptionsView.ShowGroupedColumns = true;
             this.gridView1.OptionsView.ShowGroupPanel = false;
@@ -398,8 +397,6 @@
             this.gridColumn12.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn12.FieldName = "HDNX_TONGMUA";
             this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 7;
             // 
             // gridColumn11
             // 
@@ -414,8 +411,6 @@
             this.gridColumn11.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn11.FieldName = "HDNX_VAT";
             this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 8;
             // 
             // gridColumn8
             // 
@@ -430,8 +425,6 @@
             this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "HDNX_GIAVAT";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 9;
             this.gridColumn8.Width = 100;
             // 
             // gridColumn9
@@ -447,8 +440,6 @@
             this.gridColumn9.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn9.FieldName = "HDNX_TONGVAT";
             this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 10;
             this.gridColumn9.Width = 100;
             // 
             // gridColumn13
@@ -467,7 +458,7 @@
             this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_THANHTIEN", "{0:n1}")});
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.VisibleIndex = 7;
             this.gridColumn13.Width = 100;
             // 
             // gridColumn6
@@ -496,8 +487,6 @@
             this.gridColumn14.Caption = "Nhà phân phối";
             this.gridColumn14.FieldName = "NPP_TENNPP";
             this.gridColumn14.Name = "gridColumn14";
-            this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 12;
             this.gridColumn14.Width = 100;
             // 
             // gridColumn15
@@ -511,8 +500,6 @@
             this.gridColumn15.Caption = "Kho hàng";
             this.gridColumn15.FieldName = "KH_TENKHO";
             this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 13;
             this.gridColumn15.Width = 100;
             // 
             // gridColumn16
@@ -536,7 +523,7 @@
             this.gridColumn16.OptionsFilter.AllowAutoFilter = false;
             this.gridColumn16.OptionsFilter.AllowFilter = false;
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 14;
+            this.gridColumn16.VisibleIndex = 8;
             this.gridColumn16.Width = 10;
             // 
             // frmBangKeNhapKho

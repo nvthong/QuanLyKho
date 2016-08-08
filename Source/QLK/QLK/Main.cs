@@ -165,6 +165,30 @@ namespace QLK
                 }
             }
         }
+
+        private void btnTraHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (checkConnect())
+            {
+                frmTraHang formTraHang = new frmTraHang();
+                if (ExistFrom(formTraHang)) return;
+                formTraHang.MdiParent = this;
+                formTraHang.Show();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Không thể kết nối. Bạn có muốn cấu hình?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    frmHTCauHinhKetNoi frm = new frmHTCauHinhKetNoi();
+                    frm.ShowDialog(this);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+        }
         #endregion
 
         #region Sự kiện chức năng nhập kho
@@ -343,6 +367,30 @@ namespace QLK
             if (checkConnect())
             {
                 var form = new frmBaoCaoLaiLo();
+                if (ExistFrom(form)) return;
+                form.MdiParent = this;
+                form.Show();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Không thể kết nối. Bạn có muốn cấu hình?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    frmHTCauHinhKetNoi frm = new frmHTCauHinhKetNoi();
+                    frm.ShowDialog(this);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+        }
+
+        private void btnHoaDonKhachHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (checkConnect())
+            {
+                var form = new frmBaoCaoKhachHang();
                 if (ExistFrom(form)) return;
                 form.MdiParent = this;
                 form.Show();
@@ -830,5 +878,8 @@ namespace QLK
                 return vStatus;
             }
         }
+
+        
+
     }
 }

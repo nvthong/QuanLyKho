@@ -42,17 +42,17 @@ namespace QLK
             txtNhomHangTen.Text = pNhTen;
         }
 
-        public void updateQuocGia(string pQgMa, string pQgTen)
-        {
-            txtNuocSXMa.Text = pQgMa;
-            txtNuocSanXuatTen.Text = pQgTen;
-        }
+        //public void updateQuocGia(string pQgMa, string pQgTen)
+        //{
+        //    txtNuocSXMa.Text = pQgMa;
+        //    txtNuocSanXuatTen.Text = pQgTen;
+        //}
 
-        public void updateNhaPhanPhoi(string pNppMa, string pNppTen)
-        {
-            txtNPPMa.Text = pNppMa;
-            txtNPPTen.Text = pNppTen;
-        }
+        //public void updateNhaPhanPhoi(string pNppMa, string pNppTen)
+        //{
+        //    txtNPPMa.Text = pNppMa;
+        //    txtNPPTen.Text = pNppTen;
+        //}
 
         public void loadData()
         {
@@ -99,10 +99,10 @@ namespace QLK
             //txtLoaiHangTen.Properties.ReadOnly = status;
             //txtMaHang.Properties.ReadOnly = status;
             //txtMauSac.Properties.ReadOnly = !status;
-            txtNPPMa.Properties.ReadOnly = !status;
+            //txtNPPMa.Properties.ReadOnly = !status;
             //txtNPPTen.Properties.ReadOnly = status;
             //txtNuocSanXuatTen.Properties.ReadOnly = status;
-            txtNuocSXMa.Properties.ReadOnly = !status;
+            //txtNuocSXMa.Properties.ReadOnly = !status;
             txtNhomHangMa.Properties.ReadOnly = !status;
             //txtNhomHangTen.Properties.ReadOnly = status;
             txtTenHang.Properties.ReadOnly = !status;
@@ -131,10 +131,10 @@ namespace QLK
             txtLoaiHangTen.Text = "";
             txtMaHang.Text = "";
             //txtMauSac.Text = "";
-            txtNPPMa.Text = "";
-            txtNPPTen.Text = "";
-            txtNuocSanXuatTen.Text = "";
-            txtNuocSXMa.Text = "";
+            //txtNPPMa.Text = "";
+            //txtNPPTen.Text = "";
+            //txtNuocSanXuatTen.Text = "";
+            //txtNuocSXMa.Text = "";
             txtNhomHangMa.Text = "";
             txtNhomHangTen.Text = "";
             txtTenHang.Text = "";
@@ -169,10 +169,10 @@ namespace QLK
                 txtLoaiHangTen.Text = gridView1.GetRowCellValue(pRow, "LH_TENLOAI").ToString();
                 txtMaHang.Text = gridView1.GetRowCellValue(pRow, "HH_MAHANG").ToString();
                 //txtMauSac.Text = gridView1.GetRowCellValue(pRow, "HH_MAUSAC").ToString();
-                txtNPPMa.Text = gridView1.GetRowCellValue(pRow, "NPP_MANPP").ToString();
-                txtNPPTen.Text = gridView1.GetRowCellValue(pRow, "NPP_TENNPP").ToString();
-                txtNuocSanXuatTen.Text = gridView1.GetRowCellValue(pRow, "QG_TENQUOCGIA").ToString();
-                txtNuocSXMa.Text = gridView1.GetRowCellValue(pRow, "QG_MAQUOCGIA").ToString();
+                //txtNPPMa.Text = gridView1.GetRowCellValue(pRow, "NPP_MANPP").ToString();
+                //txtNPPTen.Text = gridView1.GetRowCellValue(pRow, "NPP_TENNPP").ToString();
+                //txtNuocSanXuatTen.Text = gridView1.GetRowCellValue(pRow, "QG_TENQUOCGIA").ToString();
+                //txtNuocSXMa.Text = gridView1.GetRowCellValue(pRow, "QG_MAQUOCGIA").ToString();
                 txtNhomHangMa.Text = gridView1.GetRowCellValue(pRow, "NH_MANHOM").ToString();
                 txtNhomHangTen.Text = gridView1.GetRowCellValue(pRow, "NH_TENNHOM").ToString();
                 txtTenHang.Text = gridView1.GetRowCellValue(pRow, "HH_TENHANG").ToString();
@@ -539,28 +539,28 @@ namespace QLK
                 btnSua.Text = "Bỏ qua";
                 txtMaHang.Text = ClassController.getMaDanhMuc("HH_MAHANG");
 
-                List<HT_CAUHINH> objList = new List<HT_CAUHINH>();
-                objList = ClassController.loadCauHinh();
+                //List<HT_CAUHINH> objList = new List<HT_CAUHINH>();
+                //objList = ClassController.loadCauHinh();
 
-                string vHanSuDung = objList.Where(x => x.CH_MACH == "CH_MACDINH_HANSUDUNG").FirstOrDefault().CH_GIATRI;
-                string vSoLuong = objList.Where(x => x.CH_MACH == "CH_MACDINH_SOLUONG").FirstOrDefault().CH_GIATRI;
-                string vTonToiThieu = objList.Where(x => x.CH_MACH == "CH_MACDINH_TONTOITHIEU").FirstOrDefault().CH_GIATRI;
-                string vDVT = objList.Where(x => x.CH_MACH == "CH_MACDINH_DONVITINH").FirstOrDefault().CH_GIATRI;
-                string vLoaiHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_LOAIHANG").FirstOrDefault().CH_GIATRI;
-                string vNhomHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHOMHANG").FirstOrDefault().CH_GIATRI;
-                string vQG = objList.Where(x => x.CH_MACH == "CH_MACDINH_NUOCSANXUAT").FirstOrDefault().CH_GIATRI;
-                string vNPP = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHAPHANPHOI").FirstOrDefault().CH_GIATRI;
+                //string vHanSuDung = objList.Where(x => x.CH_MACH == "CH_MACDINH_HANSUDUNG").FirstOrDefault().CH_GIATRI;
+                //string vSoLuong = objList.Where(x => x.CH_MACH == "CH_MACDINH_SOLUONG").FirstOrDefault().CH_GIATRI;
+                //string vTonToiThieu = objList.Where(x => x.CH_MACH == "CH_MACDINH_TONTOITHIEU").FirstOrDefault().CH_GIATRI;
+                //string vDVT = objList.Where(x => x.CH_MACH == "CH_MACDINH_DONVITINH").FirstOrDefault().CH_GIATRI;
+                //string vLoaiHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_LOAIHANG").FirstOrDefault().CH_GIATRI;
+                //string vNhomHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHOMHANG").FirstOrDefault().CH_GIATRI;
+                //string vQG = objList.Where(x => x.CH_MACH == "CH_MACDINH_NUOCSANXUAT").FirstOrDefault().CH_GIATRI;
+                //string vNPP = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHAPHANPHOI").FirstOrDefault().CH_GIATRI;
 
-                lkuDonViTinh.EditValue = vDVT;
-                txtNPPMa.Text = vNPP;
-                txtNPPTen.Text = vNPP;
-                txtNuocSanXuatTen.Text = vQG;
-                txtNuocSXMa.Text = vQG;
-                txtNhomHangMa.Text = vNhomHang;
-                txtNhomHangTen.Text = vNhomHang;
-                txtLoaiHangMa.Text = vLoaiHang;
-                txtLoaiHangTen.Text = vLoaiHang;
-                txtTonToiThieu.Text = vTonToiThieu;
+                //lkuDonViTinh.EditValue = vDVT;
+                //txtNPPMa.Text = vNPP;
+                //txtNPPTen.Text = vNPP;
+                //txtNuocSanXuatTen.Text = vQG;
+                //txtNuocSXMa.Text = vQG;
+                //txtNhomHangMa.Text = vNhomHang;
+                //txtNhomHangTen.Text = vNhomHang;
+                //txtLoaiHangMa.Text = vLoaiHang;
+                //txtLoaiHangTen.Text = vLoaiHang;
+                //txtTonToiThieu.Text = vTonToiThieu;
 
                 txtTenHang.Focus();
 
@@ -589,9 +589,9 @@ namespace QLK
                     //objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
                     //objHH.KH_MAKHO = "KHO000001";
                     objHH.LH_MALOAI = txtLoaiHangMa.Text.Trim();
-                    objHH.NPP_MANPP = txtNPPMa.Text.Trim();
+                    objHH.NPP_MANPP = "NPP000002";
                     objHH.NH_MANHOM = txtNhomHangMa.Text.Trim();
-                    objHH.QG_MAQUOCGIA = txtNuocSXMa.Text.Trim();
+                    objHH.QG_MAQUOCGIA = "QUO000001";
                     objHH.DVT_MADONVI = lkuDonViTinh.EditValue == null ? "" : lkuDonViTinh.EditValue.ToString();
                     //objHH.HH_HSD = (int) spinEditHSD.Value;
 
@@ -623,19 +623,19 @@ namespace QLK
                         return;
                     }
 
-                    if (objHH.QG_MAQUOCGIA == "")
-                    {
-                        MessageBox.Show("Nước sản xuất không được rỗng");
-                        txtNuocSXMa.Focus();
-                        return;
-                    }
+                    //if (objHH.QG_MAQUOCGIA == "")
+                    //{
+                    //    MessageBox.Show("Nước sản xuất không được rỗng");
+                    //    txtNuocSXMa.Focus();
+                    //    return;
+                    //}
 
-                    if (objHH.NPP_MANPP == "")
-                    {
-                        MessageBox.Show("Nhà phân phối không được rỗng");
-                        txtNPPMa.Focus();
-                        return;
-                    }
+                    //if (objHH.NPP_MANPP == "")
+                    //{
+                    //    MessageBox.Show("Nhà phân phối không được rỗng");
+                    //    txtNPPMa.Focus();
+                    //    return;
+                    //}
 
                     try
                     {
@@ -731,9 +731,9 @@ namespace QLK
                     //objHH.HH_THANHPHAN = txtThanhPhan.Text.Trim();
                     //objHH.KH_MAKHO = "KHO000001";
                     objHH.LH_MALOAI = txtLoaiHangMa.Text.Trim();
-                    objHH.NPP_MANPP = txtNPPMa.Text.Trim();
+                    objHH.NPP_MANPP = "NPP000002";
                     objHH.NH_MANHOM = txtNhomHangMa.Text.Trim();
-                    objHH.QG_MAQUOCGIA = txtNuocSXMa.Text.Trim();
+                    objHH.QG_MAQUOCGIA = "QUO000001";
                     objHH.DVT_MADONVI = lkuDonViTinh.EditValue == null ? "" : lkuDonViTinh.EditValue.ToString();
                     //objHH.HH_HSD = (int)spinEditHSD.Value;
 
@@ -765,19 +765,19 @@ namespace QLK
                         return;
                     }
 
-                    if (objHH.QG_MAQUOCGIA == "")
-                    {
-                        MessageBox.Show("Nước sản xuất không được rỗng");
-                        txtNuocSXMa.Focus();
-                        return;
-                    }
+                    //if (objHH.QG_MAQUOCGIA == "")
+                    //{
+                    //    MessageBox.Show("Nước sản xuất không được rỗng");
+                    //    txtNuocSXMa.Focus();
+                    //    return;
+                    //}
 
-                    if (objHH.NPP_MANPP == "")
-                    {
-                        MessageBox.Show("Nhà phân phối không được rỗng");
-                        txtNPPMa.Focus();
-                        return;
-                    }
+                    //if (objHH.NPP_MANPP == "")
+                    //{
+                    //    MessageBox.Show("Nhà phân phối không được rỗng");
+                    //    txtNPPMa.Focus();
+                    //    return;
+                    //}
 
                     try
                     {
@@ -1099,8 +1099,8 @@ namespace QLK
                 frm.ShowDialog(this);
                 if (frm.dvtMa != null)
                 {
-                    txtNuocSXMa.Text = frm.dvtMa;
-                    txtNuocSanXuatTen.Text = frm.dvtTen;
+                    //txtNuocSXMa.Text = frm.dvtMa;
+                    //txtNuocSanXuatTen.Text = frm.dvtTen;
                 }
             }
         }
@@ -1113,8 +1113,8 @@ namespace QLK
                 frm.ShowDialog(this);
                 if (frm.dvtMa != null)
                 {
-                    txtNPPMa.Text = frm.dvtMa;
-                    txtNPPTen.Text = frm.dvtTen;
+                    //txtNPPMa.Text = frm.dvtMa;
+                    //txtNPPTen.Text = frm.dvtTen;
                 }
             }
         }
@@ -1298,6 +1298,41 @@ namespace QLK
             catch
             {
                 MessageBox.Show("Nội dung không đúng định dạng");
+            }
+        }
+
+        private void txtGiaMua_KeyDown(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                //if (e.KeyCode == Keys.Enter)
+                //{
+                //    int vGiaMua = 0;
+                //    int vGiaPT = 0;
+                //    vGiaMua = txtGiaMua.Text.Trim() != "" ? (int)double.Parse(txtGiaMua.Text.Trim()) : 0;
+                //    vGiaPT = (vGiaMua * 20) / 100;
+                //    txtGiaBanLe.Text = (vGiaMua + vGiaPT).ToString();
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtGiaMua_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                int vGiaMua = 0;
+                int vGiaPT = 0;
+                vGiaMua = txtGiaMua.Text.Trim() != "" ? (int)double.Parse(txtGiaMua.Text.Trim()) : 0;
+                vGiaPT = (vGiaMua * 20) / 100;
+                txtGiaBanLe.Text = (vGiaMua + vGiaPT).ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
     }

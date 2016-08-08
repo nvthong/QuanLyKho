@@ -398,8 +398,6 @@
             this.gridColumn8.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.gridColumn8.FieldName = "HDNX_TONGVAT";
             this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
             this.gridColumn8.Width = 71;
             // 
             // gridColumn9
@@ -416,7 +414,7 @@
             this.gridColumn9.FieldName = "HDNX_TONGBAN";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.VisibleIndex = 6;
             this.gridColumn9.Width = 71;
             // 
             // gridColumn10
@@ -433,7 +431,7 @@
             this.gridColumn10.FieldName = "HDNX_TONGCHIECKHAU";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.VisibleIndex = 7;
             this.gridColumn10.Width = 71;
             // 
             // gridColumn11
@@ -450,7 +448,7 @@
             this.gridColumn11.FieldName = "HDNX_THANHTIEN";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 9;
+            this.gridColumn11.VisibleIndex = 8;
             this.gridColumn11.Width = 82;
             // 
             // gridColumn12
@@ -469,7 +467,7 @@
             this.gridColumn12.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_LAI", "{0:n0}")});
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 10;
+            this.gridColumn12.VisibleIndex = 9;
             this.gridColumn12.Width = 71;
             // 
             // gridColumn13
@@ -488,7 +486,7 @@
             this.gridColumn13.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_LO", "{0:n0}")});
             this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 11;
+            this.gridColumn13.VisibleIndex = 10;
             this.gridColumn13.Width = 67;
             // 
             // frmBaoCaoLaiLo
