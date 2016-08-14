@@ -62,7 +62,6 @@
             this.btnHeThongNhatKy = new DevExpress.XtraBars.BarButtonItem();
             this.btnTienIchSaoLuu = new DevExpress.XtraBars.BarButtonItem();
             this.btnTienIchMoKhoaSo = new DevExpress.XtraBars.BarButtonItem();
-            this.barEditZoom = new DevExpress.XtraBars.BarEditItem();
             this.repositoryItemZoomTrackBar1 = new DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar();
             this.barStaticInformation = new DevExpress.XtraBars.BarStaticItem();
             this.barSubItem1 = new DevExpress.XtraBars.BarSubItem();
@@ -81,6 +80,7 @@
             this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
             this.btnHoaDonKhachHang = new DevExpress.XtraBars.BarButtonItem();
             this.btnTraHang = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             this.rpXuatBan = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.rpNhapKho = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -96,7 +96,6 @@
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar1 = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.MdiManager = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
-            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemZoomTrackBar1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MdiManager)).BeginInit();
@@ -141,7 +140,6 @@
             this.btnHeThongNhatKy,
             this.btnTienIchSaoLuu,
             this.btnTienIchMoKhoaSo,
-            this.barEditZoom,
             this.barStaticInformation,
             this.barSubItem1,
             this.barSubItem2,
@@ -723,15 +721,6 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnTienIchMoKhoaSo.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTienIchMoKhoaSo_ItemClick);
             // 
-            // barEditZoom
-            // 
-            this.barEditZoom.Alignment = DevExpress.XtraBars.BarItemLinkAlignment.Right;
-            this.barEditZoom.Caption = "Tỉ lệ";
-            this.barEditZoom.Edit = this.repositoryItemZoomTrackBar1;
-            this.barEditZoom.Id = 36;
-            this.barEditZoom.Name = "barEditZoom";
-            this.barEditZoom.Width = 150;
-            // 
             // repositoryItemZoomTrackBar1
             // 
             this.repositoryItemZoomTrackBar1.Middle = 5;
@@ -925,6 +914,24 @@
             | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             this.btnTraHang.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTraHang_ItemClick);
             // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Bảng kê trả hàng";
+            this.barButtonItem11.Id = 64;
+            this.barButtonItem11.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.barButtonItem11.ItemAppearance.Disabled.Options.UseFont = true;
+            this.barButtonItem11.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.barButtonItem11.ItemAppearance.Hovered.Options.UseFont = true;
+            this.barButtonItem11.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.barButtonItem11.ItemAppearance.Normal.Options.UseFont = true;
+            this.barButtonItem11.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.barButtonItem11.ItemAppearance.Pressed.Options.UseFont = true;
+            this.barButtonItem11.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.LargeGlyph")));
+            this.barButtonItem11.Name = "barButtonItem11";
+            this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
+            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
+            this.barButtonItem11.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem11_ItemClick);
+            // 
             // rpXuatBan
             // 
             this.rpXuatBan.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -1065,7 +1072,6 @@
             // 
             // ribbonStatusBar1
             // 
-            this.ribbonStatusBar1.ItemLinks.Add(this.barEditZoom, true);
             this.ribbonStatusBar1.Location = new System.Drawing.Point(0, 449);
             this.ribbonStatusBar1.Name = "ribbonStatusBar1";
             this.ribbonStatusBar1.Ribbon = this.ribbonControl1;
@@ -1081,23 +1087,6 @@
             this.MdiManager.AppearancePage.HeaderActive.Options.UseFont = true;
             this.MdiManager.ClosePageButtonShowMode = DevExpress.XtraTab.ClosePageButtonShowMode.InActiveTabPageAndTabControlHeader;
             this.MdiManager.MdiParent = this;
-            // 
-            // barButtonItem11
-            // 
-            this.barButtonItem11.Caption = "Bảng kê trả hàng";
-            this.barButtonItem11.Id = 64;
-            this.barButtonItem11.ItemAppearance.Disabled.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.barButtonItem11.ItemAppearance.Disabled.Options.UseFont = true;
-            this.barButtonItem11.ItemAppearance.Hovered.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.barButtonItem11.ItemAppearance.Hovered.Options.UseFont = true;
-            this.barButtonItem11.ItemAppearance.Normal.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.barButtonItem11.ItemAppearance.Normal.Options.UseFont = true;
-            this.barButtonItem11.ItemAppearance.Pressed.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.barButtonItem11.ItemAppearance.Pressed.Options.UseFont = true;
-            this.barButtonItem11.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.LargeGlyph")));
-            this.barButtonItem11.Name = "barButtonItem11";
-            this.barButtonItem11.RibbonStyle = ((DevExpress.XtraBars.Ribbon.RibbonItemStyles)(((DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithText) 
-            | DevExpress.XtraBars.Ribbon.RibbonItemStyles.SmallWithoutText)));
             // 
             // Main
             // 
@@ -1168,7 +1157,6 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
         private DevExpress.XtraTabbedMdi.XtraTabbedMdiManager MdiManager;
         private DevExpress.XtraBars.Ribbon.RibbonStatusBar ribbonStatusBar1;
-        private DevExpress.XtraBars.BarEditItem barEditZoom;
         private DevExpress.XtraEditors.Repository.RepositoryItemZoomTrackBar repositoryItemZoomTrackBar1;
         private DevExpress.XtraBars.BarStaticItem barStaticInformation;
         private DevExpress.XtraBars.BarSubItem barSubItem1;

@@ -641,29 +641,51 @@ namespace QLK
                 objBC.Clear();
                 objBC = ClassController.BaoCaoLaiLo(vTuNgay, vDenNgay, chkCaNam.Checked);
 
-                if (!chkVATTrungBinh.Checked)
-                {
-                    //objBC = objBC.Where(x => x.HH_KICHHOAT == 1).ToList();
-                }
+                //if (!chkVATTrungBinh.Checked)
+                //{
+                //    objBC = objBC.Where(x => x.HH_KICHHOAT == 1).ToList();
+                //}
 
                 foreach (var item in objBC)
                 {
                     decimal vLaiLo = 0;
-
-                    item.HDNX_SOLUONG = -item.HDNX_SOLUONG;
-                    item.HDNX_TONGBAN = -item.HDNX_TONGBAN;
-                    item.HDNX_THANHTIEN = -item.HDNX_THANHTIEN;
-
-                    decimal vTongTienNhap = item.HDNX_TONGMUA + item.HDNX_TONGVAT;
-                    decimal vTongTienXuat = item.HDNX_THANHTIEN;
-
-                    vLaiLo = vTongTienXuat - vTongTienNhap;
-                    if(vLaiLo >= 0)
+                    if (item.HDNX_TRAHANG == 0)
                     {
-                        item.HDNX_LAI = vLaiLo;
-                    }else
+                        item.HDNX_SOLUONG = -item.HDNX_SOLUONG;
+                        item.HDNX_TONGBAN = -item.HDNX_TONGBAN;
+                        item.HDNX_THANHTIEN = -item.HDNX_THANHTIEN;
+
+                        decimal vTongTienNhap = item.HDNX_TONGMUA + item.HDNX_TONGVAT;
+                        decimal vTongTienXuat = item.HDNX_THANHTIEN;
+
+                        vLaiLo = vTongTienXuat - vTongTienNhap;
+                        if (vLaiLo >= 0)
+                        {
+                            item.HDNX_LAI = vLaiLo;
+                        }
+                        else
+                        {
+                            item.HDNX_LO = -vLaiLo;
+                        }
+                    }
+                    else
                     {
-                        item.HDNX_LO = -vLaiLo;
+                        item.HDNX_SOLUONG = -item.HDNX_SOLUONG;
+                        item.HDNX_TONGBAN = -item.HDNX_TONGBAN;
+                        item.HDNX_THANHTIEN = -item.HDNX_THANHTIEN;
+
+                        decimal vTongTienNhap = item.HDNX_TONGMUA + item.HDNX_TONGVAT;
+                        decimal vTongTienXuat = item.HDNX_THANHTIEN;
+
+                        vLaiLo = (-vTongTienXuat) - vTongTienNhap;
+                        if (vLaiLo >= 0)
+                        {
+                            item.HDNX_LAI = -vLaiLo;
+                        }
+                        else
+                        {
+                            item.HDNX_LO = vLaiLo;
+                        }
                     }
                 }
                 gridControl1.DataSource = objBC;

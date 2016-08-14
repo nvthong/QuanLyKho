@@ -31,6 +31,7 @@ namespace QLK
             cbxHienThi.EditValue = "0";
             InitializeDtHDNX();
             loadDataHD();
+            setStatucButtonUpdateGia(false);
             if (gridViewDSHoaDon.DataRowCount >= 1)
             {
                 gridViewDSHoaDon.FocusedRowHandle = 0;
@@ -162,11 +163,11 @@ namespace QLK
         public void setStatusFieldHH(bool pStatus)
         {
             txtMaHang.Properties.ReadOnly = !pStatus;
-            txtGiaNhap.Properties.ReadOnly = !pStatus;
+            //txtGiaNhap.Properties.ReadOnly = !pStatus;
             //txtQC.Properties.ReadOnly = !pStatus;
             //txtVAT.Properties.ReadOnly = !pStatus;
             txtSL.Properties.ReadOnly = !pStatus;
-            txtGiaBan.Properties.ReadOnly = !pStatus;
+            //txtGiaBan.Properties.ReadOnly = !pStatus;
         }
 
         public void setStatusFieldHD(bool pStatus)
@@ -194,6 +195,12 @@ namespace QLK
             btnSuaHD.Enabled = pStatus;
             btnXoaHD.Enabled = pStatus;
             btnExcelHD.Enabled = pStatus;
+        }
+
+        public void setStatucButtonUpdateGia(bool pStatus)
+        {
+            btnCapNhatGiaBan.Enabled = pStatus;
+            btnCapNhatGiaNhap.Enabled = pStatus;
         }
 
         public void resetFieldHoaDon()
@@ -236,6 +243,7 @@ namespace QLK
                     btnSuaHH.Enabled = true;
                     btnXoaHH.Enabled = false;
                     setStatusFieldHH(true);
+                    setStatucButtonUpdateGia(true);
                     resetFieldHangHoa();
                     txtMaHang.Focus();
                 }
@@ -448,8 +456,9 @@ namespace QLK
                     btnSuaHH.Text = "Bỏ qua";
                     btnXoaHH.Enabled = false;
                     setStatusFieldHH(true);
+                    setStatucButtonUpdateGia(true);
                     txtMaHang.Properties.ReadOnly = true;
-                    txtGiaNhap.Focus();
+                    txtSL.Focus();
                 }
                 else
                 {
@@ -466,6 +475,7 @@ namespace QLK
                 btnSuaHH.Enabled = true;
                 btnThemHH.Enabled = true;
                 setStatusFieldHH(false);
+                setStatucButtonUpdateGia(false);
                 if (gridViewDSHangHoa.DataRowCount > 0)
                 {
                     gridViewDSHangHoa.FocusedRowHandle = StatusRowClickHH;
@@ -1107,6 +1117,8 @@ namespace QLK
                                     //txtDVT.Text = frm.pHhDVT;
                                     txtGiaNhap.Text = ((int)Double.Parse(frm.pHhGiaNhap)).ToString();
                                     txtGiaBan.Text = ((int)Double.Parse(frm.pHhGiaBan)).ToString();
+                                    setStatucButtonUpdateGia(true);
+                                    txtGiaBan.Focus();
                                 }
                                 else
                                 {
@@ -1123,6 +1135,8 @@ namespace QLK
                                     //txtDVT.Text = ClassController.layDonViTinhTheoMa(objHH.DVT_MADONVI).DVT_TENDONVI;
                                     txtGiaNhap.Text = ((int) objHH.HH_GIAMUA).ToString();
                                     txtGiaBan.Text = ((int) objHH.HH_GIABANLE).ToString();
+                                    setStatucButtonUpdateGia(true);
+                                    txtGiaBan.Focus();
                                 }
                                 else
                                 {
@@ -1135,6 +1149,8 @@ namespace QLK
                                         //txtDVT.Text = frm.pHhDVT;
                                         txtGiaNhap.Text = ((int)Double.Parse(frm.pHhGiaNhap)).ToString();
                                         txtGiaBan.Text = ((int)Double.Parse(frm.pHhGiaBan)).ToString();
+                                        setStatucButtonUpdateGia(true);
+                                        txtGiaBan.Focus();
                                     }
                                     else
                                     {
@@ -1291,6 +1307,52 @@ namespace QLK
         private void btnDongHD_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnCapNhatGiaNhap_Click(object sender, EventArgs e)
+        {
+            if (txtGiaNhap.Properties.ReadOnly == false)
+            {
+                if (txtTenHang.Text.Trim() != "")
+                {
+                    txtGiaNhap.Properties.ReadOnly = true;
+                    DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                    objHH.HH_MAHANG = txtMaHang.Text.Trim();
+                    objHH.HH_GIAMUA = txtGiaNhap.Text.Trim() != "" ? Decimal.Parse(txtGiaNhap.Text.Trim()) : 0;
+                    ClassController.capNhatGiaNhap(objHH);
+                }
+                else
+                {
+                    txtGiaNhap.Properties.ReadOnly = true;
+                }
+            }
+            else
+            {
+                txtGiaNhap.Properties.ReadOnly = false;
+            }
+        }
+
+        private void btnCapNhatGiaBan_Click(object sender, EventArgs e)
+        {
+            if (txtGiaBan.Properties.ReadOnly == false)
+            {
+                if (txtTenHang.Text.Trim() != "")
+                {
+                    txtGiaBan.Properties.ReadOnly = true;
+                    DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                    objHH.HH_MAHANG = txtMaHang.Text.Trim();
+                    objHH.HH_GIABANLE = txtGiaBan.Text.Trim() != "" ? Decimal.Parse(txtGiaBan.Text.Trim()) : 0;
+                    ClassController.capNhatGiaBan(objHH);
+                }
+                else
+                {
+                    txtGiaBan.Properties.ReadOnly = true;
+                }
+            }
+            else
+            {
+                txtGiaBan.Properties.ReadOnly = false;
+            }
         }
 
         private void gridViewDSHangHoa_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)

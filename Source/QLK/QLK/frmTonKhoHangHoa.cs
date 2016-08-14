@@ -397,8 +397,9 @@ namespace QLK
                         double vTongXuatSi = item.BC_TONGXUATSI;
                         double vTongXuatLe = item.BC_TONGXUATLE;
                         double vTongXuatKhac = item.BC_TONGXUATKHAC;
+                        double vTraHang = item.BC_TRAHANG;
 
-                        vTonKho = (vTongNhap + vTongNHapKhac) - ((vTongXuatSi) + (vTongXuatLe) + (vTongXuatKhac));
+                        vTonKho = (vTongNhap + vTongNHapKhac) - ((vTongXuatSi) + (vTongXuatLe) + (vTongXuatKhac)) + vTraHang;
                         vTienTon = (vTonKho * double.Parse(item.HH_GIABANLE.ToString()));
 
                         item.BC_TONKHO = vTonKho;

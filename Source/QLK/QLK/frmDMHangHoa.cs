@@ -1160,7 +1160,7 @@ namespace QLK
             try
             {
                 string Excel03ConString = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
-                string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
+                string Excel07ConString = "Provider=Microsoft.ACE.OLEDB.14.0;Data Source={0};Extended Properties='Excel 8.0;HDR={1}'";
                 string filePath = openFileDialog1.FileName;
                 string extension = Path.GetExtension(filePath);
                 string header = "YES";
@@ -1209,43 +1209,22 @@ namespace QLK
                                 DMHH_HANGHOA objHH = new DMHH_HANGHOA();
                                 string vMaHang = dt.Rows[i]["MAHANG"].ToString();
                                 string vTenHang = dt.Rows[i]["TENHANG"].ToString();
-                                string vDonViTinh = dt.Rows[i]["DONVITINH"].ToString();
-                                string vGiaMua = dt.Rows[i]["GIAMUA"].ToString();
-                                string vGiaBanLe = dt.Rows[i]["GIABANLE"].ToString();
-                                string vGiaBanSi = dt.Rows[i]["GIABANSI"].ToString();
+                                string vGiaMua = dt.Rows[i]["GIAMUA"].ToString().Trim().Replace(".", "");
 
                                 if(vTenHang.Trim() != "")
                                 {
-                                    List<HT_CAUHINH> objList = new List<HT_CAUHINH>();
-                                    objList = ClassController.loadCauHinh();
-                                    string vHanSuDung = objList.Where(x => x.CH_MACH == "CH_MACDINH_HANSUDUNG").FirstOrDefault().CH_GIATRI;
-                                    string vTonToiThieu = objList.Where(x => x.CH_MACH == "CH_MACDINH_TONTOITHIEU").FirstOrDefault().CH_GIATRI;
-                                    string vKhoHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_KHO").FirstOrDefault().CH_GIATRI;
-                                    string vDVT = objList.Where(x => x.CH_MACH == "CH_MACDINH_DONVITINH").FirstOrDefault().CH_GIATRI;
-                                    string vKhachHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_KHACHHANG").FirstOrDefault().CH_GIATRI;
-                                    string vLoaiHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_LOAIHANG").FirstOrDefault().CH_GIATRI;
-                                    string vNPP = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHAPHANPHOI").FirstOrDefault().CH_GIATRI;
-                                    string vNhomHang = objList.Where(x => x.CH_MACH == "CH_MACDINH_NHOMHANG").FirstOrDefault().CH_GIATRI;
-                                    string vQG = objList.Where(x => x.CH_MACH == "CH_MACDINH_NUOCSANXUAT").FirstOrDefault().CH_GIATRI;
-
-                                    //objHH.HH_GHICHU = txtGhiChu.Text.Trim();
-                                    objHH.HH_GIABANLE = vGiaBanLe != "" ? Decimal.Parse(vGiaBanLe) : 0;
-                                    objHH.HH_GIABANSI = vGiaBanSi != "" ? Decimal.Parse(vGiaBanSi) : 0;
-                                    objHH.HH_GIAMUA = vGiaMua != "" ? Decimal.Parse(vGiaMua) : 0;
-                                    objHH.HH_HSD = int.Parse(vHanSuDung);
+                                    decimal GiaMua = (vGiaMua != "" ? Decimal.Parse(vGiaMua) : 0);
+                                    decimal vTienLoi = GiaMua > 0 ? ((GiaMua * 20) / 100) : 0;
+                                    objHH.HH_GIAMUA = GiaMua;
+                                    objHH.HH_GIABANLE = GiaMua + vTienLoi;
                                     objHH.HH_KICHHOAT = 1;
-                                    //objHH.HH_LOAISIZE = cbxKieuSize.EditValue == null ? -1 : Int32.Parse(cbxKieuSize.EditValue.ToString());
                                     objHH.HH_MAHANG = ClassController.getMaDanhMuc("HH_MAHANG");
-                                    //objHH.HH_MAUSAC = txtMauSac.Text.Trim();
-                                    //objHH.HH_SIZE = txtSize.Text.Trim();
-                                    //objHH.HH_TENNGAN = txtTenNgan.Text.Trim();
                                     objHH.HH_TENHANG = vTenHang.Trim();
-                                    objHH.HH_TONTOITHIEU = double.Parse(vTonToiThieu);
-                                    objHH.LH_MALOAI = vLoaiHang;
-                                    objHH.NPP_MANPP = vNPP;
-                                    objHH.NH_MANHOM = vNhomHang;
-                                    objHH.QG_MAQUOCGIA = vQG;
-                                    objHH.DVT_MADONVI = vDVT;
+                                    objHH.HH_TONTOITHIEU = 10;
+                                    objHH.LH_MALOAI = "LOA000001";
+                                    objHH.NH_MANHOM = "NHO000001";
+                                    objHH.QG_MAQUOCGIA = "QUO000001";
+                                    objHH.DVT_MADONVI = "DVT000001";
 
                                     using (SqlConnection connect = ClassController.ConnectDatabase())
                                     {
@@ -1295,9 +1274,9 @@ namespace QLK
                 }
                 loadData();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Nội dung không đúng định dạng");
+                MessageBox.Show(ex.ToString());
             }
         }
 

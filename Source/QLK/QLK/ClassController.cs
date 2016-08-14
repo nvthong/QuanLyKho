@@ -3752,6 +3752,82 @@ namespace QLK
             }
         }
 
+        public static DataTable bangKeTraHang(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connect;
+            List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+            try
+            {
+                using (connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SelectHdBangKeTraHang", connect);
+                    sqlCmd.Parameters.AddWithValue("@CANAM", pCaNam ? 1 : 0);
+                    sqlCmd.Parameters.AddWithValue("@MAKHO", pMaKho);
+                    sqlCmd.Parameters.AddWithValue("@TUNGAY", pTuNgay.Year < 2000 ? DateTime.Now.AddYears(-1) : pTuNgay);
+                    sqlCmd.Parameters.AddWithValue("@DENNGAY", pDenNgay.Year < 2000 ? DateTime.Now : pDenNgay);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    da.SelectCommand = sqlCmd;
+                    da.Fill(dt);
+                    /*
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            HD_NHAPXUAT obj = new HD_NHAPXUAT();
+                            obj.HDNX_CHIECKHAU = dr["HDNX_CHIECKHAU"].ToString() != "" ? double.Parse(dr["HDNX_CHIECKHAU"].ToString()) : 0;
+                            obj.HDNX_DAIN = dr["HDNX_DAIN"].ToString() != "" ? Int32.Parse(dr["HDNX_DAIN"].ToString()) : 0;
+                            obj.HDNX_GHICHU = dr["HDNX_GHICHU"].ToString();
+                            obj.HDNX_GIABAN = dr["HDNX_GIABAN"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIABAN"].ToString()) : 0;
+                            obj.HDNX_GIAMKHAC = dr["HDNX_GIAMKHAC"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAMKHAC"].ToString()) : 0;
+                            obj.HDNX_GIAMUA = dr["HDNX_GIAMUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAMUA"].ToString()) : 0;
+                            obj.HDNX_GIAVAT = dr["HDNX_GIAVAT"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAVAT"].ToString()) : 0;
+                            obj.HDNX_KHACHDUA = dr["HDNX_KHACHDUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_KHACHDUA"].ToString()): 0;
+                            obj.HDNX_LOAIHD = dr["HDNX_LOAIHD"].ToString();
+                            obj.HDNX_NGAYCAPNHAT = dr["HDNX_NGAYCAPNHAT"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYCAPNHAT"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYHD = dr["HDNX_NGAYHD"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYHD"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYIN = dr["HDNX_NGAYIN"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYIN"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYLAP = dr["HDNX_NGAYLAP"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYLAP"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYTT = dr["HDNX_NGAYTT"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYTT"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_QUIDOI = dr["HDNX_QUIDOI"].ToString() != "" ? Int32.Parse(dr["HDNX_QUIDOI"].ToString()) : 0;
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_SOHDNB = dr["HDNX_SOHDNB"].ToString();
+                            obj.HDNX_SOLUONG = dr["HDNX_SOLUONG"].ToString() != "" ? Double.Parse(dr["HDNX_SOLUONG"].ToString()) : 0;
+                            obj.HDNX_SONGAYHD = dr["HDNX_SONGAYHD"].ToString() != "" ? Int32.Parse(dr["HDNX_SONGAYHD"].ToString()): 0;
+                            obj.HDNX_STT = dr["HDNX_STT"].ToString() != "" ? Int32.Parse(dr["HDNX_STT"].ToString()) : 0;
+                            obj.HDNX_TONGBAN = dr["HDNX_TONGBAN"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGBAN"].ToString()) : 0;
+                            obj.HDNX_TONGCHIECKHAU = dr["HDNX_TONGCHIECKHAU"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGCHIECKHAU"].ToString()) : 0;
+                            obj.HDNX_TONGMUA = dr["HDNX_TONGMUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGMUA"].ToString()) : 0;
+                            obj.HDNX_TONGVAT = dr["HDNX_TONGVAT"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGVAT"].ToString()) : 0;
+                            obj.HDNX_THANHTIEN = dr["HDNX_THANHTIEN"].ToString() != "" ? Decimal.Parse(dr["HDNX_THANHTIEN"].ToString()) : 0;
+                            obj.HDNX_TRAHANG = dr["HDNX_TRAHANG"].ToString() != "" ?Int32.Parse(dr["HDNX_TRAHANG"].ToString()) : 0;
+                            obj.HDNX_TRANGTHAI = dr["HDNX_TRANGTHAI"].ToString() != "" ? Int32.Parse(dr["HDNX_TRANGTHAI"].ToString()) : 0;
+                            obj.HDNX_VAT = dr["HDNX_VAT"].ToString() != "" ? Double.Parse(dr["HDNX_VAT"].ToString()) : 0;
+                            obj.HDTT_MATT = dr["HDTT_MATT"].ToString();
+                            obj.HH_MAHANG = dr["HH_MAHANG"].ToString();
+                            obj.KH_MAKHO = dr["KH_MAKHO"].ToString();
+                            obj.NPP_MANPP = dr["NPP_MANPP"].ToString();
+                            obj.NV_MANV = dr["NV_MANV"].ToString();
+                            obj.NV_TAIKHOAN = dr["NV_TAIKHOAN"].ToString();
+                            objList.Add(obj);
+                        }
+                    }
+                     */
+                }
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return dt;
+        }
+
         #endregion 
 
         #endregion
@@ -3796,6 +3872,7 @@ namespace QLK
                             obj.BC_TONGXUATKHAC = dr["BC_TONGXUATKHAC"].ToString() != "" ? Double.Parse(dr["BC_TONGXUATKHAC"].ToString()) : 0;
                             obj.BC_TONGXUATLE = dr["BC_TONGXUATLE"].ToString() != "" ? Double.Parse(dr["BC_TONGXUATLE"].ToString()) : 0;
                             obj.BC_TONGXUATSI = dr["BC_TONGXUATSI"].ToString() != "" ? Double.Parse(dr["BC_TONGXUATSI"].ToString()) : 0;
+                            obj.BC_TRAHANG = dr["BC_TRAHANG"].ToString() != "" ? Double.Parse(dr["BC_TRAHANG"].ToString()) : 0;
                             
                             objList.Add(obj);
                         }
@@ -3896,6 +3973,8 @@ namespace QLK
                             obj.HDNX_TONGCHIECKHAU = dr["HDNX_TONGCHIECKHAU"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGCHIECKHAU"].ToString()) : 0;
                             obj.HDNX_THANHTIEN = dr["HDNX_THANHTIEN"].ToString() != "" ? Decimal.Parse(dr["HDNX_THANHTIEN"].ToString()) : 0;
 
+                            obj.HDNX_TRAHANG = dr["HDNX_TRAHANG"].ToString() != "" ? int.Parse(dr["HDNX_TRAHANG"].ToString()) : 0;
+
                             objList.Add(obj);
                         }
                     }
@@ -3908,6 +3987,82 @@ namespace QLK
             }
 
             return objList;
+        }
+
+        public static DataTable baoCaoKhachHang(string pMaKho, DateTime pTuNgay, DateTime pDenNgay, bool pCaNam)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection connect;
+            List<HD_NHAPXUAT> objList = new List<HD_NHAPXUAT>();
+            try
+            {
+                using (connect = ClassController.ConnectDatabase())
+                {
+                    connect.Open();
+                    SqlCommand sqlCmd = new SqlCommand("SelectHdBaoCaoKhachHang", connect);
+                    sqlCmd.Parameters.AddWithValue("@CANAM", pCaNam ? 1 : 0);
+                    sqlCmd.Parameters.AddWithValue("@MAKHO", pMaKho);
+                    sqlCmd.Parameters.AddWithValue("@TUNGAY", pTuNgay.Year < 2000 ? DateTime.Now.AddYears(-1) : pTuNgay);
+                    sqlCmd.Parameters.AddWithValue("@DENNGAY", pDenNgay.Year < 2000 ? DateTime.Now : pDenNgay);
+                    sqlCmd.CommandTimeout = 1000;
+                    sqlCmd.CommandType = CommandType.StoredProcedure;
+                    SqlDataAdapter da = new SqlDataAdapter();
+                    da.SelectCommand = sqlCmd;
+                    da.Fill(dt);
+                    /*
+                    dr = sqlCmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            HD_NHAPXUAT obj = new HD_NHAPXUAT();
+                            obj.HDNX_CHIECKHAU = dr["HDNX_CHIECKHAU"].ToString() != "" ? double.Parse(dr["HDNX_CHIECKHAU"].ToString()) : 0;
+                            obj.HDNX_DAIN = dr["HDNX_DAIN"].ToString() != "" ? Int32.Parse(dr["HDNX_DAIN"].ToString()) : 0;
+                            obj.HDNX_GHICHU = dr["HDNX_GHICHU"].ToString();
+                            obj.HDNX_GIABAN = dr["HDNX_GIABAN"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIABAN"].ToString()) : 0;
+                            obj.HDNX_GIAMKHAC = dr["HDNX_GIAMKHAC"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAMKHAC"].ToString()) : 0;
+                            obj.HDNX_GIAMUA = dr["HDNX_GIAMUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAMUA"].ToString()) : 0;
+                            obj.HDNX_GIAVAT = dr["HDNX_GIAVAT"].ToString() != "" ? Decimal.Parse(dr["HDNX_GIAVAT"].ToString()) : 0;
+                            obj.HDNX_KHACHDUA = dr["HDNX_KHACHDUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_KHACHDUA"].ToString()): 0;
+                            obj.HDNX_LOAIHD = dr["HDNX_LOAIHD"].ToString();
+                            obj.HDNX_NGAYCAPNHAT = dr["HDNX_NGAYCAPNHAT"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYCAPNHAT"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYHD = dr["HDNX_NGAYHD"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYHD"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYIN = dr["HDNX_NGAYIN"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYIN"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYLAP = dr["HDNX_NGAYLAP"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYLAP"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_NGAYTT = dr["HDNX_NGAYTT"].ToString() != "" ? DateTime.Parse(dr["HDNX_NGAYTT"].ToString()) : new DateTime(1990, 01, 01);
+                            obj.HDNX_QUIDOI = dr["HDNX_QUIDOI"].ToString() != "" ? Int32.Parse(dr["HDNX_QUIDOI"].ToString()) : 0;
+                            obj.HDNX_SOHD = dr["HDNX_SOHD"].ToString();
+                            obj.HDNX_SOHDNB = dr["HDNX_SOHDNB"].ToString();
+                            obj.HDNX_SOLUONG = dr["HDNX_SOLUONG"].ToString() != "" ? Double.Parse(dr["HDNX_SOLUONG"].ToString()) : 0;
+                            obj.HDNX_SONGAYHD = dr["HDNX_SONGAYHD"].ToString() != "" ? Int32.Parse(dr["HDNX_SONGAYHD"].ToString()): 0;
+                            obj.HDNX_STT = dr["HDNX_STT"].ToString() != "" ? Int32.Parse(dr["HDNX_STT"].ToString()) : 0;
+                            obj.HDNX_TONGBAN = dr["HDNX_TONGBAN"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGBAN"].ToString()) : 0;
+                            obj.HDNX_TONGCHIECKHAU = dr["HDNX_TONGCHIECKHAU"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGCHIECKHAU"].ToString()) : 0;
+                            obj.HDNX_TONGMUA = dr["HDNX_TONGMUA"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGMUA"].ToString()) : 0;
+                            obj.HDNX_TONGVAT = dr["HDNX_TONGVAT"].ToString() != "" ? Decimal.Parse(dr["HDNX_TONGVAT"].ToString()) : 0;
+                            obj.HDNX_THANHTIEN = dr["HDNX_THANHTIEN"].ToString() != "" ? Decimal.Parse(dr["HDNX_THANHTIEN"].ToString()) : 0;
+                            obj.HDNX_TRAHANG = dr["HDNX_TRAHANG"].ToString() != "" ?Int32.Parse(dr["HDNX_TRAHANG"].ToString()) : 0;
+                            obj.HDNX_TRANGTHAI = dr["HDNX_TRANGTHAI"].ToString() != "" ? Int32.Parse(dr["HDNX_TRANGTHAI"].ToString()) : 0;
+                            obj.HDNX_VAT = dr["HDNX_VAT"].ToString() != "" ? Double.Parse(dr["HDNX_VAT"].ToString()) : 0;
+                            obj.HDTT_MATT = dr["HDTT_MATT"].ToString();
+                            obj.HH_MAHANG = dr["HH_MAHANG"].ToString();
+                            obj.KH_MAKHO = dr["KH_MAKHO"].ToString();
+                            obj.NPP_MANPP = dr["NPP_MANPP"].ToString();
+                            obj.NV_MANV = dr["NV_MANV"].ToString();
+                            obj.NV_TAIKHOAN = dr["NV_TAIKHOAN"].ToString();
+                            objList.Add(obj);
+                        }
+                    }
+                     */
+                }
+                connect.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+            return dt;
         }
         #endregion
 

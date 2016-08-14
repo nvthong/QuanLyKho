@@ -189,6 +189,30 @@ namespace QLK
                 }
             }
         }
+
+        private void barButtonItem11_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if (checkConnect())
+            {
+                frmBangKeTraHang formTraHang = new frmBangKeTraHang();
+                if (ExistFrom(formTraHang)) return;
+                formTraHang.MdiParent = this;
+                formTraHang.Show();
+            }
+            else
+            {
+                DialogResult dialogResult = MessageBox.Show("Không thể kết nối. Bạn có muốn cấu hình?", "Thông báo", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    frmHTCauHinhKetNoi frm = new frmHTCauHinhKetNoi();
+                    frm.ShowDialog(this);
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+
+                }
+            }
+        }
         #endregion
 
         #region Sự kiện chức năng nhập kho
@@ -878,6 +902,8 @@ namespace QLK
                 return vStatus;
             }
         }
+
+        
 
         
 

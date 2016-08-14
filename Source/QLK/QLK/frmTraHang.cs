@@ -24,13 +24,14 @@ namespace QLK
         public frmTraHang()
         {
             InitializeComponent();
+            InitializeDtHDNX();
             _frmTraHang = this;
             lkHienThi.Properties.DataSource = ClassController.layDSThoiGianHD();
             lkHienThi.EditValue = "0";
             loadDSHoaDon();
             gridCtrlHoaDon.Enabled = true;
-            InitializeDtHDNX();
             setStatusButtonHD(true);
+            setStatucButtonUpdateGia(false);
             btnDongHD.Enabled = true;
         }
 
@@ -89,7 +90,7 @@ namespace QLK
         public void setStatusFieldHH(bool pStatus)
         {
             txtMaHang.Properties.ReadOnly = !pStatus;
-            txtGiaBan.Properties.ReadOnly = !pStatus;
+            //txtGiaBan.Properties.ReadOnly = !pStatus;
             txtSoLuong.Properties.ReadOnly = !pStatus;
         }
 
@@ -114,6 +115,12 @@ namespace QLK
             btnXoaHD.Enabled = pStatus;
         }
 
+        public void setStatucButtonUpdateGia(bool pStatus)
+        {
+            btnSuaGiaBan.Enabled = pStatus;
+            btnSuaGiaNhap.Enabled = pStatus;
+        }
+
         public void setEmptyFieldHD()
         {
             txtHoaDon.Text = "";
@@ -130,6 +137,7 @@ namespace QLK
             txtMaHang.Text = "";
             txtTenHang.Text = "";
             //txtDonViTinh.Text = "";
+            txtGiaNhap.Text = "";
             txtSoLuong.Text = "";
             txtGiaBan.Text = "";
             txtThanhTien.Text = "";
@@ -157,6 +165,7 @@ namespace QLK
                     txtMaHang.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_MAHANG").ToString();
                     txtTenHang.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HH_TENHANG").ToString();
                     //txtDonViTinh.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "DVT_TENDONVI").ToString();
+                    txtGiaNhap.Text = double.Parse(gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_GIAMUA").ToString()).ToString();
                     txtGiaBan.Text = double.Parse(gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_GIABAN").ToString()).ToString();
                     txtSoLuong.Text = gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_SOLUONG").ToString();
                     txtThanhTien.Text = double.Parse(gridViewHangHoa.GetRowCellValue(pRowNumber, "HDNX_THANHTIEN").ToString()).ToString();
@@ -350,8 +359,8 @@ namespace QLK
                 btnSuaHH.Enabled = true;
                 btnXoaHH.Enabled = false;
                 setStatusFieldHH(true);
-                setEmptyFieldHH();
-                setEmptyFieldHH();
+                setEmptyFieldHH(); 
+                setStatucButtonUpdateGia(true);
                 txtMaHang.Focus();
             }
             else if (btnThemHH.Text == "Lưu")
@@ -375,6 +384,13 @@ namespace QLK
                         return;
                     }
 
+                    if ((txtGiaNhap.Text.Trim() == "" ? 0 : Decimal.Parse(txtGiaNhap.Text.Trim())) <= 0)
+                    {
+                        MessageBox.Show("Vui lòng nhập giá nhập");
+                        txtGiaNhap.Focus();
+                        return;
+                    }
+
                     if ((txtGiaBan.Text.Trim() == "" ? 0 : Decimal.Parse(txtGiaBan.Text.Trim())) <= 0)
                     {
                         MessageBox.Show("Vui lòng nhập giá bán");
@@ -389,28 +405,28 @@ namespace QLK
                         return;
                     }
 
-                    double vSoLuongXuatk = 0;
-                    for (int i = 0; i < dtHH.Rows.Count; i++)
-                    {
-                        if (dtHH.Rows[i]["HH_MAHANG"].ToString() == txtMaHang.Text.Trim())
-                        {
-                            vSoLuongXuatk += double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString());
-                        }
-                    }
+                    //double vSoLuongXuatk = 0;
+                    //for (int i = 0; i < dtHH.Rows.Count; i++)
+                    //{
+                    //    if (dtHH.Rows[i]["HH_MAHANG"].ToString() == txtMaHang.Text.Trim())
+                    //    {
+                    //        vSoLuongXuatk += double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString());
+                    //    }
+                    //}
 
-                    List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
-                    listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
+                    //List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
+                    //listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
                     vIdHH = DateTime.Now.Millisecond + "" + DateTime.Now.Second + "" + DateTime.Now.Minute + "" + DateTime.Now.Hour + "" + DateTime.Now.Day + "" + DateTime.Now.Month + "" + DateTime.Now.Year + "";
                     double vSoLuong = txtSoLuong.Text.Trim() == "" ? 0 : double.Parse(txtSoLuong.Text.Trim());
                     double vGiaBan = txtGiaBan.Text.Trim() == "" ? 0 : double.Parse(txtGiaBan.Text.Trim());
-                    double vGiaMua = double.Parse(listHH[0].HDNX_GIAMUA.ToString());
+                    double vGiaMua = txtGiaNhap.Text.Trim() == "" ? 0 : double.Parse(txtGiaNhap.Text.Trim());
                     double vTongMua = vGiaMua * vSoLuong;
                     double vTongBan = vGiaBan * vSoLuong;
-                    double vVAT = listHH[0].HDNX_VAT;
-                    double vGiaVAT = (vGiaMua * vVAT) / 100;
-                    double vTongVAT = vGiaVAT * vSoLuong;
-                    double vChiecKhau = objHH.HH_KHUYENMAI;
-                    double vTongChiecKhau = (vTongBan * vChiecKhau) / 100;
+                    double vVAT = 0;// listHH[0].HDNX_VAT;
+                    double vGiaVAT = 0;// (vGiaMua * vVAT) / 100;
+                    double vTongVAT = 0;// vGiaVAT* vSoLuong;
+                    double vChiecKhau = 0;// objHH.HH_KHUYENMAI;
+                    double vTongChiecKhau = 0;// (vTongBan * vChiecKhau) / 100;
                     double vThanhTien = vTongBan - vTongChiecKhau;
 
                     //vSoLuong = vSoLuong > 0 ? vSoLuong : -vSoLuong;
@@ -582,6 +598,13 @@ namespace QLK
                         return;
                     }
 
+                    if (objHDNX.HDNX_GIAMUA <= 0)
+                    {
+                        MessageBox.Show("Vui lòng nhập giá nhập");
+                        txtGiaNhap.Focus();
+                        return;
+                    }
+
                     if (objHDNX.HDNX_GIABAN <= 0)
                     {
                         MessageBox.Show("Vui lòng nhập giá bán");
@@ -596,30 +619,30 @@ namespace QLK
                         return;
                     }
 
-                    double vSoLuongXuatk = 0;
-                    for (int i = 0; i < dtHH.Rows.Count; i++)
-                    {
-                        if (dtHH.Rows[i]["ID"].ToString() != vIdHH)
-                        {
-                            if (dtHH.Rows[i]["HH_MAHANG"].ToString() == txtMaHang.Text.Trim())
-                            {
-                                vSoLuongXuatk += double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString());
-                            }
-                        }
-                    }
+                    //double vSoLuongXuatk = 0;
+                    //for (int i = 0; i < dtHH.Rows.Count; i++)
+                    //{
+                    //    if (dtHH.Rows[i]["ID"].ToString() != vIdHH)
+                    //    {
+                    //        if (dtHH.Rows[i]["HH_MAHANG"].ToString() == txtMaHang.Text.Trim())
+                    //        {
+                    //            vSoLuongXuatk += double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString());
+                    //        }
+                    //    }
+                    //}
 
-                    List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
-                    listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
+                    //List<HD_NHAPXUAT> listHH = new List<HD_NHAPXUAT>();
+                    //listHH = ClassController.layDSHangHoaNhapKhoByMaHang("KHO000001", objHDNX.HH_MAHANG);
                     string vIdHH_new = DateTime.Now.Millisecond + "" + DateTime.Now.Second + "" + DateTime.Now.Minute + "" + DateTime.Now.Hour + "" + DateTime.Now.Day + "" + DateTime.Now.Month + "" + DateTime.Now.Year + "";
                     double vSoLuong = txtSoLuong.Text.Trim() == "" ? 0 : double.Parse(txtSoLuong.Text.Trim());
                     double vGiaBan = txtGiaBan.Text.Trim() == "" ? 0 : double.Parse(txtGiaBan.Text.Trim());
-                    double vGiaMua = double.Parse(listHH[0].HDNX_GIAMUA.ToString());
+                    double vGiaMua = txtGiaNhap.Text.Trim() == "" ? 0 : double.Parse(txtGiaNhap.Text.Trim()); 
                     double vTongMua = vGiaMua * vSoLuong;
                     double vTongBan = vGiaBan * vSoLuong;
-                    double vGiaVAT = (vGiaMua * listHH[0].HDNX_VAT) / 100;
-                    double vTongVAT = vGiaVAT * vSoLuong;
-                    double vChiecKhau = objHH.HH_KHUYENMAI;
-                    double vTongChiecKhau = (vTongBan * vChiecKhau) / 100;
+                    double vGiaVAT = 0;// (vGiaMua * listHH[0].HDNX_VAT) / 100;
+                    double vTongVAT = 0;// vGiaVAT* vSoLuong;
+                    double vChiecKhau = 0;// objHH.HH_KHUYENMAI;
+                    double vTongChiecKhau = 0;// (vTongBan * vChiecKhau) / 100;
                     double vThanhTien = vTongBan - vTongChiecKhau;
 
                     dtHH.Rows.Add(
@@ -632,9 +655,9 @@ namespace QLK
                         vTongBan,
                         vThanhTien,
                         vIdHH_new,
-                        listHH[0].HDNX_GIAMUA,
+                        vGiaMua,//listHH[0].HDNX_GIAMUA,
                         vTongMua,
-                        listHH[0].HDNX_VAT,
+                        0,//listHH[0].HDNX_VAT,
                         vGiaVAT,
                         vTongVAT
                     );
@@ -783,6 +806,7 @@ namespace QLK
                     btnSuaHH.Text = "Bỏ qua";
                     btnXoaHH.Enabled = false;
                     setStatusFieldHH(true);
+                    setStatucButtonUpdateGia(true);
                     txtMaHang.Focus();
                 }
                 else
@@ -799,6 +823,7 @@ namespace QLK
                 btnSuaHH.Enabled = true;
                 btnThemHH.Enabled = true;
                 setStatusFieldHH(false);
+                setStatucButtonUpdateGia(false);
                 if (gridViewHangHoa.DataRowCount > 0)
                 {
                     gridViewHangHoa.FocusedRowHandle = StatusRowClickHH;
@@ -873,6 +898,7 @@ namespace QLK
                 btnThemHH.Enabled = true;
                 txtKhachHangMa.Focus();
                 dtHH.Clear();
+                loadDSHangHoa();
             }
             else if (btnThemHD.Text == "Lưu")
             {
@@ -893,13 +919,6 @@ namespace QLK
                         return;
                     }
 
-                    //if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
-                    //{
-                    //    MessageBox.Show("Vui lòng chọn kho xuất");
-                    //    txtXuatKhoMa.Focus();
-                    //    return;
-                    //}
-
                     HD_NHAPXUAT obj = new HD_NHAPXUAT();
                     obj.HDNX_LOAIHD = "TH";
                     obj.HDNX_SOHDNB = txtHoaDon.Text.Trim();
@@ -915,13 +934,13 @@ namespace QLK
                     obj.HDNX_THOILAI = 0;// txtTienThoiLai.Text.Trim() != "" ? Decimal.Parse(txtTienThoiLai.Text.Trim()) : 0;
                     obj.HDNX_TRANGTHAI = 1;
                     obj.HDNX_GHINO = 0;
+                    obj.HDNX_TRAHANG = 1;
 
                     for (int i = 0; i < dtHH.Rows.Count; i++)
                     {
                         obj.HH_MAHANG = dtHH.Rows[i]["HH_MAHANG"].ToString();
                         obj.HDNX_GIABAN = Decimal.Parse(dtHH.Rows[i]["HDNX_GIABAN"].ToString());
                         obj.HDNX_CHIECKHAU = Int32.Parse(dtHH.Rows[i]["HDNX_CHIECKHAU"].ToString());
-                        obj.HDNX_TRAHANG = Int32.Parse(dtHH.Rows[i]["HDNX_TRAHANG"].ToString());
                         obj.HDNX_SOLUONG = (double.Parse(dtHH.Rows[i]["HDNX_SOLUONG"].ToString()));
                         obj.HDNX_TONGBAN = (Decimal.Parse(dtHH.Rows[i]["HDNX_TONGBAN"].ToString()));
                         obj.HDNX_THANHTIEN = (Decimal.Parse(dtHH.Rows[i]["HDNX_THANHTIEN"].ToString()));
@@ -944,10 +963,10 @@ namespace QLK
                     setStatusFieldHD(false);
                     setStatusFieldTT(false);
                     loadDSHoaDon();
-                    setEmptyFieldHH();
-                    setEmptyFieldHD();
-                    setEmptyFieldTT();
-                    dtHH.Clear();
+                    //setEmptyFieldHH();
+                    //setEmptyFieldHD();
+                    //setEmptyFieldTT();
+                    //dtHH.Clear();
                 }
                 else if (StatusButtonHD == "Sua")
                 {
@@ -960,13 +979,6 @@ namespace QLK
                             txtKhachHangMa.Focus();
                             return;
                         }
-
-                        //if (txtXuatKhoTen.Text == "" | txtXuatKhoMa.Text == "")
-                        //{
-                        //    MessageBox.Show("Vui lòng chọn kho xuất");
-                        //    txtXuatKhoMa.Focus();
-                        //    return;
-                        //}
 
                         HD_NHAPXUAT objHDNX_OLD = new HD_NHAPXUAT();
                         objHDNX_OLD = ClassController.layThongTinHoaDonTraHang(HDNX_SOHDNB);
@@ -998,6 +1010,7 @@ namespace QLK
                         objHDNX_NEW.HDNX_THOILAI = 0;// txtTienThoiLai.Text.Trim() != "" ? Decimal.Parse(txtTienThoiLai.Text.Trim()) : 0;
                         objHDNX_NEW.HDNX_TRANGTHAI = 1;
                         objHDNX_NEW.HDNX_GHINO = 0;
+                        objHDNX_NEW.HDNX_TRAHANG = 1;
 
                         for (int i = 0; i < dtHH.Rows.Count; i++)
                         {
@@ -1008,7 +1021,6 @@ namespace QLK
                             objHDNX_NEW.HDNX_THANHTIEN = (Decimal.Parse(dtHH.Rows[i]["HDNX_THANHTIEN"].ToString()));
                             objHDNX_NEW.HDNX_CHIECKHAU = Int32.Parse(dtHH.Rows[i]["HDNX_CHIECKHAU"].ToString());
                             objHDNX_NEW.HDNX_TONGCHIECKHAU = (Decimal.Parse(dtHH.Rows[i]["HDNX_TONGCHIECKHAU"].ToString()));
-                            objHDNX_NEW.HDNX_TRAHANG = Int32.Parse(dtHH.Rows[i]["HDNX_TRAHANG"].ToString());
                             objHDNX_NEW.HDNX_STT = i + 1;
                             //
                             objHDNX_NEW.HDNX_GIAMUA = (Decimal.Parse(dtHH.Rows[i]["HDNX_GIAMUA"].ToString()));
@@ -1027,10 +1039,10 @@ namespace QLK
                         setStatusFieldHD(false);
                         setStatusFieldTT(false);
                         updateDSHoaDon();
-                        setEmptyFieldHH();
-                        setEmptyFieldHD();
-                        setEmptyFieldTT();
-                        dtHH.Clear();
+                        //setEmptyFieldHH();
+                        //setEmptyFieldHD();
+                        //setEmptyFieldTT();
+                        //dtHH.Clear();
                     }
                     catch (Exception ex)
                     {
@@ -1132,6 +1144,9 @@ namespace QLK
                     setStatusFieldHH(false);
                     setStatusFieldHD(false);
                     setStatusFieldTT(false);
+                    setEmptyFieldHD();
+                    setEmptyFieldHH();
+                    setEmptyFieldTT();
                     StatusButtonHD = "";
                     StatusButtonHH = "";
                     dtHH.Clear();
@@ -1374,6 +1389,52 @@ namespace QLK
             }
         }
 
+        private void btnSuaGiaNhap_Click(object sender, EventArgs e)
+        {
+            if (txtGiaNhap.Properties.ReadOnly == false)
+            {
+                if (txtTenHang.Text.Trim() != "")
+                {
+                    txtGiaNhap.Properties.ReadOnly = true;
+                    DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                    objHH.HH_MAHANG = txtMaHang.Text.Trim();
+                    objHH.HH_GIAMUA = txtGiaNhap.Text.Trim() != "" ? Decimal.Parse(txtGiaNhap.Text.Trim()) : 0;
+                    ClassController.capNhatGiaNhap(objHH);
+                }
+                else
+                {
+                    txtGiaNhap.Properties.ReadOnly = true;
+                }
+            }
+            else
+            {
+                txtGiaNhap.Properties.ReadOnly = false;
+            }
+        }
+
+        private void btnSuaGiaBan_Click(object sender, EventArgs e)
+        {
+            if (txtGiaBan.Properties.ReadOnly == false)
+            {
+                if (txtTenHang.Text.Trim() != "")
+                {
+                    txtGiaBan.Properties.ReadOnly = true;
+                    DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+                    objHH.HH_MAHANG = txtMaHang.Text.Trim();
+                    objHH.HH_GIABANLE = txtGiaBan.Text.Trim() != "" ? Decimal.Parse(txtGiaBan.Text.Trim()) : 0;
+                    ClassController.capNhatGiaBan(objHH);
+                }
+                else
+                {
+                    txtGiaBan.Properties.ReadOnly = true;
+                }
+            }
+            else
+            {
+                txtGiaBan.Properties.ReadOnly = false;
+            }
+        }
+
         private void lkHienThi_EditValueChanged(object sender, EventArgs e)
         {
             updateDSHoaDon();
@@ -1391,6 +1452,7 @@ namespace QLK
                         frm.ShowDialog(this);
                         txtKhachHangMa.Text = frm.dvtMa;
                         txtKhachHangTen.Text = frm.dvtTen;
+                        txtKhachHangTen.Focus();
                     }
                     else
                     {
@@ -1400,6 +1462,7 @@ namespace QLK
                         {
                             txtKhachHangMa.Text = objNPP.NPP_MANPP;
                             txtKhachHangTen.Text = objNPP.NPP_TENNPP;
+                            txtKhachHangTen.Focus();
                         }
                         else
                         {
@@ -1464,10 +1527,13 @@ namespace QLK
                         if (frm.pHhMa != null)
                         {
                             //txtDonViTinh.Text = frm.pHhDVT;
+                            txtGiaNhap.Text = ((int)double.Parse(frm.pHhGiaNhap)).ToString();
                             txtGiaBan.Text = ((int)double.Parse(frm.pHhGiaBan)).ToString();
                             txtMaHang.Text = frm.pHhMa;
                             txtTenHang.Text = frm.pHhTen;
                             txtTonKho.Text = frm.pHhTonKho.ToString();
+                            setStatucButtonUpdateGia(true);
+                            txtGiaBan.Focus();
                         }
                         else
                         {
@@ -1483,8 +1549,11 @@ namespace QLK
                             txtMaHang.Text = objHH.HH_MAHANG;
                             txtTenHang.Text = objHH.HH_TENHANG;
                             //txtDonViTinh.Text = ClassController.layDonViTinhTheoMa(objHH.DVT_MADONVI).DVT_TENDONVI;
+                            txtGiaNhap.Text = ((int)objHH.HH_GIAMUA).ToString();
                             txtGiaBan.Text = ((int)objHH.HH_GIABANLE).ToString();
                             txtTonKho.Text = ClassController.layTonKhoHangHoa(objHH.HH_MAHANG, "KHO000001").ToString();
+                            setStatucButtonUpdateGia(true);
+                            txtGiaBan.Focus();
                         }
                         else
                         {
@@ -1495,8 +1564,11 @@ namespace QLK
                                 txtMaHang.Text = frm.pHhMa;
                                 txtTenHang.Text = frm.pHhTen;
                                 //txtDonViTinh.Text = frm.pHhDVT;
+                                txtGiaNhap.Text = ((int)double.Parse(frm.pHhGiaNhap)).ToString();
                                 txtGiaBan.Text = ((int)Double.Parse(frm.pHhGiaBan)).ToString();
                                 txtTonKho.Text = frm.pHhTonKho.ToString();
+                                setStatucButtonUpdateGia(true);
+                                txtGiaBan.Focus();
                             }
                             else
                             {
@@ -1511,6 +1583,14 @@ namespace QLK
                     //}
                 }
 
+            }
+        }
+
+        private void txtSoLuong_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtTonKho.Focus();
             }
         }
 
@@ -1633,6 +1713,43 @@ namespace QLK
             updateTienThoiLai();
         }
 
+        private void txtKhachHangMa_TextChanged(object sender, EventArgs e)
+        {
+            DM_NHAPHANPHOI objNPP = new DM_NHAPHANPHOI();
+            objNPP = ClassController.layKhachHangTheoMa(txtKhachHangMa.Text.Trim());
+            if (objNPP != null && objNPP.NPP_MANPP != "")
+            {
+                txtKhachHangMa.Text = objNPP.NPP_MANPP;
+                txtKhachHangTen.Text = objNPP.NPP_TENNPP;
+                txtGhiChu.Focus();
+            }
+            else
+            {
+                txtKhachHangMa.Text = "";
+                txtKhachHangTen.Text = "";
+            }
+        }
+
+        private void txtMaHang_TextChanged(object sender, EventArgs e)
+        {
+            DMHH_HANGHOA objHH = new DMHH_HANGHOA();
+            objHH = ClassController.layHangHoaTheoMa(txtMaHang.Text.Trim());
+            if (objHH != null && objHH.HH_MAHANG != "")
+            {
+                txtMaHang.Text = objHH.HH_MAHANG;
+                txtTenHang.Text = objHH.HH_TENHANG;
+                txtGiaNhap.Text = ((int)objHH.HH_GIAMUA).ToString();
+                txtGiaBan.Text = ((int)objHH.HH_GIABANLE).ToString();
+            }
+            else
+            {
+                txtMaHang.Text = "";
+                txtTenHang.Text = "";
+                txtGiaNhap.Text = "";
+                txtGiaBan.Text = "";
+            }
+        }
+
         private void chkTraHang_CheckStateChanged(object sender, EventArgs e)
         {
             try
@@ -1714,6 +1831,12 @@ namespace QLK
             }
             return false;
         }
+
+        
+
+        
+
+        
 
         
     }

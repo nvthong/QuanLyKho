@@ -14,11 +14,11 @@ using Excel = Microsoft.Office.Interop.Excel;
 
 namespace QLK
 {
-    public partial class frmBaoCaoKhachHang : Form
+    public partial class frmBangKeTraHang : Form
     {
         string vSoHD = "";
         DataTable dtBK = new DataTable();
-        public frmBaoCaoKhachHang()
+        public frmBangKeTraHang()
         {
             InitializeComponent();
             dateDenNgay.DateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
@@ -40,7 +40,7 @@ namespace QLK
             xlWorkSheet.get_Range("b2", "p3").Merge(false);
 
             chartRange = xlWorkSheet.get_Range("b2", "p3");
-            chartRange.FormulaR1C1 = "BẢNG KÊ BÁN LẺ";
+            chartRange.FormulaR1C1 = "BẢNG KÊ TRẢ HÀNG";
             chartRange.HorizontalAlignment = 3;
             chartRange.VerticalAlignment = 3;
             chartRange.Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White);
@@ -597,25 +597,7 @@ namespace QLK
                 string vMaKho = "KHO000001";
                 DateTime vTuNgay = dateTuNgay.DateTime;
                 DateTime vDenNgay = dateDenNgay.DateTime;
-                dtBK = ClassController.baoCaoKhachHang(vMaKho, vTuNgay, vDenNgay, cbxCaNam.Checked);
-
-                if (!cbxXemNo.Checked && !cbxXemTraHang.Checked)
-                {
-                    dtBK.DefaultView.RowFilter = "HDNX_GHINO = '0' and HDNX_TRAHANG = '0'";
-                }
-                else if (!cbxXemNo.Checked && cbxXemTraHang.Checked)
-                {
-                    dtBK.DefaultView.RowFilter = "HDNX_GHINO = '0'";
-                }
-                else if (cbxXemNo.Checked && !cbxXemTraHang.Checked)
-                {
-                    dtBK.DefaultView.RowFilter = "HDNX_TRAHANG = '0'";
-                }
-
-                //if (!cbxXemTraHang.Checked)
-                //{
-                //    dtBK.DefaultView.RowFilter = "HDNX_TRAHANG = '0' ";
-                //}
+                dtBK = ClassController.bangKeTraHang(vMaKho, vTuNgay, vDenNgay, cbxCaNam.Checked);
 
                 decimal vDonGia = 0;
                 decimal vTongDonGia = 0;
@@ -628,33 +610,15 @@ namespace QLK
                 {
                     vDonGia = (-Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString()));
                     vTongDonGia += vDonGia;
-                    dtBK.Rows[i]["HDNX_SOLUONG"] = (-double.Parse(dtBK.Rows[i]["HDNX_SOLUONG"].ToString())).ToString();
-                    dtBK.Rows[i]["HDNX_TONGBAN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString())).ToString();
-                    dtBK.Rows[i]["HDNX_THANHTIEN"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_THANHTIEN"].ToString())).ToString();
-                    dtBK.Rows[i]["HDNX_GIAMKHAC"] = (-Decimal.Parse(dtBK.Rows[i]["HDNX_GIAMKHAC"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_SOLUONG"] = (double.Parse(dtBK.Rows[i]["HDNX_SOLUONG"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_TONGBAN"] = (Decimal.Parse(dtBK.Rows[i]["HDNX_TONGBAN"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_THANHTIEN"] = (Decimal.Parse(dtBK.Rows[i]["HDNX_THANHTIEN"].ToString())).ToString();
+                    dtBK.Rows[i]["HDNX_GIAMKHAC"] = (Decimal.Parse(dtBK.Rows[i]["HDNX_GIAMKHAC"].ToString())).ToString();
                 }
 
                 vTienChiecKhau = (vTongDonGia * vChiecKhau) / 100;
                 vTongThanhToan = vTongDonGia - (vGiamKhac + vTienChiecKhau);
                 gridControl1.DataSource = dtBK;
-
-                if (!cbxXemNo.Checked)
-                {
-                    gridView1.Columns[16].Visible = false;
-                }
-                else
-                {
-                    gridView1.Columns[16].Visible = true;
-                }
-
-                if (!cbxXemTraHang.Checked)
-                {
-                    gridView1.Columns[17].Visible = false;
-                }
-                else
-                {
-                    gridView1.Columns[17].Visible = true;
-                }
 
             }
             catch (Exception ex)
@@ -756,5 +720,6 @@ namespace QLK
             //    }
             //}
         }
+    
     }
 }

@@ -2082,6 +2082,7 @@ namespace QLK
         private double _bc_XUATSI;
         private double _bc_XUATLE;
         private double _bc_XUATKHAC;
+        private double _bc_TRAHANG;
         private double _bc_TONKHO;
 
         private decimal _bc_TIENTON;
@@ -2195,6 +2196,12 @@ namespace QLK
         {
             get { return _bc_TONKHO; }
             set { _bc_TONKHO = value; }
+        }
+
+        public double BC_TRAHANG
+        {
+            get { return _bc_TRAHANG; }
+            set { _bc_TRAHANG = value; }
         }
 
         public decimal BC_TIENTON

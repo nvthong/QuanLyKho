@@ -58,6 +58,7 @@
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chkKhongQuanLy.Properties)).BeginInit();
@@ -263,6 +264,7 @@
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9,
+            this.gridColumn5,
             this.gridColumn10,
             this.gridColumn11,
             this.gridColumn12,
@@ -300,7 +302,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.Visible = true;
             this.gridColumn1.VisibleIndex = 0;
-            this.gridColumn1.Width = 84;
+            this.gridColumn1.Width = 80;
             // 
             // gridColumn2
             // 
@@ -315,7 +317,7 @@
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 1;
-            this.gridColumn2.Width = 120;
+            this.gridColumn2.Width = 165;
             // 
             // gridColumn3
             // 
@@ -330,9 +332,7 @@
             this.gridColumn3.Caption = "Đơn vị tính";
             this.gridColumn3.FieldName = "DVT_TENDONVI";
             this.gridColumn3.Name = "gridColumn3";
-            this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 2;
-            this.gridColumn3.Width = 59;
+            this.gridColumn3.Width = 81;
             // 
             // gridColumn15
             // 
@@ -348,8 +348,8 @@
             this.gridColumn15.FieldName = "HH_GIAMUA";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 3;
-            this.gridColumn15.Width = 59;
+            this.gridColumn15.VisibleIndex = 2;
+            this.gridColumn15.Width = 70;
             // 
             // gridColumn4
             // 
@@ -365,8 +365,8 @@
             this.gridColumn4.FieldName = "HH_GIABANLE";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 4;
-            this.gridColumn4.Width = 59;
+            this.gridColumn4.VisibleIndex = 3;
+            this.gridColumn4.Width = 70;
             // 
             // gridColumn16
             // 
@@ -397,8 +397,8 @@
             this.gridColumn6.FieldName = "BC_TONGNHAPKHO";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 5;
-            this.gridColumn6.Width = 59;
+            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.Width = 70;
             // 
             // gridColumn7
             // 
@@ -444,8 +444,8 @@
             this.gridColumn9.FieldName = "BC_TONGXUATLE";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
-            this.gridColumn9.Width = 59;
+            this.gridColumn9.VisibleIndex = 5;
+            this.gridColumn9.Width = 70;
             // 
             // gridColumn10
             // 
@@ -464,12 +464,8 @@
             // 
             // gridColumn11
             // 
-            this.gridColumn11.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gridColumn11.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gridColumn11.AppearanceCell.ForeColor = System.Drawing.Color.White;
-            this.gridColumn11.AppearanceCell.Options.UseBackColor = true;
             this.gridColumn11.AppearanceCell.Options.UseFont = true;
-            this.gridColumn11.AppearanceCell.Options.UseForeColor = true;
             this.gridColumn11.AppearanceHeader.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.gridColumn11.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
             this.gridColumn11.AppearanceHeader.Options.UseBackColor = true;
@@ -485,7 +481,7 @@
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum)});
             this.gridColumn11.Visible = true;
             this.gridColumn11.VisibleIndex = 7;
-            this.gridColumn11.Width = 66;
+            this.gridColumn11.Width = 70;
             // 
             // gridColumn12
             // 
@@ -531,6 +527,23 @@
             this.gridColumn14.Caption = "Hạn sử dụng";
             this.gridColumn14.FieldName = "HH_HANSUDUNG";
             this.gridColumn14.Name = "gridColumn14";
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceCell.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn5.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn5.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn5.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn5.Caption = "Trả hàng";
+            this.gridColumn5.DisplayFormat.FormatString = "n1";
+            this.gridColumn5.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn5.FieldName = "BC_TRAHANG";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 6;
+            this.gridColumn5.Width = 70;
             // 
             // frmTonKhoHangHoa
             // 
@@ -592,6 +605,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
 
     }
 }

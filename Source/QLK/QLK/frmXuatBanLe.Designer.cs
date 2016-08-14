@@ -49,6 +49,7 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -82,10 +83,13 @@
             this.btnThemHD = new System.Windows.Forms.Button();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
+            this.btnSuaGiaNhap = new DevExpress.XtraEditors.SimpleButton();
+            this.btnSuaGiaBan = new DevExpress.XtraEditors.SimpleButton();
             this.btnXoaHH = new DevExpress.XtraEditors.SimpleButton();
             this.btnSuaHH = new DevExpress.XtraEditors.SimpleButton();
             this.btnThemHH = new DevExpress.XtraEditors.SimpleButton();
             this.txtThanhTien = new DevExpress.XtraEditors.TextEdit();
+            this.txtGiaNhap = new DevExpress.XtraEditors.TextEdit();
             this.txtGiaBan = new DevExpress.XtraEditors.TextEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.TextEdit();
             this.txtTonKho = new DevExpress.XtraEditors.TextEdit();
@@ -93,6 +97,7 @@
             this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl16 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -103,11 +108,6 @@
             this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.lkHienThi = new DevExpress.XtraEditors.LookUpEdit();
-            this.txtGiaNhap = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl13 = new DevExpress.XtraEditors.LabelControl();
-            this.btnSuaGiaBan = new DevExpress.XtraEditors.SimpleButton();
-            this.btnSuaGiaNhap = new DevExpress.XtraEditors.SimpleButton();
-            this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachHangTen.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties.VistaTimeProperties)).BeginInit();
@@ -138,6 +138,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTonKho.Properties)).BeginInit();
@@ -152,7 +153,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
             this.groupControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkHienThi.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl15
@@ -478,6 +478,24 @@
             this.gridColumn4.ToolTip = "Đơn vị tính";
             this.gridColumn4.Width = 70;
             // 
+            // gridColumn15
+            // 
+            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn15.AppearanceCell.Options.UseFont = true;
+            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
+            this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
+            this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.gridColumn15.Caption = "Giá nhập";
+            this.gridColumn15.DisplayFormat.FormatString = "N1";
+            this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.gridColumn15.FieldName = "HDNX_GIAMUA";
+            this.gridColumn15.Name = "gridColumn15";
+            this.gridColumn15.OptionsColumn.AllowEdit = false;
+            this.gridColumn15.OptionsColumn.ReadOnly = true;
+            this.gridColumn15.Visible = true;
+            this.gridColumn15.VisibleIndex = 2;
+            // 
             // gridColumn8
             // 
             this.gridColumn8.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
@@ -494,7 +512,7 @@
             this.gridColumn8.OptionsColumn.AllowEdit = false;
             this.gridColumn8.OptionsColumn.ReadOnly = true;
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
+            this.gridColumn8.VisibleIndex = 3;
             this.gridColumn8.Width = 100;
             // 
             // gridColumn5
@@ -514,7 +532,7 @@
             this.gridColumn5.OptionsColumn.ReadOnly = true;
             this.gridColumn5.ToolTip = "Số lượng";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
+            this.gridColumn5.VisibleIndex = 4;
             this.gridColumn5.Width = 70;
             // 
             // gridColumn9
@@ -535,7 +553,7 @@
             this.gridColumn9.Summary.AddRange(new DevExpress.XtraGrid.GridSummaryItem[] {
             new DevExpress.XtraGrid.GridColumnSummaryItem(DevExpress.Data.SummaryItemType.Sum, "HDNX_TONGBAN", "{0:n0}")});
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 4;
+            this.gridColumn9.VisibleIndex = 5;
             this.gridColumn9.Width = 100;
             // 
             // gridColumn6
@@ -1002,6 +1020,30 @@
             this.groupControl10.Size = new System.Drawing.Size(796, 75);
             this.groupControl10.TabIndex = 16;
             // 
+            // btnSuaGiaNhap
+            // 
+            this.btnSuaGiaNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSuaGiaNhap.Enabled = false;
+            this.btnSuaGiaNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaGiaNhap.Image")));
+            this.btnSuaGiaNhap.Location = new System.Drawing.Point(447, 3);
+            this.btnSuaGiaNhap.Name = "btnSuaGiaNhap";
+            this.btnSuaGiaNhap.Size = new System.Drawing.Size(25, 18);
+            this.btnSuaGiaNhap.TabIndex = 28;
+            this.btnSuaGiaNhap.ToolTip = "Cập nhật giá nhập";
+            this.btnSuaGiaNhap.Click += new System.EventHandler(this.btnSuaGiaNhap_Click);
+            // 
+            // btnSuaGiaBan
+            // 
+            this.btnSuaGiaBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnSuaGiaBan.Enabled = false;
+            this.btnSuaGiaBan.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaGiaBan.Image")));
+            this.btnSuaGiaBan.Location = new System.Drawing.Point(535, 3);
+            this.btnSuaGiaBan.Name = "btnSuaGiaBan";
+            this.btnSuaGiaBan.Size = new System.Drawing.Size(25, 18);
+            this.btnSuaGiaBan.TabIndex = 28;
+            this.btnSuaGiaBan.ToolTip = "Cập nhật giá bán";
+            this.btnSuaGiaBan.Click += new System.EventHandler(this.btnSuaGiaBan_Click);
+            // 
             // btnXoaHH
             // 
             this.btnXoaHH.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1053,6 +1095,24 @@
             this.txtThanhTien.Properties.ReadOnly = true;
             this.txtThanhTien.Size = new System.Drawing.Size(89, 22);
             this.txtThanhTien.TabIndex = 22;
+            // 
+            // txtGiaNhap
+            // 
+            this.txtGiaNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtGiaNhap.EnterMoveNextControl = true;
+            this.txtGiaNhap.Location = new System.Drawing.Point(391, 24);
+            this.txtGiaNhap.Name = "txtGiaNhap";
+            this.txtGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.txtGiaNhap.Properties.Appearance.Options.UseFont = true;
+            this.txtGiaNhap.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
+            this.txtGiaNhap.Properties.AppearanceReadOnly.Options.UseBackColor = true;
+            this.txtGiaNhap.Properties.Mask.EditMask = "N0";
+            this.txtGiaNhap.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtGiaNhap.Properties.Mask.UseMaskAsDisplayFormat = true;
+            this.txtGiaNhap.Properties.ReadOnly = true;
+            this.txtGiaNhap.Size = new System.Drawing.Size(89, 22);
+            this.txtGiaNhap.TabIndex = 20;
+            this.txtGiaNhap.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
             // 
             // txtGiaBan
             // 
@@ -1152,6 +1212,16 @@
             this.labelControl17.TabIndex = 11;
             this.labelControl17.Text = "SL";
             this.labelControl17.ToolTip = "Số lượng";
+            // 
+            // labelControl13
+            // 
+            this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.labelControl13.Location = new System.Drawing.Point(391, 5);
+            this.labelControl13.Name = "labelControl13";
+            this.labelControl13.Size = new System.Drawing.Size(50, 16);
+            this.labelControl13.TabIndex = 11;
+            this.labelControl13.Text = "Giá nhập";
             // 
             // labelControl16
             // 
@@ -1284,76 +1354,6 @@
             this.lkHienThi.TabIndex = 4;
             this.lkHienThi.EditValueChanged += new System.EventHandler(this.lkHienThi_EditValueChanged);
             // 
-            // txtGiaNhap
-            // 
-            this.txtGiaNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtGiaNhap.EnterMoveNextControl = true;
-            this.txtGiaNhap.Location = new System.Drawing.Point(391, 24);
-            this.txtGiaNhap.Name = "txtGiaNhap";
-            this.txtGiaNhap.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.txtGiaNhap.Properties.Appearance.Options.UseFont = true;
-            this.txtGiaNhap.Properties.AppearanceReadOnly.BackColor = System.Drawing.Color.AliceBlue;
-            this.txtGiaNhap.Properties.AppearanceReadOnly.Options.UseBackColor = true;
-            this.txtGiaNhap.Properties.Mask.EditMask = "N0";
-            this.txtGiaNhap.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
-            this.txtGiaNhap.Properties.Mask.UseMaskAsDisplayFormat = true;
-            this.txtGiaNhap.Properties.ReadOnly = true;
-            this.txtGiaNhap.Size = new System.Drawing.Size(89, 22);
-            this.txtGiaNhap.TabIndex = 20;
-            this.txtGiaNhap.TextChanged += new System.EventHandler(this.txtGiaBan_TextChanged);
-            // 
-            // labelControl13
-            // 
-            this.labelControl13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.labelControl13.Appearance.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.labelControl13.Location = new System.Drawing.Point(391, 5);
-            this.labelControl13.Name = "labelControl13";
-            this.labelControl13.Size = new System.Drawing.Size(50, 16);
-            this.labelControl13.TabIndex = 11;
-            this.labelControl13.Text = "Giá nhập";
-            // 
-            // btnSuaGiaBan
-            // 
-            this.btnSuaGiaBan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSuaGiaBan.Enabled = false;
-            this.btnSuaGiaBan.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaGiaBan.Image")));
-            this.btnSuaGiaBan.Location = new System.Drawing.Point(535, 3);
-            this.btnSuaGiaBan.Name = "btnSuaGiaBan";
-            this.btnSuaGiaBan.Size = new System.Drawing.Size(25, 18);
-            this.btnSuaGiaBan.TabIndex = 28;
-            this.btnSuaGiaBan.ToolTip = "Cập nhật giá bán";
-            this.btnSuaGiaBan.Click += new System.EventHandler(this.btnSuaGiaBan_Click);
-            // 
-            // btnSuaGiaNhap
-            // 
-            this.btnSuaGiaNhap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSuaGiaNhap.Enabled = false;
-            this.btnSuaGiaNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnSuaGiaNhap.Image")));
-            this.btnSuaGiaNhap.Location = new System.Drawing.Point(447, 3);
-            this.btnSuaGiaNhap.Name = "btnSuaGiaNhap";
-            this.btnSuaGiaNhap.Size = new System.Drawing.Size(25, 18);
-            this.btnSuaGiaNhap.TabIndex = 28;
-            this.btnSuaGiaNhap.ToolTip = "Cập nhật giá nhập";
-            this.btnSuaGiaNhap.Click += new System.EventHandler(this.btnSuaGiaNhap_Click);
-            // 
-            // gridColumn15
-            // 
-            this.gridColumn15.AppearanceCell.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gridColumn15.AppearanceCell.Options.UseFont = true;
-            this.gridColumn15.AppearanceHeader.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.gridColumn15.AppearanceHeader.Options.UseFont = true;
-            this.gridColumn15.AppearanceHeader.Options.UseTextOptions = true;
-            this.gridColumn15.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.gridColumn15.Caption = "Giá nhập";
-            this.gridColumn15.DisplayFormat.FormatString = "N1";
-            this.gridColumn15.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
-            this.gridColumn15.FieldName = "HDNX_GIAMUA";
-            this.gridColumn15.Name = "gridColumn15";
-            this.gridColumn15.OptionsColumn.AllowEdit = false;
-            this.gridColumn15.OptionsColumn.ReadOnly = true;
-            this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 2;
-            // 
             // frmXuatBanLe
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1365,7 +1365,7 @@
             this.Controls.Add(this.groupControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmXuatBanLe";
-            this.Text = "Xuất bán lẻ";
+            this.Text = "Xuất bán";
             ((System.ComponentModel.ISupportInitialize)(this.txtGhiChu.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtKhachHangTen.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNgayHoaDon.Properties.VistaTimeProperties)).EndInit();
@@ -1398,6 +1398,7 @@
             this.groupControl10.ResumeLayout(false);
             this.groupControl10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtThanhTien.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtGiaBan.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTonKho.Properties)).EndInit();
@@ -1414,7 +1415,6 @@
             this.groupControl5.ResumeLayout(false);
             this.groupControl5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.lkHienThi.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtGiaNhap.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }

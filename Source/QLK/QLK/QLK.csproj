@@ -80,6 +80,12 @@
     </Compile>
     <Compile Include="ClassController.cs" />
     <Compile Include="ClassObject.cs" />
+    <Compile Include="frmBangKeTraHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBangKeTraHang.Designer.cs">
+      <DependentUpon>frmBangKeTraHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmBangKeXuatKhac.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -412,6 +418,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmBangKeNhapKho.resx">
       <DependentUpon>frmBangKeNhapKho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBangKeTraHang.resx">
+      <DependentUpon>frmBangKeTraHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmBangKeXuatKhac.resx">
       <DependentUpon>frmBangKeXuatKhac.cs</DependentUpon>
